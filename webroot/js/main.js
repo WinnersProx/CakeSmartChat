@@ -376,10 +376,13 @@ $(document).ready(function(){
 	}
 	//Live users instant chat with chatbox chatbox chatbox chatbox
 	$('.user-online').click(function(){
-		$('.chat-box').show();
 		$receiverId = $(this).attr('data-liveuid');
 		console.log($receiverId)
-		$receiverId.appendTo('.chat-box');
+		$tBox = $('.appendable-boxes');
+		$tBox.append($('.chat-box'));
+		$('.chat-box').show();
+		$('.chat-box .chat-box-header').attr('id', $receiverId);
+		
 	})
 	//Live users instant chat with chatbox chatbox chatbox chatbox
 

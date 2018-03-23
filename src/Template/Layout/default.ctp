@@ -90,6 +90,41 @@
     </div>
     <div class="container-fluid" id="main_wrapper">
         <?= $this->fetch('content');?>
+
+
+
+<!--For the chat box once visible-->
+<div id="appendable-boxes">
+   <div class="chat-box row">
+    <div class="chat-box-header">
+        Chat with WinnersProx<span class="chat-box-alert"></span>
+    </div>
+    <div class="chat-contents">
+        <div class="chat-contents-msgs">
+            Vainqueur : salut monsieur sg
+            shg : wow hereux de revoir maitre
+        </div>
+        <div class="chat-contents-input">
+            <form method="post">
+                <form action="/messages/sendMessage/" method="post" id="MsgBoxSender">
+                    <div class="MsgInputBox">
+                        <input type="text" name="msgSender" class="msgSender" placeholder="Type your message here!! Click enter to send" autocomplete="off" />
+
+                    </div>
+                    <div class="custFsub">
+                        <i class="fa fa-send fa-lg fSender"></i>
+                    </div>
+                </form>
+            </form>
+            <br>
+            
+        </div>
+    </div>
+
+</div> 
+</div>
+
+<!--Chat box end -->
         
         <!--Scripts javascript-->
 

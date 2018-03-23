@@ -35,26 +35,3 @@
 
 
 
-<!--For the chat box once visible-->
-<div class="chat-box row">
-    <div class="chat-box-header">
-        Chat with WinnersProx<span class="chat-box-alert"></span>
-    </div>
-    <div class="chat-contents">
-        <div class="chat-contents-msgs">
-            Vainqueur : salut monsieur sg
-            shg : wow hereux de revoir maitre
-        </div>
-        <div class="chat-contents-input">
-            <form method="post">
-                <div class="form-group">
-                    <textarea name="new-chat" class="form-control msgBox" placeholder="votre message ici" rows="1"></textarea> 
-                </div>
-                <input type="submit" name="sendmsg" class="btn btn-xs btn-primary" value="send">
-            </form>
-            <br>
-            
-        </div>
-    </div>
-
-</div>
