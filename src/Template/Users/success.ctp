@@ -1,0 +1,1 @@
+<span class="fa fa-checked">The message has been sent</span>

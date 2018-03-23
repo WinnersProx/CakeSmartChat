@@ -1,0 +1,345 @@
+2018-01-16 01:51:02 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 01:51:36 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 01:52:18 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 01:52:42 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 01:53:24 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 01:55:18 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:25:42 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:25:54 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:31:46 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:31:54 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:35:58 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 02:47:09 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 05:10:25 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 05:34:37 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 05:45:27 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 05:46:49 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 05:47:24 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:11:52 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:12:00 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:13:08 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:21:34 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Media.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Media.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Media.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:21:52 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:22:03 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Load" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Load',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('load')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:22:11 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Load" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Load',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('load')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-01-16 17:23:05 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Medias.Create" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Medias.Create',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Medias.create')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-03-06 20:06:19 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Serevr" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Serevr',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('serevr')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-03-16 11:14:53 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Schema" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Schema',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('schema')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-03-19 22:36:35 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.messages' doesn't exist in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'messages', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('messages', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('messages')
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(217): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'messages', 'Messages')
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Messages')
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(257): Bake\Shell\Task\ModelTask->main('Messages')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Messages', 0)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(258): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(458): Bake\Shell\BakeShell->all('Messages')
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
