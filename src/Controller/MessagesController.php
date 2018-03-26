@@ -16,8 +16,24 @@ class MessagesController extends AppController
    
 
     public function l($idReceiver = null){
+        //setup messages status
+        $connection = $this->Messages->connectTocake();
+        $connected = $this->Auth->user('id');
+        $newStatus = $connection->newQuery()
+        ->update('messages')
+        ->set(['m_status' => 1])
+        ->where(['m_receiver' => $connected, 'm_status !=' => 2])
+        ->execute();
         if($idReceiver != null){
-            $receiverId = $idReceiver;
+            $receiverId = intval($idReceiver);
+            $connected = $this->Auth->user('id');
+            $updateStatus = $connection->newQuery()
+            ->update('messages')
+            ->set(['m_status' => 2])
+            ->where(['m_sender' => $receiverId, 'm_receiver' => $connected,'m_status !=' => 2])
+            ->execute();
+           
+            
             $this->set(compact('receiverId'));
         }
     }

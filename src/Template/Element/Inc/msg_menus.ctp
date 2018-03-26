@@ -1,6 +1,6 @@
 <div class="Messages-opts">
 	<div class="msg-header">
-		Welcome to SMI(SmartChat Instant Messaging)
+		Welcome to SMI(SmartChat Instant Messaging) <i class="fa fa-spin"></i>
 		<span class="flash"><?= $this->Flash->render()?></span>
 	</div>
 	<div class="msgs-lists">

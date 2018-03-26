@@ -23,8 +23,8 @@
         <?php if(!$userAcquaint->checkRelation($people['id'])):?>
             <?= $this->Html->Image($people['avatar'],['class' => 'user-avatar-xs'])?> 
             <?= h($people['name'])?>
-                <?=$this->Html->link(__('Invite'),['controller'
-                => 'Users', 'action' => 'sendRequest',$people['id']],['class' =>'fa fa-send ajaxInvite'])
+                <?=$this->Html->link(__('Invite '),['controller'
+                => 'Users', 'action' => 'sendRequest',$people['id']],['class' =>'fa fa-user-plus ajaxInvite'])
             ?><span class="status"></span><br/>
         <?php endif;?>
     <?php endforeach;?>

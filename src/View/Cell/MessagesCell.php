@@ -63,5 +63,17 @@ class MessagesCell extends Cell{
 		}
 		
 	}
+	public function countNewMessages(){
+		$this->loadModel('Messages');
+		$connect = $this->Messages->connectTocake();
+		$connectedId = $this->request->session()->read('Auth')['User']['id'];
+		$newMessages = $connect->newQuery()
+		->select('*')
+		->from('messages')
+		->where(['m_receiver' => $connectedId, 'm_status' => 0])
+		->execute()
+		->rowCount();
+		return $newMessages;
+	}
 }
 ?>

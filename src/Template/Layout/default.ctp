@@ -50,9 +50,22 @@
                     <ul class="nav navbar-nav navbar-right">
                         <?php if($LoggedUser):?>
                             <li><a href="/users/timeline"><strong><i class="fa fa-home fa-lg"></i> Home</strong></a></li>
-                            <li><a href="/messages"><strong><i class="fa fa-comment fa-lg"></i> Messages</strong></a></li>
-                            <li><a href="/users/notificationsList" class="toggle-notifs"><strong><i class="fa fa-envelope-o fa-lg"></i>Notifications</strong>
-                                <span class="notif"></span></a>
+                            <li>
+                                <?php
+                                    $news = $this->cell('Messages')->countNewMessages();
+                                ?>
+                                <a href="/messages">
+                                    <strong><i class="fa fa-comment fa-lg"></i> Messages</strong>
+                                    <?php if($news>0):?>
+                                        <span class="m-counts"><?= $news?></span>
+                                    <?php endif;?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/users/notificationsList" class="toggle-notifs">
+                                    <strong><i class="fa fa-envelope-o fa-lg"></i> Notifications</strong>
+                                    <span class="notif"></span>
+                                </a>
                             </li>
 
                         <li>
@@ -64,7 +77,7 @@
                                     <?= $this->Html->Image('user.png',['class' => 'user-avatar-lu'])?>
                                 <?php endif;?>
 
-                                <span class="caret"></span>
+                                <span class="fa fa-chevron-down"></span>
                             <ul class="dropdown-menu menu-drop">
                                 <li><a href="/users/profile/<?= $LoggedUser['User']['name']?>"><strong><i class="fa fa-user-md fa-lg"></i> Profile</strong></a></li>
                                 <li class="divider"></li>

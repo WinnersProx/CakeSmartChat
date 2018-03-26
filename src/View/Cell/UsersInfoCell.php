@@ -41,6 +41,49 @@ class UsersInfoCell extends Cell{
 		return $result;
 
 	}
+	public function countMessages($friendId){
+		$this->loadModel('Messages');
+		$myAccount = $this->request->session()->read('Auth')['User']['id'];
+		$connect = $this->Messages->connectTocake();
+		$checkNumber = $connect->newQuery()
+		->select('*')
+		->from('messages')
+		->where(['m_sender' =>$friendId , 'm_receiver' => $myAccount, 'm_status <>' => 2])
+		->execute()
+		->rowCount();
+		return $checkNumber;
+	}
+	public function friendMessages($friendId){
+		$this->loadModel('Messages');
+		$myAccount = $this->request->session()->read('Auth')['User']['id'];
+		$connect = $this->Messages->connectTocake();
+		$checkFriendMessages = $connect->newQuery()
+		->select('*')
+		->from('messages')
+		->where(['m_sender' =>$friendId , 'm_receiver' =>$myAccount , 'm_status <>' => 2])
+		->order(['m_id' => 'DESC'])
+		->limit(1)
+		->execute()
+		->fetch('obj');
+
+		return $checkFriendMessages; 
+
+
+		
+	}
+	public function findAllMessages($friendId){
+		$this->loadModel('Messages');
+		$myAccount = $this->request->session()->read('Auth')['User']['id'];
+		$connect = $this->Messages->connectTocake();
+		$findAllMessages = $connect->newQuery()
+		->select('*')
+		->from('messages')
+		->where(['m_sender' =>$friendId , 'm_receiver' =>$myAccount])
+		->order(['m_id' => 'DESC'])
+		->limit(1)
+		->execute();
+		return $findAllMessages; 
+	}
 
 	public function friendsLists($user){
 		$this->loadModel('Users');
@@ -69,12 +112,31 @@ class UsersInfoCell extends Cell{
 					else{
 						$flag = '';
 					}
+					//to check if there are unread messages
+					$countUnread = $this->countMessages($sFriend->id);
+					$findAll = $this->findAllMessages($sFriend->id);
+					if($countUnread > 0){
+						$fMessage = $this->friendMessages($sFriend->id);
+						$newMessage = '<span class="new-m">'.$fMessage->m_content.'</span><span class="c-unread-m">'.$countUnread.'</span>';
+					}
+					else{
+						$countM = $findAll->rowCount();
+						if($countM > 0){
+							$lastM = $findAll->fetch('obj');
+							$newMessage = '<span class="new-m">'.$lastM->m_content.'</span>';
+
+						}
+						else{
+							$newMessage = '<span class="new-m">no new message</span>';
+						}
+
+					}
+					//checks if there are unread messages
 
 					echo 
 						'<a href="/messages/l/'.$sFriend->id.'">
 							<div class="userFriend">
-							
-							<img src="/img/'.$sFriend->avatar.'" class="user-avatar-xs"/>'.$flag. ' ' .$sFriend->name.
+							<img src="/img/'.$sFriend->avatar.'" class="user-avatar-xs"/>'.$flag. ' ' .$sFriend->name. ' '.$newMessage.
 							'</div>
 						</a>';
 				}
