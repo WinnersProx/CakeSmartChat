@@ -22,7 +22,7 @@
                         <input type="file" name="userAvatar" class="img-upload avatarSetter" multiple="multiple" required><?= $this->Html->Image('instagram.png', ['class' => 'picture-uploader'])?>
                         <input type="submit" name="s" value="Upload" class="btn btn-xs uploadAvatar">
                     </form>
-                    <span class="uploader-text">Click on the icon to upload your profile picture</span>
+                    <span class="uploader-text-e">Click on the icon to upload your profile picture</span>
                     
                 </div>
             </div>

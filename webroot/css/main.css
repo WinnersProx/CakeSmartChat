@@ -94,6 +94,51 @@ textarea.parsley-error {
 .user-block .avatar{
 	margin:auto;
 }
+.myUsersSignUp{
+	width: 550px;
+	color: black;
+	font-family: quantify;
+}
+#about{
+	margin-bottom: 20px;
+}
+#about, #phone,#name{
+	border-radius: 4px;
+	border:none;
+}
+.Sign-Avatar{
+	background-color: #bbbbbb;
+	border-radius: 4px;
+	padding-top: 4px;
+}
+.s-avatar{
+	border:3px dashed #b5bbd8;
+	cursor: pointer;
+}
+.S-instructions{
+	text-align: justify;
+	color: #09212b;
+}
+.SignUp-Cred{
+	float: right;
+}
+.users-side-nav{
+	color: #041258;
+    font-weight: bold;
+    font-family: serif;
+}
+.c-badge-r{
+	margin-top: 8px;
+	text-align: center;
+	width: 200px;
+	display: block;
+}
+.sign-custom-btn{
+	background-color: #78909c;
+	color: #c1c1c1;
+	margin-top: 4px;
+	border-radius: 4px;
+}
 /*This is about the left menu and other simular blocks*/
 
 /*This is about the left menu and other simular blocks*/
@@ -335,16 +380,92 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	font-weight: bold;
 
 }
+#email, #password{
+	font-family: cursive;
+    background-color: beige;
+    border-radius: 4px;
+    border:none;
+    color: black;
+}
+#email:focus, #password:focus{
+	border: none;
+}
+.panel{
+	padding: 15px 2px 2px 2px;
+	font-family: quantify;
+	color: #583f3f;
+    font-weight: bold;
+    display: none;
+
+}
+.smartchat-infos{
+	margin-top: 60px;
+	background-color: #bbbbbb;
+	border-radius: 4px;
+	padding: 4px;
+	font-family: quantify;
+	text-align: center;
+}
+.rm-box{
+	text-align: center;
+}
+/*for the pictures shown on home*/
+.connect-people{
+	
+}
+.people-pictures{
+	width: 500px;
+	display: none;
+}
+.s-picture{
+	padding: 2px;
+	width: 150px;
+	height: 206px;
+	display: inline-block;
+}
+.s-picture img{
+	width: 200px;
+	border-radius: 4px;
+	height: 200px;
+}
+/*for the pictures shown on home*/
+.myLogonTab{
+	margin-top: 60px;
+}
+#myLogonTab{
+	height: 300px;
+}
+
+.log-control{
+	font-family: cursive;
+    background-color: beige;
+    border-radius: 4px;
+}
+.logon-box{
+	background-color: #e4e4e4;
+	border-radius: 4px 4px 0px 0px;
+	text-align: center;
+	padding: 8px;
+	margin-left: 14px;
+	margin-right: 15px;
+}
+.l-flash{
+	font-size: 14px;
+}
+
 .login-title{
-	font-family:reality sunday; 
-	font-size: 30px;
+	font-family:quantify; 
+	font-size: 26px;
+	color: #09212b;
+	line-height: 25px;
 
 }
 .login-bd{
-	margin-top: -7px;
+	margin-top: -30px;
+
 }
 .login-box{
-	width: 365px; 
+	width: 300px; 
 	margin-top:2px;
 }
 /*carousel*/
@@ -780,12 +901,20 @@ input[type="file"]{
 .img-transfer .uploader-text{
     font-family: verdana;
 	font-size: 14px;
-	position: absolute;
 	padding-top: 15px;
 	text-align: center;
 	width: 159px;
 	color: #000000;
 	
+}
+.img-transfer .uploader-text-e{
+	font-family: verdana;
+	font-size: 14px;
+	padding-top: 15px;
+	text-align: center;
+	width: 159px;
+	position: absolute;
+	color: #000000;
 }
 .uploadAvatar{
 	display: none;
@@ -925,6 +1054,7 @@ span.dated{
 i.sub{
 	font-size: 12px;
 	color: #da7c9a;
+	cursor: zoom-in;
 
 }
 .sub-tags{
@@ -1002,6 +1132,14 @@ span.post-erroneous {
 	max-width:91%;
 
 }
+.side-nav li a:not(.button){
+	padding: 1px;
+	color: #041258;
+}
+.side-nav li a:not(.button):hover{
+	color: #041258;
+}
+
 .users-comments .u-name{
 	color: #8a90ad;
 	font-family:quantify;
@@ -1009,6 +1147,7 @@ span.post-erroneous {
 }
 .user-photo{
 	margin-bottom:2px;
+	margin-right: -2px;
 }
 .user-comment{
 	width:65%;

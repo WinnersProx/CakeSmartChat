@@ -4,30 +4,38 @@
   */
     $this->assign('title', 'Login-Users');
 ?>
-    <nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--  <nav class="large-3 medium-4 columns" id="actions-sidebar">
         <ul class="side-nav">
             <li class="heading"><?= __('Actions') ?></li>
-            <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
             <li><?= $this->Html->link(__('Sign Up'), ['action' => 'signup']) ?></li>
         </ul>
-    </nav>
+    </nav>-->
 
-<div class="users form large-9 medium-8 columns content">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-3 login-box">
+<div class="row">
+    <div class="col-md-6 smartchat-infos visible-md">
+        <div class="rm-box">Welcome back login and discover what's going on all over the world
+        </div>
+        <div class="connect-people">
+            <div class="people-pictures">
+              <?php $this->cell('Files')->getAllpngFiles();?>  
+            </div>
+        </div>
+    </div>
+    <div class="myLogonTab col-md-6">
+        <div class="col-md-4 login-box">
             <div class="panel panel-primary">
-                <span class="flash"><?= $this->Flash->render()?></span>
-                <div class="panel-footer">
-                    <h2 class="panel-title text-center login-title"><strong>Login to WinChat!</strong></h3>
+                <div class="logon-box">
+                    <span class="login-title text-center">Login to Smartchat!</span>
                 </div>
+                <span class="flash l-flash"><?= $this->Flash->render()?></span>
                 <div class="panel-body login-bd">
                     <?= $this->Form->create()?>
                     <fieldset>
                         <div class="form-group">
-                            <?= $this->Form->control('email',['placeholder' => 'yourmail@gmail.com','required'])?>
+                            <?= $this->Form->control('email',['placeholder' => 'yourmail@gmail.com','required','class'])?>
                         </div>
                         <div class="form-group">
-                            <?=$this->Form->control('password', ['placeholder' => 'Password','required'])?>
+                            <?=$this->Form->control('password', ['placeholder' => 'Password','required','class'])?>
                         </div>
                         <div class="checkbox">
                             <label>
@@ -43,3 +51,4 @@
         </div>
     </div>
 </div>
+<?= $this->Html->script('smartcakeAnim',['block' => true]);?>
