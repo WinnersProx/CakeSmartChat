@@ -31,6 +31,8 @@ class RecordNotFoundException extends RuntimeException
      */
     public function __construct($message, $code = 404, $previous = null)
     {
+        $this->layout = 'error.ctp';
+        return "Page Not Found";
         parent::__construct($message, $code, $previous);
     }
 }

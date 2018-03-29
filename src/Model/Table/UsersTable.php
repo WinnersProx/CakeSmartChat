@@ -8,6 +8,7 @@ use Cake\Validation\Validator;
 use Cake\Datasource\ConnectionManager;
 use Cake\Chronos\Chronos;
 use Cake\Controller\Component\AuthComponent;
+use Cake\Utility\Text;
 //use Cake\Datasource\ConnectionManager;
 
 /**
@@ -63,6 +64,13 @@ class UsersTable extends Table
         }
 
 
+    }
+
+    public function beforeSave($event, $entity, $options){
+        if($entity->isNew() && !($entity->slug)){
+            $NameSlug = Text::slug($entity->name);
+            $entity->slug = substr($NameSlug, 0, 190);
+        }
     }
 
     public function connectTocake(){

@@ -6,6 +6,9 @@ use Cake\Event\Event;
 use Cake\Http\Client\FormData;
 
 class PostsController extends AppController{
+	public function plists(){
+
+	}
 	
 	public function newPost(){
 		$this->loadModel('Users');

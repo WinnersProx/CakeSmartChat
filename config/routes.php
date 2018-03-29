@@ -58,6 +58,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/users/', ['controller' => 'Users', 'action' => 'timeline']);
     $routes->connect('/users/profile/', ['controller' => 'Users', 'action' => 'profile']);
     $routes->connect('/messages/', ['controller' => 'Messages', 'action' => 'l']);
+     $routes->connect('/profiles/', ['controller' => 'Profiles', 'action' => 'u']);
     /*for the users' controller route*/
     //$routes->connect('/users/', ['controller' => 'Users', 'action' => 'login']);
     /**

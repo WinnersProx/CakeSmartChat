@@ -79,7 +79,7 @@
 
                                 <span class="fa fa-chevron-down"></span>
                             <ul class="dropdown-menu menu-drop">
-                                <li><a href="/profiles/u/<?= $LoggedUser['User']['name']?>"><strong><i class="fa fa-user-md fa-lg"></i> Profile</strong></a></li>
+                                <li><a href="/users/profile/<?= $LoggedUser['User']['name']?>"><strong><i class="fa fa-user-md fa-lg"></i> Profile</strong></a></li>
                                 <li class="divider"></li>
                                 <li><a href="/users/logout"><strong><i class="fa fa-sign-out fa-lg"></i> Logout</strong></a></li>
                                 
@@ -103,57 +103,3 @@
     </div>
     <div class="container-fluid" id="main_wrapper">
         <?= $this->fetch('content');?>
-
-
-
-<!--For the chat box once visible-->
-<div id="appendable-boxes">
-   <div class="chat-box row">
-    <div class="chat-box-header">
-        Chat with WinnersProx<span class="chat-box-alert"></span>
-    </div>
-    <div class="chat-contents">
-        <div class="chat-contents-msgs">
-            Vainqueur : salut monsieur sg
-            shg : wow hereux de revoir maitre
-        </div>
-        <div class="chat-contents-input">
-            <form method="post">
-                <form action="/messages/sendMessage/" method="post" id="MsgBoxSender">
-                    <div class="MsgInputBox">
-                        <input type="text" name="msgSender" class="msgSender" placeholder="Type your message here!! Click enter to send" autocomplete="off" />
-
-                    </div>
-                    <div class="custFsub">
-                        <i class="fa fa-send fa-lg fSender"></i>
-                    </div>
-                </form>
-            </form>
-            <br>
-            
-        </div>
-    </div>
-
-</div> 
-</div>
-
-<!--Chat box end -->
-        
-        <!--Scripts javascript-->
-
-        <!--Local jquery for Js-->
-        <?= $this->Html->script('jquery.min')?>
-        <!-- Include all compiled plugins (below), or include individual files as needed-->
-        <?= $this->Html->script('bootstrap')?>
-        <!-- <script src="libraries/parsley/parsley.min.js"></script>
-        <script src="libraries/i18n/fr.js"></script>-->
-        <?= $this->Html->script('main')?>
-        <?= $this->Html->script('navig')?>
-        <?= $this->Html->script('customScrollbar/js/jquery.mCustomScrollbar.concat.min')?>
-        <?=$this->fetch('script');?>
-
-</body>
-
-       
-    
-        
