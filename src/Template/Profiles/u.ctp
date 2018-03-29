@@ -37,6 +37,7 @@
             </div>
             
           </div>
+          <!--end profile user banner -->
           <div class="user-informations">
             <div class="user-inf-avatars">
               <span class="u-inf-title">

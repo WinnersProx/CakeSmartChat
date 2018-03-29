@@ -1361,6 +1361,8 @@ input.msgSender:focus{
 }
 .user-informations{
 	text-align: justify;
+	padding-right: 4px;
+
 
 }
 .profile-opts{
@@ -1380,6 +1382,9 @@ input.msgSender:focus{
 	border-bottom: 4px solid white;
 	padding: 4px;
 	border-radius: 4px 4px 0px 0px;
+	padding-bottom: 4px;
+}
+.user-inf-avatars{
 	padding-bottom: 4px;
 }
 /*profile page related*/
