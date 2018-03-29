@@ -1377,9 +1377,10 @@ input.msgSender:focus{
 	font-family: quantify;
 	color:#571e61; 
 	background-color: #cacaca;
-	border-top: 4px solid white;
+	border-bottom: 4px solid white;
 	padding: 4px;
-	border-radius: 0px 0px 4px 4px;
+	border-radius: 4px 4px 0px 0px;
+	padding-bottom: 4px;
 }
 /*profile page related*/
 
