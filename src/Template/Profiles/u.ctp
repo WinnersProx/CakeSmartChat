@@ -40,36 +40,18 @@
           <!--end profile user banner -->
           <div class="user-informations">
             <div class="user-inf-avatars">
-              <span class="u-inf-title">
+              <div class="u-inf-title">
                 Profile Images
-              </span>
+              </div>
+              <div class="u-s-avatars">
+                <?php 
+                  $Files = $this->cell('Files');
+                  $Files->getUserAvatars($userInfos['id']);
+                ?>
+              </div>
+              
             </div>
-            Profile <?=$userInfos['name']?>
-           <?= $this->Html->link('Edit Profile', ['controller' => 'Users', 'action' => 'edit',$userInfos['id']])?>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
           </div>
            
 
