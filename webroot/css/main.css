@@ -124,15 +124,27 @@ textarea.parsley-error {
 }
 .users-side-nav{
 	color: #041258;
-    font-weight: bold;
-    font-family: serif;
     padding-top: 2px;
+    font-family: serif;
+    width: 220px;
 }
 .c-badge-r{
-	margin-top: 8px;
+	margin-top: -4px;
+	margin-left: 10px;
 	text-align: center;
+	background-color: #9498ad;
+	border-radius: 4px 2px 4px 2px;
+	color: #eef2fc;
+	font-family: cursive;
+	font-size: 13px;
+	padding: 2px;
+	font-weight: inherit;
 	width: 200px;
-	display: block;
+	word-break: break-all;
+
+}
+.user-contacts{
+	margin-left: 10px;
 }
 .sign-custom-btn{
 	background-color: #78909c;
@@ -1140,6 +1152,7 @@ span.post-erroneous {
 }
 .side-nav li a:not(.button):hover{
 	color: #041258;
+	border-left: 4px solid #8e91a0;
 }
 
 .users-comments .u-name{
@@ -1337,7 +1350,7 @@ input.msgSender:focus{
     font-weight: bold;
 }
 .c-on{
-	color: #f371a4;
+	color: #a01ea0;
 }
 .user-banner{
 	padding: 4px 4px 4px 0px;
@@ -1361,7 +1374,7 @@ input.msgSender:focus{
 	border-radius: 100%;
 }
 .profile-menus{
-	padding-left: 188px;
+	padding-left: 185px;
 	font-family: quantify;
 	font-size: 16px;
 	padding-bottom: 65px;
@@ -1398,6 +1411,40 @@ input.msgSender:focus{
 .u-s-avatars{
 	padding-left:17px;
 	background-image: linear-gradient(to right, white,#cacaca,white);
+}
+.list-friends{
+	background-image: #cacaca;
+	padding-top: 2px;
+	padding-left: 17px;
+}
+.user-card-avatar{
+	width: 110px;
+	height: 110px;
+	border-radius: 100%;
+}
+.user-card{
+	padding-top: 4px;
+	color:#571e61;
+}
+.user-card a{
+	color:#571e61;
+}
+.user-card a:hover{
+	color:#571e61;
+}
+.u-card-name{
+	text-transform: capitalize;
+}
+.user-friend-box{
+	background-color: white;
+	border-radius: 4px;
+	width: 150px;
+	height: 150px;
+	padding: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	display: inline-block;
+	font-family: quantify;
 }
 /*profile page related*/
 

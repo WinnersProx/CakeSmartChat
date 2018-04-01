@@ -13,8 +13,8 @@
                          <li><a href=""><i class="fa fa-group"></i> COMMUNITIES</a></li>
                          <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
                          <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
-                         <li><a href=""><i class="fa fa-info-circle fa-lg"></i> FRIENDS EVENTS</a></li>
-                         <li><a href=""><i class="fa fa-user-plus fa-lg"></i> NEW FRIENDS</a></li>
+                         <li><a href=""><i class="fa fa-info-circle fa-lg"></i> EVENTS</a></li>
+                         <li><a href=""><i class="fa fa-user-plus fa-lg"></i> FIND FRIENDS</a></li>
                 </ul>   
               
             
@@ -25,7 +25,7 @@
                <span>
                 <?php $cUserName = 'My'; $userInfos['name'] == $LoggedUser['User']['name'] ? $cUserName : $cUserName = $userInfos['name']."'s"
                 ?>
-                <i class="fa fa-circle c-on"></i> <?= $cUserName?> Profile
+                <i class="fa fa-user c-on"></i> <?= $cUserName?> Profile
                 </span> 
             </div>
             <ul class="side-nav users-side-nav">
@@ -33,12 +33,15 @@
                  <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
                  <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
                  <li class="heading"><?= __('Contacts') ?></li>
-                <li><i class="fa fa-user"></i> <?= $userInfos['name']?></li>
-                <li><i class="fa fa-google-plus"></i> <?= $userInfos['email']?></li>
-                <li><i class="fa fa-phone"></i> <?= $userInfos['phone']?></li>
-                <span class="badge-custom c-badge-r">
-                    <span><i class="fa fa-book fa-lg"></i> <?= $userInfos['about']?></span>
-                </span>
+                 <div class="user-contacts">
+                    <li><i class="fa fa-user"></i> <?= $userInfos['name']?></li>
+                    <li><i class="fa fa-google-plus"></i> <?= $userInfos['email']?></li>
+                    <li><i class="fa fa-phone"></i> <?= $userInfos['phone']?></li> 
+                 </div>
+                <li class="heading"><?= __('About '. $userInfos['name']) ?></li>
+                <div class="c-badge-r">
+                    <i class="fa fa-book fa-lg"></i><?= $userInfos['about']?>
+                </div>
             </ul>
         <?php endif;?>
     </div> 

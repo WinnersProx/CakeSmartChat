@@ -355,3 +355,15 @@ Stack Trace:
 #4 {main}
 
 
+2018-04-01 18:13:41 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Serv" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Serv',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('serv')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+

@@ -150,4 +150,59 @@ class UsersInfoCell extends Cell{
 
 
 	}
+	public function countUserFriends($user_id){
+		$this->loadModel('Users');
+		$dBC = $this->Users->connectTocake();
+		$countFriends = $dBC->newQuery()
+		->select('*')
+		->from('relations')
+		->where(['sender_id' => $user_id, 'status' => 1])
+		->orwhere(['receiver_id' => $user_id, 'status' => 1])
+		->execute()
+		->rowCount();
+		if($countFriends > 0){
+			$result = $countFriends;
+		}
+		else{
+			$result = "No friends";
+		}
+		return $result;
+	}
+	public function getAllUserFriends($user_id){
+		$this->loadModel('Users');
+		$user_id = intval($user_id);
+		$dBC = $this->Users->connectTocake();
+		$frLists = $dBC->newQuery()
+		->select('*')
+		->from('relations')
+		->join([
+			'alias' => 'u',
+			'table' => 'users',
+			'type' => 'RIGHT',
+			'conditions' => 'u.id = sender_id OR receiver_id = u.id'
+		])
+		->where(['sender_id' => $user_id, 'status' => 1])
+		->orwhere(['receiver_id' => $user_id, 'status' => 1])
+		->execute();
+		$count = $frLists->rowCount();
+		if($count > 0){
+			$ListFriends = $frLists->fetchAll('obj');
+			foreach ($ListFriends as $friend) {
+				if($friend->id != $user_id){
+					echo '<div class="user-friend-box">
+							<div class="user-card text-center">
+								<img src="/img/'.$friend->avatar.'" class="user-card-avatar">
+								<span class="u-card-name">
+								<a href="/profiles/u/'.$friend->slug.'">'
+								.$friend->name.'</a></span>
+							</div>
+						 </div>';
+				}
+				
+			}
+		}
+		else{
+			echo "You have actually no friends try to find new ones";
+		}
+	}
 }

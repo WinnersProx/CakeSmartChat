@@ -46,10 +46,20 @@
               <div class="u-s-avatars">
                 <?php 
                   $Files = $this->cell('Files');
+                  $TargetUserInfos = $this->cell('UsersInfo');
                   $Files->getUserAvatars($userInfos['id']);
+
                 ?>
               </div>
               
+            </div>
+            <div class="u-inf-title">
+                Friends(<?=$TargetUserInfos->countUserFriends($userInfos['id'])?>)
+            </div>
+            <div class="list-friends">
+             <?php
+               $TargetUserInfos->getAllUserFriends($userInfos['id']);
+              ?>
             </div>
             
           </div>
