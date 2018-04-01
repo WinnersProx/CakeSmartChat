@@ -288,7 +288,7 @@ $(document).ready(function(){
 			if(content.length >= 2){
 				url = '/posts/commentPost/' + $postId;
 				$this.blur();
-				$.post(url, {content},function(sent){
+				$.post(url, {content:content},function(sent){
 					if(!(sent.error)){
 						$this.val('');
 						$this.attr('placeholder', 'click on link comment to hide the form if no more comments!');

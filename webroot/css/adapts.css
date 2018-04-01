@@ -1,0 +1,70 @@
+/*for adapting */
+body{
+	min-width: 320px;
+	
+}
+/*to avoid images,textareas and others to overflow*/
+img, table, td, blockquote, code, pre, textarea, input, iframe,
+object, embed, video {
+	max-width: 100%;
+}
+@media (max-width: 320px){
+	body{
+		width: 320px;
+		background-color:#c1c1c1;
+		padding-top: 115px;
+		margin-left:-25px;
+		font-size: 11px;
+	}
+	#left-p{
+		width:224px;
+		margin-bottom: -4px;
+	}
+	#back{
+		width: 216px;
+	}
+	.img{
+		padding-left:40px;
+		padding-top: 18px;
+	}
+	#main-p{
+		background-color:#eae7e7;
+		width:250px;
+		padding-left:4px;
+		border-radius: 4px;
+	}
+	.right-menu{
+		
+		padding-left: 15px;
+		width:250px;
+		position: absolute;
+		opacity: 0.8;
+		margin-top: -30px;
+	}
+	#post-infos{	
+		width: 250px;
+		font-size: 11px;
+	}
+	.post-images {
+		padding: 2px;
+		width: 230px;
+	}
+	.user-photo{
+		display: none;
+	}
+	.user-event{
+		width: 200px;
+	}
+	.post{
+		width: 250px;
+	}
+	#post-baker{
+		width: 250px;
+		margin-bottom: -5px;
+
+	}
+	.flash-render{
+		width: 200px;
+	}
+
+}

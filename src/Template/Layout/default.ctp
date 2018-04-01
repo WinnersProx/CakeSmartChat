@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" width="device-width" initial-scale="1.0" user-scalable=no>
+    <meta name="viewport" width="device-width" initial-scale="1.0" targetdensitydpi="
+    device-dpi" user-scalable=no>
     <meta name="description" content="Articles">
     <meta name="author" content="WinnersProx">
    <!-- <link rel="shortcut icon" type="images/x-icon" href="/img/smartnet.png">-->
@@ -14,6 +15,7 @@
     <?= $this->Html->css('bootstrap');?>
     <?= $this->Html->css('base');?>
     <?= $this->Html->css('main');?>
+    <?= $this->Html->css('adapts');?>
     <?= $this->Html->css('jquery.mCustomScrollbar.min'); ?>
     <?= $this->Html->css('font-awesome/css/font-awesome.min')?>
     <!--<?= $this->Html->css('main');?>-->
