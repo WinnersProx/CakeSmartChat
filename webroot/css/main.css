@@ -126,6 +126,7 @@ textarea.parsley-error {
 	color: #041258;
     font-weight: bold;
     font-family: serif;
+    padding-top: 2px;
 }
 .c-badge-r{
 	margin-top: 8px;
@@ -738,6 +739,7 @@ a:hover{
 	background-color:#9d91a0;
 	border-radius: 4px 4px 0px 0px;
 	font-family: verdana;
+	cursor: pointer;
 }
 .post{
 	padding-bottom: 4px;
@@ -1359,7 +1361,7 @@ input.msgSender:focus{
 	border-radius: 100%;
 }
 .profile-menus{
-	padding-left: 189px;
+	padding-left: 188px;
 	font-family: quantify;
 	font-size: 16px;
 	padding-bottom: 65px;

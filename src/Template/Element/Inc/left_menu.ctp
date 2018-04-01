@@ -14,6 +14,7 @@
                          <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
                          <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
                          <li><a href=""><i class="fa fa-info-circle fa-lg"></i> FRIENDS EVENTS</a></li>
+                         <li><a href=""><i class="fa fa-user-plus fa-lg"></i> NEW FRIENDS</a></li>
                 </ul>   
               
             
@@ -28,6 +29,10 @@
                 </span> 
             </div>
             <ul class="side-nav users-side-nav">
+                <li><a href=""><i class="fa fa-group"></i> COMMUNITIES</a></li>
+                 <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
+                 <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
+                 <li class="heading"><?= __('Contacts') ?></li>
                 <li><i class="fa fa-user"></i> <?= $userInfos['name']?></li>
                 <li><i class="fa fa-google-plus"></i> <?= $userInfos['email']?></li>
                 <li><i class="fa fa-phone"></i> <?= $userInfos['phone']?></li>

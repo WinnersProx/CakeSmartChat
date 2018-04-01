@@ -117,6 +117,9 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('.tag-infos').fadeIn(500);
 	});
+	$('.post-title').click(function(){
+		$('#about').focus();
+	});
 	//for uploading the image post style now
 	$('.img-upload').change(function(e){
 		var $files = $(this)[0].files, imgCount = $files.length,
