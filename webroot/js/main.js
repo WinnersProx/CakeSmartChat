@@ -1,5 +1,30 @@
 $(document).ready(function(){
 	
+	//user scrolling
+	$(window).scroll(function(){
+		$targetNav = $('.navbar-inverse');
+		$NavOffsetTop = $targetNav.offset().top;
+		if($NavOffsetTop > 65){
+			$targetNav.css('opacity', 0.7);
+		}
+		else{
+			$targetNav.css('opacity', 1);
+
+		}
+		//for profiles now
+		$imgProfile = $('#user-box-images');
+		$imgProfileOffset = $imgProfile.offset().top - 65;
+		console.log($bodyOffsetTop + ' : body offset');
+		console.log($imgProfileOffset + ' : img offset');
+		if($bodyOffsetTop == $imgProfileOffset){
+			$imgProfile.css('borderBottom','3px solid #b45bb4');
+		}
+		else{
+			$imgProfile.css('borderBottom','3px solid white');
+		}
+	});
+
+/*
 	$(window).load(function(){
 		////dark-3
 		$('body').mCustomScrollbar({
@@ -7,6 +32,7 @@ $(document).ready(function(){
 			scrollInertia:52
 		});
 	});
+*/
 	
 	$('.menu-drop').css('backgroundColor','gray','borderRadius','4px');
 	var menu = $('.menu-drop'),
@@ -310,6 +336,7 @@ $(document).ready(function(){
 		$this = $(this);
 
 		$listMsgs = $this.parent().prev();
+		console.log($listMsgs); 
 		$lists = $listMsgs.children('.slidingMessages');
 		$endMsg = $('#endMsg').offset().top;
 		
@@ -366,6 +393,32 @@ $(document).ready(function(){
 		
 		
 	});
+	$('.profile-opts').click(function(e){
+		$this = $(this);
+		$exclude = $(this).attr('data-exclude');
+		if(!$exclude){
+			e.preventDefault();
+			$focusForward = $this.children().attr('data-focus');
+			
+			$targetBlock = $('#user-box-'+ $focusForward);
+			
+			$allMenus = $('.profile-opts');
+			$allMenus.children().css('borderBottom','2px solid white');
+			$this.children().css('borderBottom','3px solid #b45bb4');
+			$ABox = $('.user-informations');
+
+			$offsetH = $targetBlock.offset().top - 65;
+			$('html, body').animate({
+				scrollTop : $offsetH
+			}, 2000);
+
+			//$('body').scrollTop($height);
+			
+			
+		}
+		
+	});
+
 	$contName = $('body').attr('data-cont-name');
 	if($contName == 'Messages'){
 

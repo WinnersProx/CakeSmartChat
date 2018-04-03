@@ -5,6 +5,18 @@ body{
 	background-opacity:0.4;
 	padding-top:70px;
 }
+/*for body customization scrollbar*/
+body::-webkit-scrollbar{
+	width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+	border-radius:6px;
+	background-color:#8e99a0;
+}
+/*for body customization scrollbar*/
+.container-customized{
+	width: 960px;
+}
 .navbar-inverse{
 	background-color: #09212b;
 	border-bottom: none;
@@ -1374,7 +1386,7 @@ input.msgSender:focus{
 	border-radius: 100%;
 }
 .profile-menus{
-	padding-left: 185px;
+	padding-left: 189px;
 	font-family: quantify;
 	font-size: 16px;
 	padding-bottom: 65px;
@@ -1384,7 +1396,7 @@ input.msgSender:focus{
 .user-informations{
 	text-align: justify;
 	padding-right: 4px;
-
+    
 
 }
 .profile-opts{
@@ -1397,6 +1409,10 @@ input.msgSender:focus{
     padding: 4px;
     border-radius: 0px 0px 4px 4px;
 }
+.profile-opts a:focus{
+	text-decoration: none;
+}
+
 .u-inf-title{
 	font-family: quantify;
 	color:#571e61; 
