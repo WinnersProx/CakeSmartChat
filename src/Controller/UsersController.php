@@ -329,6 +329,9 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
+        $connectedUser = $this->Auth->user('id');
+        $id = intval($id);
+        $id != $connectedUser ? $id = $connectedUser : $id = $id;
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
@@ -336,7 +339,7 @@ class UsersController extends AppController
 
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('Profile Updated Successfully'));
 
                 return $this->redirect(['controller' => 'users', 'action' => 'timeline']);
             }

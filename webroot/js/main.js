@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		$targetNav = $('.navbar-inverse');
 		$NavOffsetTop = $targetNav.offset().top;
+		
 		if($NavOffsetTop > 65){
 			$targetNav.css('opacity', 0.7);
 		}
@@ -13,15 +14,20 @@ $(document).ready(function(){
 		}
 		//for profiles now
 		$imgProfile = $('#user-box-images');
-		$imgProfileOffset = $imgProfile.offset().top - 65;
-		console.log($bodyOffsetTop + ' : body offset');
-		console.log($imgProfileOffset + ' : img offset');
-		if($bodyOffsetTop == $imgProfileOffset){
-			$imgProfile.css('borderBottom','3px solid #b45bb4');
+		$avatarsBox = $('.user-inf-avatars');
+
+		if($('body').attr('data-cont-name') === 'Profiles'){
+			$imgProfileOffset = $imgProfile.offset().top - 65;
+			$imgProfileHeight = parseInt($avatarsBox.css('height')) + $NavOffsetTop;//to test overflow of its height
+			
+			if($NavOffsetTop >= $imgProfileOffset && $NavOffsetTop <= $imgProfileHeight){
+				$imgProfile.css('borderBottom','3px solid #b45bb4');
+			}
+			else{
+				$imgProfile.css('borderBottom','3px solid white');
+			}
 		}
-		else{
-			$imgProfile.css('borderBottom','3px solid white');
-		}
+		
 	});
 
 /*
@@ -184,6 +190,9 @@ $(document).ready(function(){
 	//uploading the image post end now
 
 	//for uploading the user avatar quickly
+	$('.avatar-update').click(function(e){
+		$('.avatarSetter').trigger('click');
+	})
 	$('.avatarSetter').change(function(e){
 		var $files = $(this)[0].files, imgCount = $files.length,
 		imgPath = $(this)[0].value, imgExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1).toLowerCase(),
@@ -201,6 +210,7 @@ $(document).ready(function(){
 							"title" : fName + 'Has '+ fSize + 'bytes, type: ' + fType,
 							"height" : 166,
 							"width"  : 170,
+							"class"  : "data-avatar-img-update"
 						}).appendTo($previewImg);
 
 						$('.upload-validate').slideDown(1000);
@@ -248,7 +258,9 @@ $(document).ready(function(){
 			}
 		}
 		else{
-			$previewImg.append("This extension is not allowed");
+			$('.upload-validate').hide();
+			$newError = '<div class="newCl">This extension is not allowed change it</div>'
+			$previewImg.html($newError);
 		}
 		
 		
@@ -411,13 +423,38 @@ $(document).ready(function(){
 			$('html, body').animate({
 				scrollTop : $offsetH
 			}, 2000);
-
-			//$('body').scrollTop($height);
 			
 			
 		}
 		
 	});
+	/*Start ==> editing my profile script*/
+	$backColor = $('body').css('backgroundColor');
+	$('#next').click(function(e){
+		$firstDisplayed = true;
+		$('body').css('backgroundImage', 'linear-gradient(to bottom, #251725,#b5b5b5)');
+		$('#profile-edition').css('backgroundColor','#504650');
+		$('#profile-edition').css('color','white');
+		$('label').css('color','#fff4f4');
+		$changes = $('.Notify-changes');
+		$changes.fadeIn(2000);
+		$changes.after('<div class="fa fa-spinner fa-pulse fa-lg w-spine"></div>');
+
+		setInterval(function(){ $('.w-spine').hide()},3000);
+		if($firstDisplayed){
+			$('.first-edit-block').hide();
+			$('.last-edit-block').fadeIn(1000);
+		}
+	});
+	$('#prev').click(function(e){
+		$('body').css('backgroundImage', '');
+		$('body').css('backgroundColor', $backColor);
+		$('.Notify-changes').fadeOut(2000);
+		$('.last-edit-block').hide();
+		$('.first-edit-block').fadeIn(1000);
+	});
+
+	/*End ==> editing my profile script*/
 
 	$contName = $('body').attr('data-cont-name');
 	if($contName == 'Messages'){

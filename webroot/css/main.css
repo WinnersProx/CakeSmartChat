@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 body{
-	background-color:#c1c1c1;
+	background-color:rgb(177, 175, 175);/*#c1c1c1*/
 	background-attachment: fixed;
 	background-opacity:0.4;
 	padding-top:70px;
@@ -865,6 +865,9 @@ a:hover{
 	border: none;
 	border-radius: 4px;
 }
+.edit-b{
+	margin-bottom:12px;
+}
 .submit-b:hover{
 	background-color:#8e91a0;
 }
@@ -912,6 +915,14 @@ input[type="file"]{
 	width: 23px;
 	opacity: 0;
 }
+.newCl{
+	margin-top: 40px;
+    text-align: center;
+    font-family: cursive;
+}
+.data-avatar-img-update{
+	border-radius: 100%;
+}
 .upl-button, .avatar-update{
 	position: absolute;
 }
@@ -936,10 +947,9 @@ input[type="file"]{
 .img-transfer .uploader-text-e{
 	font-family: verdana;
 	font-size: 14px;
-	padding-top: 15px;
+	padding-top: 40px;
 	text-align: center;
 	width: 159px;
-	position: absolute;
 	color: #000000;
 }
 .uploadAvatar{
@@ -979,23 +989,25 @@ input[type="file"]{
 .avatar-update{
 	width:170px;
 	height: 170px;
-	background-color: white;
+	background-color: #9498ad;
 	border-radius: 4px;
-	border:2px dashed #9498ad;
+	border:2px solid #9498ad;
+	cursor: pointer;
 }
 /*badge customization*/
 .userAvatar{
 	height: 166px;
+	border-radius: 100%;
+
 }
 .upload-validate{
-	width: 166px;
+	width: 170px;
 	height: 30px;
 	padding: 4px 4px 4px 4px;
 	text-align: center;
 	float: center;
 	position: absolute;
-	background-color: #9498ad;
-	box-shadow: 2px 2px 2px 2px #8e92a7;
+	background-color: #090d21;
 	color:#eef2fc;
 	font-family: cursive; 
 	opacity: 0.8;
@@ -1465,3 +1477,69 @@ input.msgSender:focus{
 /*profile page related*/
 
 /*End of the users messages end of the users messages */
+/*Profile Edition*/
+.w-spine{
+	padding-left:180px;
+}
+div#profile-edition{
+	background-color:#b5b5b5;
+	border-radius: 4px;
+	font-family: quantify;
+	overflow:hidden;
+	width: 700px;
+	height: 490px;
+	margin-top: 20px;
+	float: right;
+}
+#left-side-advices{
+	width: 250px;
+	text-align: justify;
+	font-family: quantify;
+	color: #2f0e2f;
+	word-break: break-all;
+}
+/*customization of the next and prev box*/
+.block-adds-one{
+	padding-top: 85px;
+}
+.Notify-changes{
+	display: none;
+	font-size: 19px;
+}
+.btn-control-custom{
+    color: #fff;
+    width: 55px;
+    padding: 8px;
+    display: inline;
+    background-color: #9498ad;
+    border-radius: 4px;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}
+.btn-control-custom a{
+	color: white;
+
+}
+.submit-btn-edit{
+	margin-top: 25px;
+}
+.right-s{
+	margin-left:290px;
+}
+select{
+	width: 60px;
+	display: inline;
+}
+select[name="user_dob[month]"]{
+	width: 85px;
+}
+.last-edit-block{
+	display: none;
+}
+#about{
+	resize: none;
+}
+/*Customization of the next and prev box*/
+
+/*Profile Edition*/
