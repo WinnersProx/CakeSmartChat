@@ -111,14 +111,14 @@ class PostsCell extends Cell{
 
 				if($tag->tag_id == $this->getCurrentUserId()){
 				 	$tagged = 'You';
-				 	$tagName = $this->userInfo($tag->tag_id)['name'];
+				 	$tagName = $this->userInfo($tag->tag_id)['slug'];
 				}
 				else{
 					$tagged = $this->userInfo($tag->tag_id)['name'];
-					$tagName = $this->userInfo($tag->tag_id)['name'];
+					$tagName = $this->userInfo($tag->tag_id)['slug'];
 				}
 
-				$tagLink .= '<a class="tags" href="/users/profile/'.$tagName.'">'.$tagged.'</a>, ';
+				$tagLink .= '<a class="tags" href="/profiles/u/'.$tagName.'">'.$tagged.'</a>, ';
 			}
 			$tagLink = trim($tagLink, ', ');
 			

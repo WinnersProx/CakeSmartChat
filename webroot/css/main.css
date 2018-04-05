@@ -252,10 +252,12 @@ textarea.parsley-error {
 }
 /*for a given search*/
 #search{
-	background-color: #343535;
+	background-color: #2d4646;
 	border:none;
 	border-radius:15px;
 	width: 300px;
+	color: white;
+	font-family: quantify;
 
 
 }
@@ -505,7 +507,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	width:494px;
 	padding-left:4px;
 	border-radius: 4px;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 }
 
 #side-p{
@@ -861,7 +863,7 @@ a:hover{
 
 }
 .submit-b{
-	background-color:#8e91a0;
+	background-color:#584258;
 	border: none;
 	border-radius: 4px;
 }
@@ -968,6 +970,10 @@ input[type="file"]{
 /*post uploader input type*/
 /*new modifications related to smartchat after something occurence*/
 /*badge customization*/
+#p-edit fieldset{
+	border: 1px solid #614761;
+	height: 420px;
+}
 .badge-custom{
 	display: inline-block;
     min-width: 10px;
@@ -980,7 +986,7 @@ input[type="file"]{
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    background-color: #9498ad;
+    background-color: #584258;
     border-radius: 10px;
 }
 .upl-block{
@@ -989,7 +995,7 @@ input[type="file"]{
 .avatar-update{
 	width:170px;
 	height: 170px;
-	background-color: #9498ad;
+	background-color: #5f485f;
 	border-radius: 4px;
 	border:2px solid #9498ad;
 	cursor: pointer;
@@ -997,6 +1003,7 @@ input[type="file"]{
 /*badge customization*/
 .userAvatar{
 	height: 166px;
+	width: 170px;
 	border-radius: 100%;
 
 }
@@ -1511,7 +1518,7 @@ div#profile-edition{
     width: 55px;
     padding: 8px;
     display: inline;
-    background-color: #9498ad;
+    background-color: #584258;
     border-radius: 4px;
     border: 2px solid white;
     color: white;
@@ -1522,7 +1529,9 @@ div#profile-edition{
 
 }
 .submit-btn-edit{
-	margin-top: 25px;
+	margin-top: 20px;
+	float: right;
+	padding-right: 150px;
 }
 .right-s{
 	margin-left:290px;

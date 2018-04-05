@@ -37,13 +37,13 @@
                 </div>
             </div>
             <div class="upload-validate">
-               Click here to upload
+               Click me to upload 
             </div>
         </div>
         
     </ul>
 </nav>
-<div class="users form large-10 medium-8 columns">
+<div class="users form large-10 medium-8 columns" id="p-edit">
     <?= $this->Form->create($user,['enctype' => 'multipart/form-data']) ?>
     <fieldset>
         <legend class="badge-custom"><?= __('Profile Edition') ?></legend>
@@ -63,7 +63,7 @@
             ?>
 
            <div class="submit-btn-edit">
-                <?= $this->Form->button(__('Submit'),['class' => 'btn btn-success submit-b edit-b']) ?>
+                <?= $this->Form->button(__('Update Now'),['class' => 'btn btn-success submit-b edit-b']) ?>
                 <?= $this->Form->end() ?>  
             </div> 
         </div>

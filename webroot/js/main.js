@@ -433,7 +433,7 @@ $(document).ready(function(){
 	$('#next').click(function(e){
 		$firstDisplayed = true;
 		$('body').css('backgroundImage', 'linear-gradient(to bottom, #251725,#b5b5b5)');
-		$('#profile-edition').css('backgroundColor','#504650');
+		$('#profile-edition').css('backgroundColor','#bdb7b7');
 		$('#profile-edition').css('color','white');
 		$('label').css('color','#fff4f4');
 		$changes = $('.Notify-changes');

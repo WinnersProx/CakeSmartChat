@@ -1,3 +1,4 @@
+
 /*for adapting */
 body{
 	min-width: 320px;
@@ -12,14 +13,65 @@ object, embed, video {
 	body{
 		width: 320px;
 		background-color:#c1c1c1;
-		padding-top: 115px;
-		margin-left:-25px;
-		font-size: 11px;
+		padding-top: 116px;
+		margin-left:-10px;
+		font-size: 11px !important;
+		overflow-x: hidden;
 	}
 	#left-p{
 		width:224px;
-		margin-bottom: -4px;
+		height: 240px;
+		font-family: 4px;
+		border-radius: 0px;
 	}
+	.p-int .p-interaction {
+		font-size: 8px;
+		width: 55px;
+	}
+	span.p-interaction.p-comment {
+    	width: 75px;
+	}
+	span.p-interaction.p-star{
+		width: 65px;
+	}
+	span.p-interaction.p-share {
+    	width: 61px;
+	}
+
+	input.msgSender{
+		width: 200px;
+	}
+	.msg-header{
+		width: 216px;
+	}
+	.msg-box-error{
+		padding: 0;
+		margin: 0;
+		width: 150px;
+	}
+	span.dated{
+		font-size: 11px;
+	}
+	.tags a{
+		font-size: 11px;
+	}
+	.users-comments{
+		padding:4px;
+	}
+	.users-comments .u-name{
+		font-size: 10px;
+	}
+	.users-comments .comment-texts{
+		font-size: 10px;
+	}
+	.msgs-lists{
+		width: 216px;
+	}
+	#about{
+		height: 40px;
+	}
+
+	
 	#back{
 		width: 216px;
 	}
@@ -29,12 +81,12 @@ object, embed, video {
 	}
 	#main-p{
 		background-color:#eae7e7;
-		width:250px;
+		width:224px;
 		padding-left:4px;
-		border-radius: 4px;
+		border-radius: 0px;
 	}
 	.right-menu{
-		
+		display: none;
 		padding-left: 15px;
 		width:250px;
 		position: absolute;
@@ -42,8 +94,14 @@ object, embed, video {
 		margin-top: -30px;
 	}
 	#post-infos{	
-		width: 250px;
+		width: 216px;
 		font-size: 11px;
+	}
+	.s-img{
+		width: 208px;
+	}
+	.r-imgs{
+		width: 208px;
 	}
 	.post-images {
 		padding: 2px;
@@ -56,15 +114,33 @@ object, embed, video {
 		width: 200px;
 	}
 	.post{
-		width: 250px;
+		width: 224px;
 	}
 	#post-baker{
-		width: 250px;
+		width: 216px;
 		margin-bottom: -5px;
 
 	}
 	.flash-render{
-		width: 200px;
+		font-size: 11px;
+		width: 216px;
+		color: #09212b;
+	}
+	.comment-post input[type="text"]{
+		height: 27px;
+	}
+	.side-nav li.heading{
+		margin: -4px 50px 4px 65px;
+	}
+	.side-nav li {
+	    font-size: 9px;
+	    font-weight: normal;
+	    width: 100px;
+	    padding-right: 10px;
+	    display: inline-block;
+	}
+	.side-nav li a:hover{
+		border-left: 1px solid gra;
 	}
 
 }

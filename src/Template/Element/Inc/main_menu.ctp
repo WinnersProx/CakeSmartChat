@@ -92,9 +92,8 @@
 			<img src="/img/<?= $Uinfos['avatar'] ? $Uinfos['avatar'] : '/userdefault.png';?>" 
 			class="user-avatar-xs">
 			<span class="poster-text">
-				<a href="/users/profile/<?= $Uinfos['name'] ?>"><?= $Uinfos['name']?></a>
+				<a href="/profiles/u/<?= $Uinfos['slug'] ?>"><?= $Uinfos['name']?></a>
 				<span class="dated">posted in last <?= $posts->getDate($post->date_from);?> 
-					
 				</span>
 
 			</span>
@@ -135,7 +134,7 @@
 					</span>
 				</span>
 				<span class="p-int share">
-					<span class="p-interaction" data-share-post = "/posts/sharePost/<?= $post->id?>">
+					<span class="p-interaction p-share" data-share-post = "/posts/sharePost/<?= $post->id?>">
 						<i class="fa fa-share"></i> Share
 					</span>
 				</span>
