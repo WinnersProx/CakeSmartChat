@@ -36,14 +36,21 @@ class CommunitiesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function view($communityName)
     {
-        $community = $this->Communities->get($id, [
-            'contain' => ['Users']
-        ]);
+        $targetCommunity = $this->Communities->find()->where(['community_name' => $communityName])->first();
+        if($targetCommunity){
+            
 
-        $this->set('community', $community);
-        $this->set('_serialize', ['community']);
+            $this->set(compact('targetCommunity'));
+        }
+        else{
+            $this->Flash->error('Please the specified community does not exist');
+            return $this->redirect(['action' => 'index']);
+        }
+       
+        //$this->set('community', $community);
+        //$this->set('_serialize', ['community']);
     }
 
     /**
@@ -74,7 +81,15 @@ class CommunitiesController extends AppController
         $newCommunity = $this->Communities->newEntity();
 
         $communityDatas = $this->request->getData();
+
+        $existIn = $this->Communities->find()->where(['community_name' => $communityDatas['community_name']])->first();
+
+        if($existIn){
+            $this->Flash->error('Already exist please use a different name');
+            return $this->redirect(['action' => 'create']);
+        }
         
+
         $communityDatas['creater_id'] != $creater 
         ? $communityDatas['creater_id'] = $creater 
         : $communityDatas['creater_id'] = $communityDatas['creater_id'];
@@ -94,8 +109,9 @@ class CommunitiesController extends AppController
 
             if($newComm){
                 $idCommunity = $this->Communities->find()->last()['id'];
-                $members = $communityDatas['addMember'];
-                if(isset($members)){
+                
+                if(isset($communityDatas['addMember'])){
+                    $members = $communityDatas['addMember'];
                     foreach ($members as $member){
                         $member_role = 0;
 
@@ -174,6 +190,33 @@ class CommunitiesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function joinCommunity($communityId = null){
+        $communityId = intval($communityId);
+        
+        $connected = $this->Auth->user('id');
+        $this->loadModel('CommunityMembers');
+        $connect = $this->Communities->connectTocake();
+
+        $memberExist = $this->CommunityMembers->find()->
+        where(['id_community' => $communityId, 'member_id' => $connected])
+        ->first();
+        if(!$memberExist){
+            $newMember = $connect->newQuery()
+            ->insert(['id_community', 'member_id'])
+            ->into('community_members')
+            ->values(['id_community' => $communityId, 'member_id' => $connected])
+            ->execute();
+            if($newMember){
+                $this->Flash->success('Community joined successfully');
+                return $this->redirect(['action' => 'view', $communityId]);
+            }
+            else{
+                $this->Flash->success('Please the community could not be joined');
+                return $this->redirect(['action' => 'view', $communityId]);
+            }
+        }
+        
     }
     public function create(){
 

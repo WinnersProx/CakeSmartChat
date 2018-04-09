@@ -49,8 +49,8 @@
                             </span>
                             <a href="/communities/view/<?= $community->community_name?>">
                             <?= $community->community_name;?>
-                            <?php if():?>
-                            <span class="count-members">(<?=  $CommunityCell->countMembers($community->id);?>)</span>
+                            <?php if($countMembers > 0):?>
+                            <span class="count-members">(<?= $countMembers ?>)</span>
                             <?php endif;?>
                             </a>
                         </div>

@@ -38,6 +38,7 @@
                       <label for="community_name">Community Name</label>
                       <input type="text" name="community_name" class="form-control" id="community_name" placeholder="The name of your community" required="required">
                     </div>
+                    
                     <span class="community-title">Add Members</span>
                     <div class="community-details">
                       Don't worry you can add members now or later but it's better to add them right now!!!
