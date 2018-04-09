@@ -205,4 +205,12 @@ class UsersInfoCell extends Cell{
 			echo "You have actually no friends try to find new ones";
 		}
 	}
+
+	public function listRegisteredCakeUsers(){
+
+		$this->loadModel('Users');
+
+		$users = $this->Users->find('all')->limit(10);
+		return $users;
+	}
 }

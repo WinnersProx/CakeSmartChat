@@ -59,6 +59,16 @@
         <div class="last-edit-block">
             <?php
                 echo $this->Form->control('user_dob');
+            ?>
+            <div class="user-gender">
+                Your gender
+                <select class="user_sex">
+                    <option value="M">Man</option>
+                    <option value="W">Woman</option>
+                </select>
+            </div>
+            
+            <?php
                 echo $this->Form->control('about');
             ?>
 

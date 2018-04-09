@@ -144,16 +144,24 @@ object, embed, video {
 	}
 
 }
-@media (min-width: 1200px) and (max-width: 1500px){
-	
+#community-side-m.side-one{
+	border-radius: 0px;
 }
-#left-one{
+@media (min-width: 900px) and (max-width: 1500px){
+	.left-one{
 	background-color:#eae7e7;
 	position: fixed;
-	padding-left: 4px;
 	border-radius: 4px;
 	width:239px;
+	}
+	.side-one{
+		position: fixed;
+		right: 30px;
+		top: 61px;
+		width:200px;
+	}
 }
+
 #t-menu{
 	margin-right: 90px;
 	position: absolute;

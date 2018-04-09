@@ -1,16 +1,16 @@
 <nav id="actions-sidebar">
     <div class="row" id="profile-box">
-        <?php if($this->name == 'Users'):?>
+        <?php if($this->name == 'Users' || $this->name == 'Communities'):?>
         <div class="col-md-3 col-sm-3 col-xs-5" id="back">
             <div class="back">   
             </div>
             
             <div class="img">
-                <?= $this->Html->Image($connected['avatar'],['class' => 'user-avatar-md img-user'])?>
+                <?= $this->Html->Image($LoggedUser['User']['avatar'],['class' => 'user-avatar-md img-user'])?>
             </div>
                 <ul class="side-nav users-side-nav">
                     <li class="heading"><?= __('More') ?></li>
-                         <li><a href=""><i class="fa fa-group"></i> COMMUNITIES</a></li>
+                         <li><a href="/communities"><i class="fa fa-group"></i> COMMUNITIES</a></li>
                          <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
                          <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
                          <li><a href=""><i class="fa fa-info-circle fa-lg"></i> EVENTS</a></li>
@@ -29,7 +29,7 @@
                 </span> 
             </div>
             <ul class="side-nav users-side-nav">
-                <li><a href=""><i class="fa fa-group"></i> COMMUNITIES</a></li>
+                <li><a href="/communities"><i class="fa fa-group"></i> COMMUNITIES</a></li>
                  <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
                  <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
                  <li class="heading"><?= __('Contacts') ?></li>

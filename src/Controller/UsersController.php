@@ -148,7 +148,6 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $data = $this->request->getData();
             $user = $this->Users->patchEntity($user, $data);
-            
             if($this->Users->save($user)){
                 $this->Flash->success(__('The user has been saved.Edit your profile here Login now!'));
                 return $this->redirect(['action' => 'login']);

@@ -63,10 +63,70 @@ class CommunitiesController extends AppController
             }
             $this->Flash->error(__('The community could not be saved. Please, try again.'));
         }
-        $communities = $this->Communities->Communities->find('list', ['limit' => 200]);
+        $communities = $this->Communities->find('list', ['limit' => 200]);
         $users = $this->Communities->Users->find('list', ['limit' => 200]);
         $this->set(compact('community', 'communities', 'users'));
         $this->set('_serialize', ['community']);
+    }
+    public function newCommunity(){
+        $connection = $this->Communities->connectTocake();
+        $creater = $this->Auth->user('id');
+        $newCommunity = $this->Communities->newEntity();
+
+        $communityDatas = $this->request->getData();
+        
+        $communityDatas['creater_id'] != $creater 
+        ? $communityDatas['creater_id'] = $creater 
+        : $communityDatas['creater_id'] = $communityDatas['creater_id'];
+
+        if($this->request->is('post')){
+            //$newCommunity = $this->Communities->patchEntity($newCommunity, $communityDatas);
+
+            $c_name = $communityDatas['community_name'];
+            $c_id = $communityDatas['creater_id'];
+            $c_description = $communityDatas['description'];
+
+            $newComm = $connection->newQuery()
+            ->insert(['creater_id', 'community_name', 'com_description'])
+            ->into('communities')
+            ->values(['creater_id' => $c_id, 'community_name' => $c_name, 'com_description' => $c_description])
+            ->execute();
+
+            if($newComm){
+                $idCommunity = $this->Communities->find()->last()['id'];
+                $members = $communityDatas['addMember'];
+                if(isset($members)){
+                    foreach ($members as $member){
+                        $member_role = 0;
+
+                        $member == $creater ? $member_role = 1 : $member_role = 0;
+                        //
+                        $newMembers = $connection->newQuery()
+                        ->insert(['id_community','member_id', 'member_role'])
+                        ->into('community_members')
+                        ->values([
+                            'id_community' => $idCommunity,
+                            'member_id'    => $member,
+                            'member_role'  => $member_role
+
+                        ])
+                        ->execute(); 
+                    }
+                }
+                $this->Flash->success('Congratulation You have created a new community!!!');
+                return $this->redirect(['action' => 'index']);
+
+            }
+            else{
+                $this->Flash->success('The new Community could not be saved!!!');
+                return $this->redirect(['action' => 'create']);
+            }
+        }
+        else{
+            $this->Flash->success('Please post something!!!');
+            return $this->redirect(['action' => 'create']);
+
+        }
     }
 
     /**
@@ -114,5 +174,8 @@ class CommunitiesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function create(){
+
     }
 }

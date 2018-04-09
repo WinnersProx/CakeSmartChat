@@ -5,7 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-
+use Cake\Datasource\ConnectionManager;
 /**
  * Communities Model
  *
@@ -43,6 +43,12 @@ class CommunitiesTable extends Table
             'joinType' => 'INNER'
         ]);
     }
+    public function connectTocake(){
+        $dbb = ConnectionManager::get('default');
+        //Tests//
+        //$this->set(compact($user));
+        return $dbb;
+    }
 
     /**
      * Default validation rules.
@@ -53,11 +59,12 @@ class CommunitiesTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->allowEmpty('community_name');
+            ->requirePresence('community_name', 'create')
+            ->notEmpty('community_name');
 
         $validator
             ->dateTime('created_time')
-            ->allowEmpty('created_time');
+            ->notEmpty('created_time');
 
         return $validator;
     }

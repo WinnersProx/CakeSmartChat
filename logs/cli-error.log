@@ -388,3 +388,45 @@ Stack Trace:
 #16 {main}
 
 
+2018-04-06 20:56:17 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.communities_members;' doesn't exist in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'communities_mem...', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('communities_mem...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('communities_mem...')
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(217): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'communities_mem...', 'CommunitiesMemb...')
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('CommunitiesMemb...')
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(257): Bake\Shell\Task\ModelTask->main('CommunitiesMemb...')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('communities_mem...', 0)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(258): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(458): Bake\Shell\BakeShell->all('communities_mem...')
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
+2018-04-06 20:56:25 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.community_members;' doesn't exist in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'community_membe...', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('community_membe...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('community_membe...')
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(217): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'community_membe...', 'CommunityMember...')
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('CommunityMember...')
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(257): Bake\Shell\Task\ModelTask->main('CommunityMember...')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('community_membe...', 0)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\BakeShell.php(258): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(458): Bake\Shell\BakeShell->all('community_membe...')
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+

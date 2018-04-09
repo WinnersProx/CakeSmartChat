@@ -10,7 +10,7 @@
 
 <div class="container-customized">
     <div class="col-md-3">
-        <div id="left-p">
+        <div id="left-p" class="left-one">
             <?= $this->element('Inc/left_menu');?>
         </div>
     </div>
@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="col-md-2 right-menu">
-        <div id="side-p">
+        <div id="side-p" class="side-one">
            <?= $this->element('Inc/side_menu');?>
         </div>
     </div>

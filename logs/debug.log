@@ -52738,3 +52738,692 @@ Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
 
 
 
+2018-04-05 19:54:44 Notice: Notice (8): Undefined variable: connected in [C:\xampp\htdocs\oven\app\src\Template\Element\Inc\left_menu.ctp, line 9]
+Request URL: /communities/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Element\Inc\left_menu.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1372
+Cake\View\View::element() - CORE\src\View\View.php, line 513
+include - APP/Template\Communities\index.ctp, line 20
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 06:29:00 Notice: Notice (8): Undefined variable: communities in [C:\xampp\htdocs\oven\app\src\Template\Communities\create.ctp, line 30]
+Request URL: /communities/create
+Referer URL: http://localhost:8765/communities
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Communities\create.ctp, line 30
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 07:28:19 Notice: Notice (8): Undefined index: creater_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 77]
+Request URL: /communities/newCommunity
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 77
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:41:46 Notice: Notice (8): Undefined index: name in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 85]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 85
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:41:46 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 92
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:43:25 Notice: Notice (8): Undefined index: creater_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 78]
+Request URL: /communities/newCommunity
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 78
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:44:23 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 92
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:45:20 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 92
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:46:53 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 92
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 19:13:41 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php, line 2195]
+Request URL: /communities/create
+Referer URL: http://localhost:8765/communities
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\ORM\Table::callFinder() - CORE\src\ORM\Table.php, line 2195
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1174
+App\View\Cell\UsersInfoCell::listRegisteredCakeUsers() - APP/View\Cell\UsersInfoCell.php, line 213
+include - APP/Template\Communities\create.ctp, line 41
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 19:13:41 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php, line 2205]
+Request URL: /communities/create
+Referer URL: http://localhost:8765/communities
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+sprintf - [internal], line ??
+Cake\ORM\Table::callFinder() - CORE\src\ORM\Table.php, line 2205
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1174
+App\View\Cell\UsersInfoCell::listRegisteredCakeUsers() - APP/View\Cell\UsersInfoCell.php, line 213
+include - APP/Template\Communities\create.ctp, line 41
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 19:19:38 Notice: Notice (8): Undefined variable: SELECT Users.id AS `Users__id`, Users.email AS `Users__email`, Users.password AS `Users__password`, Users.created AS `Users__created`, Users.modified AS `Users__modified`, Users.about AS `Users__about`, Users.phone AS `Users__phone`, Users.avatar AS `Users__avatar`, Users.name AS `Users__name`, Users.slug AS `Users__slug`, Users.user_dob AS `Users__user_dob`, Users.user_sex AS `Users__user_sex` FROM users Users LIMIT 10 in [C:\xampp\htdocs\oven\app\src\Template\Communities\create.ctp, line 43]
+Request URL: /communities/create
+Referer URL: http://localhost:8765/communities
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Communities\create.ctp, line 43
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:23:30 Notice: Notice (8): Undefined variable: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:23:30 Notice: Notice (8): Undefined variable: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:23:30 Notice: Notice (8): Undefined variable: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:23:31 Notice: Notice (8): Undefined variable: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:23:31 Notice: Notice (8): Undefined variable: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 101]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 101
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 101]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 101
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 101]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 101
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:58 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:59 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 101]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 101
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:59 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:59 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 101]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 101
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 21:33:59 Notice: Notice (8): Undefined index: member_id in [C:\xampp\htdocs\oven\app\src\Controller\CommunitiesController.php, line 109]
+Request URL: /communities/newCommunity
+Referer URL: http://localhost:8765/communities/create
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\CommunitiesController::newCommunity() - APP/Controller\CommunitiesController.php, line 109
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+

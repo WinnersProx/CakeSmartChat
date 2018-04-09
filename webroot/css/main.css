@@ -3,7 +3,7 @@ body{
 	background-color:rgb(177, 175, 175);/*#c1c1c1*/
 	background-attachment: fixed;
 	background-opacity:0.4;
-	padding-top:70px;
+	padding-top:65px;
 }
 /*for body customization scrollbar*/
 body::-webkit-scrollbar{
@@ -526,7 +526,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 }
 /*customization of side block*/
 #side-p a{
-	color:#8e98a0;
+	
 
 }
 .side-title{
@@ -1540,6 +1540,17 @@ select{
 	width: 60px;
 	display: inline;
 }
+select.user_sex {
+    width: 75px;
+    display: block;
+}
+select.user_sex:focus{
+	border: 1px solid gray;
+}
+
+.user-gender{
+	display: block;
+}
 select[name="user_dob[month]"]{
 	width: 85px;
 }
@@ -1549,6 +1560,188 @@ select[name="user_dob[month]"]{
 #about{
 	resize: none;
 }
+
 /*Customization of the next and prev box*/
 
 /*Profile Edition*/
+
+/*Now for users communities*/
+.fa-custom{
+	margin-left: -6px;
+}
+#group-controllers{
+	background-color: white;
+	border-radius: 0px 0px 4px 4px;
+	padding-top: 3px;
+	padding-right:1px;
+	padding-left: 6px;
+	padding-bottom: 2px;
+}
+#communities-lists a {
+    color: #c077e0;
+}
+.side-title-community{
+	background-color:#c077e0;
+	margin-top: 8px;
+	margin-bottom: 4px;
+	padding: 4px;
+}
+.communities-buttons i{
+	color: purple;
+ 	font-size: 16px;
+ }
+.communities-buttons i.fa-custom{
+ 	font-size: 12px;
+ 	color: #27022f;
+ }
+.communities-buttons{
+	padding-bottom: 2px;
+	color: #f3e6f3;
+}
+
+.communities-buttons a{
+	color: #f3e6f3;
+
+}
+.btn-1,.btn-2{
+	
+	padding: 4px;
+	cursor: pointer;
+	margin: 2px;
+	border-radius: 4px;
+	background-color: #9f79ef;
+	box-shadow: 2px 1px 2px black;
+	text-align: center;
+}
+#communities{
+	font-family: quantify;
+	padding-left: 14px;
+}
+.community-title{
+	display: block;
+}
+.community-block{
+	background-color: white;
+	border-radius: 4px;
+	text-align: center;
+	height: 150px;
+	width: 150px;
+	display: inline-block;
+	margin-bottom: 2px;
+	border: 1px solid #d8d8d8;
+	cursor: pointer;
+	overflow:hidden;
+	z-index: 1;
+}
+
+.community-contents{
+	padding-top: 75px;
+}
+.community-description{
+	border-radius: 4px 4px 0px 0px;
+	background-color: black;
+	padding: 2px;
+	color: white;
+	width: 148px;
+	max-height: 145px;
+	opacity: 0.7;
+	font-size: 14px;
+	display: none;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	position: absolute;
+	
+}
+.community-description::-webkit-scrollbar{
+	width: 3px;
+}
+.community-description::-webkit-scrollbar-thumb{
+	border-radius:6px;
+	background-color:#8e99a0;
+}
+.community-title{
+	background-color: #d8d8d8;
+	padding: 4px;
+	color: #250125;
+	margin-left: -4px;
+	margin-bottom: 4px;
+	font-weight: bold;
+	text-align: center;
+}
+.community-block:hover{
+	background-image: linear-gradient(to bottom, purple,gray);
+}
+.community-sub-infos{
+	font-family: cursive;
+	text-align: justify;
+}
+
+.comm-icon{
+	color: purple;
+}
+#communities-creation{
+	font-family: quantify;
+}
+#communities-creation input[type="text"]{
+	border: none;
+	box-shadow: none;
+	border-radius: 4px;
+	background-color: white;
+
+}
+#communities-creation:focus{
+	border: none;
+	background-color: white;
+	
+}
+#communities-creation textarea{
+	resize: none;
+	background-color: white;
+	box-shadow: none;
+	border: none;
+	border-radius: 4px 4px 0px 4px;
+
+}
+#communities-creation textarea:focus{
+	box-shadow: none;
+	background-color: white;
+	border: none;
+}
+#submit-community{
+	float: right;
+	color: #f3e6f3;
+	margin-right: 15px;
+	background-color: #9f79ef;
+	border-color: #9f79ef;
+    border-radius: 4px 0px 4px 4px;
+}
+.community-members{
+	width: 100px;
+	display: inline-block;
+	overflow: hidden;
+    color: #2f023a;
+    font-size: 12px;
+    font-family: cursive;
+}
+.community-details{
+	text-align: justify;
+	font-family: cursive;
+	font-size: 14px;
+	padding-bottom: 2px;
+}
+input[type="checkbox"]{
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+.check-user{
+	margin: 0;
+}
+.community-members:nth-child(odd){
+	
+}
+.community-members:nth-child(even){
+	float: right;
+	padding-left:5px;
+}
+/*End for users communities*/

@@ -39,6 +39,23 @@
     <span class="side-title">Online Friends</span>
     <div class="col-md-12 users-online" id="people">
         <?= $this->cell('LiveUsers')->showOnlineUsers();?>
+
     </div>
+    <?php if($this->name == 'Communities'):?>
+        <div class="side-title-community">Community Tools</div>
+        <div id="group-controllers" class="col-md-12">
+            <div class="communities-buttons">
+                <span class="btn-1">
+                    <i class="fa fa-group "></i><i class="fa fa-plus fa-custom"></i>
+                    <a href="/communities/create">Create </a>  
+                </span>
+                <span class="btn-2">
+                    <i class="fa fa-group "></i><i class="fa fa-list-alt fa-custom"></i> List all   
+                </span>
+               
+            </div>
+            
+        </div>
+    <?php endif;?>
     
 </div>

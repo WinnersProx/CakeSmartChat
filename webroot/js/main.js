@@ -478,6 +478,19 @@ $(document).ready(function(){
 		
 	})
 	//Live users instant chat with chatbox chatbox chatbox chatbox
+	$('.community-block').mouseenter(function(e){
+		$this = $(this);
+		$targetChildren = $this.children('.community-description');
+		console.log($targetChildren);
+		$targetChildren.slideDown(1000);
+		
+
+	});
+	$('.community-block').mouseleave(function(){
+		$this = $(this);
+		$targetChildren = $this.children('.community-description');
+		$targetChildren.slideUp(500);
+	});
 
 });
 //
