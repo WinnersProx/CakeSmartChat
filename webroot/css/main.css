@@ -505,8 +505,8 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 #main-p{
 	background-color:#eae7e7;
 	width:494px;
+	min-height: 636px;
 	padding-left:4px;
-	border-radius: 4px;
 	padding-bottom: 5px;
 }
 
