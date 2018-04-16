@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 body{
-	background-color:rgb(177, 175, 175);/*#c1c1c1*/
+	background-color:#c1c1c1;
 	background-attachment: fixed;
 	background-opacity:0.4;
-	padding-top:65px;
+	padding-top:60px;
+	overflow-x: hidden;
 }
 /*for body customization scrollbar*/
 body::-webkit-scrollbar{
@@ -17,9 +18,15 @@ body::-webkit-scrollbar-thumb{
 .container-customized{
 	width: 960px;
 }
+.navbar-inverse .navbar-brand{
+	color: #efeded;
+}
 .navbar-inverse{
-	background-color: #09212b;
+	background-color: #191e35;
 	border-bottom: none;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #efeded;
 }
 #home{
 	font-size: 20px;
@@ -144,7 +151,7 @@ textarea.parsley-error {
 	margin-top: -4px;
 	margin-left: 10px;
 	text-align: center;
-	background-color: #9498ad;
+	background-color: #bb6fbb;
 	border-radius: 4px 2px 4px 2px;
 	color: #eef2fc;
 	font-family: cursive;
@@ -499,7 +506,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 #left-p{
 	background-color:#eae7e7;
 	padding-left: 4px;
-	border-radius: 4px;
+	border-radius: 0px 0px 4px 4px;
 	width:239px;
 }
 #main-p{
@@ -575,7 +582,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	background-color: #8e91a0;
 	width: 486px;
 	padding: 4px;
-	border-radius: 4px;
+	border-radius: 0px 0px 4px 4px;
 }
 .chat-box{
 	position: fixed;
@@ -639,7 +646,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	background-color:#8e91a0;
 	width: 231px;
 	height:75px;
-	border-radius: 4px;
+	border-radius: 0px 0px 4px 4px;
 }
 .img-user{
 
@@ -1489,7 +1496,7 @@ input.msgSender:focus{
 	padding-left:180px;
 }
 div#profile-edition{
-	background-color:#b5b5b5;
+	background-color:#949a9c;
 	border-radius: 4px;
 	font-family: quantify;
 	overflow:hidden;
@@ -1682,6 +1689,10 @@ select[name="user_dob[month]"]{
 #communities-creation{
 	font-family: quantify;
 }
+#communities-creation label{
+	color: #e88989;
+}
+
 #communities-creation input[type="text"]{
 	border: none;
 	box-shadow: none;
