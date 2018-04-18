@@ -29,6 +29,7 @@ class CommunitiesController extends AppController
         $this->set('_serialize', ['communities']);
     }
 
+
     /**
      * View method
      *
@@ -41,7 +42,6 @@ class CommunitiesController extends AppController
         $targetCommunity = $this->Communities->find()->where(['community_name' => $communityName])->first();
         if($targetCommunity){
             
-
             $this->set(compact('targetCommunity'));
         }
         else{
@@ -220,5 +220,99 @@ class CommunitiesController extends AppController
     }
     public function create(){
 
+    }
+    public function newPost($currentCommunity = null){
+        $sessionUser = $this->Auth->user('id');
+        $connect = $this->Communities->connectTocake();
+        if($this->request->is('post')){
+            if($currentCommunity != null){
+                //$previous = $this->referer();
+                //$toArray = split('/', $previous);
+                $datas = $this->request->getData();
+                $postContent = $datas['community-post-content'];
+                $postPictures = $datas['post-pictures'];
+                $postPrivacy = $datas['post-privacy'];
+
+                if(isset($postContent) && $postContent != null){
+                    if(mb_strlen($postContent > 5) || mb_strlen($postContent < 500)){
+                        $checkCommunity = $this->Communities->find()->where(['community_name' => $currentCommunity])->count();
+                        if($checkCommunity){
+
+                            $newPost = $connect->newQuery()->insert(['member_poster', 'post_content', 'privacy', 'target_community'])->into('community_posts')->values(['member_poster' => $sessionUser, 'post_content' => $postContent, 'privacy' => $postPrivacy, 'target_community' => $currentCommunity])
+                            ->execute();
+                            if($newPost){
+                                $this->Flash->success("Post added successfully!!");
+                                //for files upload depending on our communities post
+                                $lastId = $connect->newQuery()->select('id')->from('community_posts')->order(['id' =>'DESC'])->limit(1)->execute()->fetch('assoc')['id'];
+                                
+                                if(isset($postPictures) && $postPictures != null){
+                        
+                                    //Now to download my avatar
+                                    foreach ($postPictures as $file) {
+                                    //$file = $postPictures;
+                                        $fileName = $file['name'];
+                                        $targetFolder= 'img/communities/pictures/'.$sessionUser;
+                                        $fileExt = strrchr($fileName,'.');
+                                        $tmp_name = $file['tmp_name'];
+                                        $randomFileName = md5(uniqid(rand())).''.$fileExt;
+                                        $filePath = $_SERVER['DOCUMENT_ROOT'].'/'.$targetFolder;
+                                        $userFile = $filePath . '/' .$randomFileName;
+                                        if(!file_exists($filePath)){
+                                            mkdir($filePath, 0755, true);
+                                        }
+                                        $allowedExt = ['.png', '.jpeg','.jpg','.PNG','.JPG','.JPEG'];
+                                        if(in_array($fileExt, $allowedExt)){
+                                            if(move_uploaded_file($tmp_name, $userFile)){
+                                                $avatar_url = 'communities/pictures/'.$sessionUser. '/'.$randomFileName;
+                                                $postImgs = $connect
+                                                ->newQuery()
+                                                ->insert(['picture_url', 'target_post'])
+                                                ->into('community_pictures')
+                                                ->values(['picture_url' => $avatar_url, 'target_post' => $lastId])
+                                                ->execute();
+                                            }
+                                            else{
+                                                $this->Flash->warning(__('The file could not be uploaded'));
+                                            }
+                                        }
+                                    }
+                                }
+                                //for files upload depending on our communities post
+                                return $this->redirect($this->referer());
+                            }
+                            else{
+                                $this->Flash->error('Unable to post try again!!!');
+                                return $this->redirect($this->referer());
+                            }
+
+                        }
+                        else{
+                            $this->Flash->error('The specified community does not exist');
+                            return $this->redirect($this->referer());
+                        }
+                    }
+                    else{
+                        $this->Flash->error('Please the length must be between 5 and 500');
+                        return $this->redirect($this->referer());
+                    }
+                }
+                else{
+                    $this->Flash->error('Please fill out required fields');
+                    return $this->redirect($this->referer());
+                }
+
+                
+
+            }
+            else{
+                $this->Flash->error('No specified community');
+                return $this->redirect(['action' => 'index']);
+            }
+        }
+        else{
+            $this->Flash->error('Please Try again!!');
+            return $this->redirect($this->referer());
+        }
+        
     }
 }

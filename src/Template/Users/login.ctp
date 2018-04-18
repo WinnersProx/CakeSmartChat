@@ -27,7 +27,10 @@
                 <div class="logon-box">
                     <span class="login-title text-center">Login to Smartchat!</span>
                 </div>
-                <span class="flash l-flash"><?= $this->Flash->render()?></span>
+               
+                <?php if($this->request->referer() != null):?>
+                    <span class="flash l-flash"><?= $this->Flash->render()?></span>
+                <?php endif;?>
                 <div class="panel-body login-bd">
                     <?= $this->Form->create()?>
                     <fieldset>

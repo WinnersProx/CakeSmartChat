@@ -54,10 +54,43 @@
                    <a href="">Members</a>
                </span>  
             </div>
-                
             </div>
         </div>
              
+        </div>
+        <span class="community-title">Bake Posts</span>
+        <div class="community-posts row">
+          <form action="/communities/newPost/<?=$targetCommunity->community_name?>" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <textarea class="form-control new-community-post" name="community-post-content" placeholder="New Post in <?= $targetCommunity->community_name ?> community " required></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="post-pictures">
+                  <input type="file" name="post-pictures[]" class="picture-baker" value="Add Pictures" multiple="multiple">
+                  <span class="community-file-options">
+                    <span class="post-img-baker">
+                    <i class="fa fa-upload"></i> Upload
+                    </span>
+                    &nbsp;<span class="adds-text">Add images</span>
+                  </span>
+                  <span class="privacy-setter">Privacy</span>
+                    <select name="post-privacy" class="community-post-privacy">
+                      <option value="0">Public</option>
+                      <option value="1">Members</option>
+                      <option value="2">Private</option> 
+                    </select>
+                  
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bottom-button right">
+                  <input type="submit" name="community-post-submit" class="btn btn-primary community-post-submit" value="New Post">
+                </div>
+                
+              </div>  
+            </div>
+          </form>
         </div>
         <span class="community-title">Members</span>
         <div class="render">

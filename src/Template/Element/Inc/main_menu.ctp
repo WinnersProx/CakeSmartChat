@@ -30,7 +30,11 @@
 
 										<span class="badge post-opts"><i class="fa fa-picture-o"></i> Post Images</span> 
 										<div class="img-transfer">
-											<input type="file" name="imgFile[]" class="img-upload" multiple="multiple"><?= $this->Html->Image('avatarpic.png', ['class' => 'picture-uploader', 'multiple'])?>
+											<input type="file" name="imgFile[]" class="img-upload" multiple="multiple">
+											<span class="post-img-baker">
+												<i class="fa fa-upload"></i> Upload
+											</span>
+											
 											<span class="uploader-text">Choose a picture</span>
 											
 										</div>

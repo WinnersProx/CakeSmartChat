@@ -911,18 +911,40 @@ a:hover{
 /*post-modal*/
 /*post uploader input type*/
 input[type ="file"]::-webkit-file-upload-button{
-	
+	box-shadow: none;
 	color: white;
 	background-color:#8e91a0;
-	font-family: fantasy;
+	font-family: quantify;
 	box-shadow: none;
-	width: 6px;
+	border: none;
+	cursor: pointer;
+	width: 4px;
+	
+}
+.post-img-baker{
+	color: white;
+	border-radius: 8px 0px 0px 8px;
+	text-align: center;
+	background-image:linear-gradient(to bottom, #4c0000, #b578d0);
+	font-family: quantify;
+	width: 100px;
+	padding: 4px;
+	cursor: pointer;
+
 }
 input[type="file"]{
 	background-color:#8e91a0;
 	font-family: fantasy;
-	width: 23px;
+	width:78px;
+	border-radius: 8px;
+	padding: 2px;
+	cursor: pointer;
+	height: 22px;
+	z-index: 100;
+	position: absolute;
 	opacity: 0;
+
+	
 }
 .newCl{
 	margin-top: 40px;
@@ -1093,6 +1115,7 @@ span.dated{
 .post-content-text{
 	text-align: justify;
 	padding: 4px;
+	word-break: break-all;
 }
 .tags a{
 	color: #8a90ad;
@@ -1133,8 +1156,8 @@ i.sub{
 	display: inline-block;
 }
 .p-int .p-interaction{
-	background-color:#e8e3e3;
-	color: #8a90ad;
+	background-color:#eadcdc;
+	color: #87128e;
 	font-weight: bold;
 	font-family: quantify;
 	font-size: 14px;
@@ -1798,4 +1821,75 @@ input[type="checkbox"]{
 .custom-button a{
 	color: #fffcfc;
 }
+.community-file-options{
+	border-top: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-right: 1px solid gray;
+	padding: 2px 2px 2px 0px;
+	border-radius: 8px;  
+}
+.privacy-setter{
+	margin-left: 4px;
+	margin-right: -8px;
+	font-size: 12px; 
+	
+    font-family: quantify; 
+    background-color: #803c68;
+    color: white;
+    padding: 6px 6px 5px 6px;
+    border-radius: 8px 0px 0px 8px;	
+}
+
+select.community-post-privacy{
+	font-family: quantify; 	
+	border-top: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-left: 1px solid gray;
+    background-color: #eae7e7;
+    border-radius: 0px 8px 8px 0px;	
+    width: 80px;
+    height: 24px;
+    padding: 4px;
+    color: #651c65;;
+    font-size: 12px;
+    cursor: pointer; 
+}
+select:focus{
+	box-shadow: none;
+	outline: none;
+}
+input[name="community-post-submit"]{
+	background-color: #803c68;
+	border: none;
+	border-radius: 8px; 
+	height: 27px;
+	line-height: 10px;
+	margin-top: -25px;
+}
+.community-post-submit:hover{
+	background-color: #803c68;
+	border: none;
+}
+
+
+.new-community-post{
+	resize: none;
+	border: none;
+	box-shadow: none;
+	margin-bottom: -12px;
+}
+.new-community-post:focus{
+	border: none;
+	box-shadow: none;
+
+}
+.bottom-button{
+	margin-top: 12px;
+}
+.adds-text{
+	font-family: quantify;
+	font-size: 12px;
+	color: #651c65;
+}
+
 /*End for users communities*/

@@ -60,7 +60,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                           <label for="description">Description</label>
-                          <textarea class="form-control" name="description" rows="2" id="description" placeholder="What's your community target" required="required"></textarea>
+                           <input type="text" name="description" class="form-control" id="description" placeholder="What's your community target" required="required">
                         </div>
                     </div>
                     <input type="submit" name="new" class="btn btn-success" value="Create Now" id="submit-community" />
