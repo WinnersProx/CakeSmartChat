@@ -92,10 +92,16 @@
             </div>
           </form>
         </div>
-        <span class="community-title">Members</span>
         <div class="render">
           <?= $this->Flash->render()?>
         </div>
+        <div class="community-posts-lists">
+            <?php
+                $CommunityCell->getCommunityPosts($targetCommunity->id);
+            ?>
+        </div>
+        <span class="community-title">Members</span>
+        
          <div class="box-members">
              <?php
                 $userInfos = $this->cell('UsersInfo'); 
