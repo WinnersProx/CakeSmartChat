@@ -13,6 +13,21 @@ class CommunitiesCell extends Cell{
 		$connected = $this->request->session()->read('Auth')['User']['id'];
 		return $connected;
 	}
+	public function isAdministrator($CommunityId, $memberId){
+		$this->loadModel('CommunityMembers');
+		$checkAdmin = $this->CommunityMembers->find()->where(['id_community' => $CommunityId,'member_id' => $memberId, 'member_role' => 1])->execute()->count();
+		$checkAdmin = boolval($checkAdmin);
+
+		return $checkAdmin;
+
+	}
+
+	public function isCreater($CommunityId, $memberId){
+		$this->loadModel('Communities');
+		$checkCreater = $this->Communities->findById($CommunityId)->where(['creater_id' => $memberId])->execute()->count();
+		$checkCreater = boolval($checkCreater);
+		return $checkCreater;
+	}
 
 	public function generateCommunityIcons($communityId){
 		$this->loadModel('Communities');
@@ -66,6 +81,24 @@ class CommunitiesCell extends Cell{
 		}
 	}
 
+	public function getCommunityPostComments($postId){
+		$this->loadModel('CommunityPosts');
+
+		$connect = $this->CommunityPosts->connect();
+		$checkComments = $connect->select('*')->from('community_post_comments')->where(['related_post' => $postId])->execute();
+		if($checkComments->count() > 0){
+			$comments = $checkComments->fetchAll('obj');
+			foreach ($comments as $comment) {
+				$memberInfos = $this->getMemberInfos($comment->member_id);
+				?>
+					<img src="/img/<?= $memberInfos['avatar']?>" class="user-avatar-xs"><span class="u-name"><?= $memberInfos['name']?></span> 
+					<span class="comment-texts"><?= $comment->content ?></span><br>
+
+				<?php
+			}
+		}
+	}
+
 	public function getCommunityPosts($communityId){
 		$this->loadModel('Communities');
 		$connect = $this->Communities->connectTocake();
@@ -99,19 +132,45 @@ class CommunitiesCell extends Cell{
 					//the interface for users to comment share and rate so on//
 					?>
 						<div class="member-interface">
-							<span><i class="fa fa-thumbs-o-up"></i> Vote</span>
-							<span><i class="fa fa-comment"></i> Comment </span>
-							<span><i class="fa fa-share"></i> Share </span>
-
+							<span><i class="fa fa-thumbs-o-up"></i> <a href="/communities/commu">Rate</a></span>
+							<span>
+								<i class="fa fa-comment"></i> <a href="/communities/communityComment/<?= $post->id?>">Comment</a>
+							</span>
+							<span>
+								<i class="fa fa-share"></i> <a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">Share</a> 
+							</span>
+							<?php if($this->checkCommunityMembership($communityId)):?>
+								<span class="right tools dropdown">
+									<span class="dropdown-toggle" id="communityDrop1" data-toggle="dropdown">
+										<i class="fa fa-certificate"></i><i class="fa fa-caret-down"></i>
+									</span>
+									<ul class="dropdown-menu" role="menu" arialabelledby="communityDrop1">
+										<?php if($this->isAdministrator($givenCommunity['id'], $this->getConnected()) || $this->isCreater($givenCommunity['id'], $this->getConnected())):?>
+											<li>
+												<a href="/communities/deleteCommunityPost/<?=$post->id?>">Delete</a>
+											</li>
+										<?php endif;?>
+										<li>
+											<a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">Share</a>
+										</li>
+										
+									</ul>
+								</span>
+							<?php endif;?>
 						</div>
 						<div class="member-comment">
 							<div class="community-comment">
-								<form>
+								<form action="/CommunityPosts/commentPost/<?= $post->id?>" method="post">
 									<input type="text" class="community-post-comment comment-post form-control" name="mPostComment" placeholder="Put your comment right here!!!">
+									<input type="submit" name="subComment" value="Share" class=" community-post-submit">
 									
 								</form>
 								
 							</div>
+						</div>
+
+						<div class="community-post-comments">
+							<?php $this->getCommunityPostComments($post->id);?><br/>
 						</div>
 					<?php
 				}	
@@ -120,5 +179,17 @@ class CommunitiesCell extends Cell{
 				echo "<br>No posts in this community";
 			}
 		}
+	}
+	public function getCommunityInfos($communityName){
+		$this->loadModel('Communities');
+		$communityInfos = $this->Communities->find()->where(['community_name' => $communityName])->first();
+		return $communityInfos;
+
+	}
+	public function getPostRelatedPictures($postId){
+		$this->loadModel('CommunityPosts');
+		$connect = $this->CommunityPosts->connect();
+		$checkPictures = $connect->select('picture_url')->from('community_pictures')->where(['target_post' => $postId])->execute();
+		return $checkPictures;
 	}
 }

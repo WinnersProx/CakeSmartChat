@@ -210,8 +210,8 @@ class UsersController extends AppController
                 //checks if the user does not exist in our table
     			
     			$this->Flash->success('Welcome '.$user['name'].' Feel free you are at yours!');
-    			//return $this->redirect($this->Auth->redirectUrl());
-    			return $this->redirect(['controller' => 'Users', 'action' => 'timeline']);
+    			return $this->redirect($this->Auth->redirectUrl());
+    			//return $this->redirect($this->referer());
     		}
     		$this->Flash->error(__('Your username or password is invalid'));
     	}

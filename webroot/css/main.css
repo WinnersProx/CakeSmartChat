@@ -1896,5 +1896,14 @@ input[name="community-post-submit"]{
 	font-family: cursive;
 	margin: 0 0 0em 0;
 }
+.tools {
+    background-color: #866179;
+    color: black;
+    border-radius: 8px;
+    padding: 0px 6px 0px 6px;
+    margin-right: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
 
 /*End for users communities*/

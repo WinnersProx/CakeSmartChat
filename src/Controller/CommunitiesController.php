@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\FileSystem\Folder;
 
 /**
  * Communities Controller
@@ -222,6 +223,7 @@ class CommunitiesController extends AppController
 
     }
     public function newPost($currentCommunity = null){
+
         $sessionUser = $this->Auth->user('id');
         $connect = $this->Communities->connectTocake();
         if($this->request->is('post')){
@@ -251,7 +253,7 @@ class CommunitiesController extends AppController
                                     foreach ($postPictures as $file) {
                                     //$file = $postPictures;
                                         $fileName = $file['name'];
-                                        $targetFolder= 'img/communities/pictures/'.$sessionUser;
+                                        $targetFolder= 'img/communities/pictures/'.$lastId;
                                         $fileExt = strrchr($fileName,'.');
                                         $tmp_name = $file['tmp_name'];
                                         $randomFileName = md5(uniqid(rand())).''.$fileExt;
@@ -263,7 +265,7 @@ class CommunitiesController extends AppController
                                         $allowedExt = ['.png', '.jpeg','.jpg','.PNG','.JPG','.JPEG'];
                                         if(in_array($fileExt, $allowedExt)){
                                             if(move_uploaded_file($tmp_name, $userFile)){
-                                                $avatar_url = 'communities/pictures/'.$sessionUser. '/'.$randomFileName;
+                                                $avatar_url = 'communities/pictures/'.$lastId. '/'.$randomFileName;
                                                 $postImgs = $connect
                                                 ->newQuery()
                                                 ->insert(['picture_url', 'target_post'])
@@ -314,5 +316,31 @@ class CommunitiesController extends AppController
             return $this->redirect($this->referer());
         }
         
+    }
+    public function deleteCommunityPost($postId = null){
+        $connect = $this->Communities->connectTocake();
+        $postId = intval($postId);
+        $checksPost = boolval($connect->newQuery()->select('*')->from('community_posts')->where(['id' => $postId])->execute()->count());
+        if($checksPost){
+            $postFolder = new Folder(WWW_ROOT.'img/communities/pictures/'.$postId);
+            
+            //delete post and all of its content;
+            $deletePost = $connect->newQuery()->delete()->from('community_posts')->where(['id' => $postId])->execute();
+            if($deletePost){
+                $postFolder->delete();
+                $this->Flash->success('Post deleted successfully!!!');
+                return $this->redirect($this->referer());
+            }
+            else{
+                $this->Flash->success('Try again!!!');
+                return $this->redirect($this->referer());
+            }
+            $postFolder->close();
+        }
+        else{
+            $this->Flash->success('The specified post does not exist');
+            return $this->redirect($this->referer());
+        }
+
     }
 }
