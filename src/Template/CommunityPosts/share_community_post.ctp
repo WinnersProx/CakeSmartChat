@@ -56,15 +56,20 @@
         </div>
              
         </div>
-        
+        <div class="render">
+          <?= $this->Flash->render()?>
+        </div>
         <div class="community-posts row">
-          <form action="/communities/newPost/<?=$postToShare->target_community?>" method="post" enctype="multipart/form-data">
+          <form action="/CommunityPosts/newPostShare/<?= $postToShare->id ?>" method="post" enctype="multipart/form-data">
             
             <div class="row">
               <div class="col-md-12">
                   <span class="community-title">Share Post</span>
                   Creater : <span class="u-name"><?= $CommunityCell->getMemberInfos($postToShare->member_poster)['name']?></span><br> 
                   Content : <?= h($postToShare->post_content)?>
+                  <div class="form-group">
+                    <textarea class="form-control" name="sharePostContent" rows="2" placeholder="Write something about this or not!!!"></textarea>
+                  </div>
                   <div class="pictures">
                       <?php if($rPictures->count() > 0):?>
                           <?php foreach($rPictures->fetchAll('obj') as $picture):?>
@@ -77,7 +82,7 @@
               <div class="col-md-8">
                 
                   <span class="privacy-setter">Privacy</span>
-                    <select name="post-privacy" class="community-post-privacy">
+                    <select name="sharePrivacy" class="community-post-privacy">
                       <option value="0">Public</option>
                       <option value="1">Members</option>
                       <option value="2">Private</option> 
@@ -95,9 +100,7 @@
             </div>
           </form>
         </div>
-        <div class="render">
-          <?= $this->Flash->render()?>
-        </div>
+        
         <div class="community-posts-lists">
             
         </div>
@@ -117,4 +120,3 @@
     </div>
     
 </div>
-

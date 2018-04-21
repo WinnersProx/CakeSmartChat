@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\FileSystem\Folder;
-
+use Cake\Chronos\Chronos;
 /**
  * Communities Controller
  *
@@ -73,6 +73,57 @@ class CommunityPostsController extends AppController
         }
         else{
             $this->Flash->error('The specified post does not exist');
+            return $this->redirect($this->referer());
+        }
+        
+
+
+    }
+
+    public function newPostShare($postId = null){
+        //inserts
+        //share-privacy, $related_cpost,share_content
+        //checks whether the given post exist
+        $curTime = Chronos::parse('- 7 hours');
+        $PostId = intval($postId);
+
+        $currentMember = $this->Auth->user('id');
+        $connect = $this->CommunityPosts->connect();
+        $datas = $this->request->getData();
+        $checkPost = $this->CommunityPosts->findById($postId);
+        
+        if($checkPost->count() > 0){
+            $checkPost = $checkPost->first();
+            if($this->request->is('post')){
+                if(isset($datas['sharePostContent']) && $datas['sharePostContent'] != null){
+                    $shareContent = $datas['sharePostContent'];
+                    if(mb_strlen($shareContent) > 5){
+                        $newShare = $connect->insert(['related_cpost','share_content','privacy', 'member_sharing','dated'])
+                        ->into('community_post_shares')->values(['related_cpost' => $postId, 'share_content' => $shareContent, 'privacy' => $datas['sharePrivacy'], 'member_sharing' => $currentMember, 'dated' => $curTime])->execute();
+                        if($newShare){
+                            $this->Flash->success('You have shared a post from this community');
+                            return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
+
+                        }
+                        else{
+
+                            $this->Flash->error('Unable Try again!!!');
+                            return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
+                        }
+                    }
+                    else{
+                        $this->Flash->error('Please the length must be  at least 5');
+                        return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
+                    }
+                }
+                
+
+
+            }
+
+        }
+        else{
+            $this->Flash->error('Please the specified community does not exist!');
             return $this->redirect($this->referer());
         }
         
