@@ -130,4 +130,44 @@ class CommunityPostsController extends AppController
 
 
     }
+    public function ratePost($postId = null){
+        $postId = intval($postId);
+        $curTime = Chronos::parse('- 7 hours');
+        $curUser = $this->Auth->user('id');
+        $connect = $this->CommunityPosts->connect();
+         $checkPost = $this->CommunityPosts->findById($postId);
+         if($checkPost->count() > 0){
+        
+                $checksIfrated = $connect->select('*')->from('community_post_rates')->where(['user_rate' => $curUser, 'related_post' => $postId])->execute()->count();
+                $checksIfrated = boolval($checksIfrated);
+                if(!$checksIfrated){
+                    $newRate = $connect->insert(['user_rate', 'related_post'])->into('community_post_rates')->values(['user_rate' => $curUser, 'related_post' => $postId])->execute();
+                    if($newRate){
+                        $this->Flash->success('post rated successfully');
+                        return $this->redirect($this->referer());
+                    }
+                    else{
+                        $this->Flash->success('unable to rate this post!');
+                        return $this->redirect($this->referer());
+
+                    }
+                }
+                else{
+                    //dd($checksIfrated);
+                    $removeRate = $connect->delete()
+                    ->where(['user_rate' => $curUser , 'related_post' => $postId])
+                    ->execute();
+                    if($removeRate){
+                        $this->Flash->success('rate removed successfully');
+                        return $this->redirect($this->referer());
+                    }
+                    else{
+                        $this->Flash->success('unable to remove rate');
+                        return $this->redirect($this->referer());
+                    }
+
+                }
+         }
+         
+    }
 }

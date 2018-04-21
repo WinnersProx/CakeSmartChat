@@ -320,12 +320,12 @@ class CommunitiesController extends AppController
     public function deleteCommunityPost($postId = null){
         $connect = $this->Communities->connectTocake();
         $postId = intval($postId);
-        $checksPost = boolval($connect->newQuery()->select('*')->from('community_posts')->where(['id' => $postId])->execute()->count());
+        $checksPost = boolval($connect->newQuery()->select('*')->from('post_community_rates')->where(['id' => $postId])->execute()->count());
         if($checksPost){
             $postFolder = new Folder(WWW_ROOT.'img/communities/pictures/'.$postId);
             
             //delete post and all of its content;
-            $deletePost = $connect->newQuery()->delete()->from('community_posts')->where(['id' => $postId])->execute();
+            $deletePost = $connect->newQuery()->delete()->from('post_community_rates')->where(['id' => $postId])->execute();
             if($deletePost){
                 $postFolder->delete();
                 $this->Flash->success('Post deleted successfully!!!');

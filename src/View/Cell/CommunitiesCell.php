@@ -132,7 +132,7 @@ class CommunitiesCell extends Cell{
 					//the interface for users to comment share and rate so on//
 					?>
 						<div class="member-interface">
-							<span><i class="fa fa-thumbs-o-up"></i> <a href="/communities/commu">Rate</a></span>
+							<span><i class="fa fa-thumbs-o-up"></i> <a href="/communityPosts/ratePost/<?= $post->id?>">Rate</a></span>
 							<span>
 								<i class="fa fa-comment"></i> <a href="/communities/communityComment/<?= $post->id?>">Comment</a>
 							</span>
