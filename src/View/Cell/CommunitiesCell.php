@@ -13,7 +13,7 @@ class CommunitiesCell extends Cell{
 		$connected = $this->request->session()->read('Auth')['User']['id'];
 		return $connected;
 	}
-	public function isAdministrator($CommunityId, $memberId){
+	public function isAdmin($CommunityId, $memberId){
 		$this->loadModel('CommunityMembers');
 		$checkAdmin = $this->CommunityMembers->find()->where(['id_community' => $CommunityId,'member_id' => $memberId, 'member_role' => 1])->execute()->count();
 		$checkAdmin = boolval($checkAdmin);
@@ -26,7 +26,33 @@ class CommunitiesCell extends Cell{
 		$this->loadModel('Communities');
 		$checkCreater = $this->Communities->findById($CommunityId)->where(['creater_id' => $memberId])->execute()->count();
 		$checkCreater = boolval($checkCreater);
+		
 		return $checkCreater;
+
+	}
+	public function isFriendWith($targetUser = null){
+		$targetUser = intval($targetUser);
+		$this->loadModel('Users');
+		$sessionUser = $this->request->session()->read('Auth')['User']['id'];
+		$dbb = $this->Users->connectTocake();
+
+
+		if($targetUser != $sessionUser){
+			$check = $dbb->newQuery()
+			->select('*')
+			->from('relations')
+			->where(['sender_id' => $sessionUser, 'receiver_id' => $targetUser])
+			->orwhere(['sender_id' => $targetUser, 'receiver_id' => $sessionUser])
+			->andwhere(['status' => 1])
+			->execute()
+			->rowCount();
+			
+			return boolval($check);
+		}
+		else{
+			return true;
+		}
+		
 	}
 
 	public function generateCommunityIcons($communityId){
@@ -63,9 +89,11 @@ class CommunitiesCell extends Cell{
 		return $checks;
 
 	}
-	public function listMembers($communityId){
+	public function listCommunityMembers($communityId){
 		$communityId = intval($communityId);
 		$lists = $this->CommunityMembers->find()->where(['id_community' => $communityId]);
+		//$acquaints = parent::cell('UserAcquaintances');
+		
 		if($lists->count() > 0){
 			foreach ($lists as $memberInfo) {
 				$memberInfos = $this->getMemberInfos($memberInfo->member_id);
@@ -73,6 +101,35 @@ class CommunitiesCell extends Cell{
 				: $memberInfos->name = $memberInfos->name;
 				
 				echo '<img src="/img/'.$memberInfos->avatar.'" class="user-avatar-xs"/>'.$memberInfos->name.'&nbsp;&nbsp;';
+				//followed by some controls in html
+				?>
+					<span class="moreUsersTools">
+						<span class="dropdown-toggle" data-toggle="dropdown" id="dopMenuII">Tools<i class="fa fa-cog"></i><i class="fa fa-caret-down"></i></span>
+						<ul class="dropdown-menu" role="menu" arialabelledby="dropMenuII">
+							<?php if(!$this->isFriendWith($memberInfos->id)):?>
+								<li>
+									<a href="/users/send-request/<?=$memberInfos->id?>"><i class="fa fa-send"></i> Friend Request</a>
+								</li>
+							<?php endif;?>
+							<?php if($this->isCreater($communityId, $this->getConnected()) || $this->isAdmin($communityId, $this->getConnected())):?>
+								<li>
+									<a href="/CommunityMembers/addCommunityAdmin/<?=$communityId.'/'.$memberInfos->id?>"><i class="fa fa-plus-circle"></i> Add Administrator</a>
+								</li>
+								<li>
+									<a href="/communitymembers/remove-member/<?= $memberInfos->id.'/'.$communityId?>"><i class="fa fa-minus-circle"></i> Delete Member</a>
+								</li>
+							<?php endif;?>
+							<?php if($this->getConnected() == $memberInfos->id && !$this->isAdmin($communityId, $this->getConnected())):?>
+								<li>
+									<a href="/communitymembers/remove-member/<?= $memberInfos->id.'/'.$communityId?>"><i class="fa fa-minus-circle"></i> Leave Community</a>
+								</li>
+							<?php endif;?>
+						</ul>
+
+						
+					</span>
+
+				<?php
 			}
 			
 		}
@@ -142,10 +199,10 @@ class CommunitiesCell extends Cell{
 							<?php if($this->checkCommunityMembership($communityId)):?>
 								<span class="right tools dropdown">
 									<span class="dropdown-toggle" id="communityDrop1" data-toggle="dropdown">
-										<i class="fa fa-certificate"></i><i class="fa fa-caret-down"></i>
+										<i class="fa fa-cog"></i><i class="fa fa-caret-down"></i>
 									</span>
 									<ul class="dropdown-menu" role="menu" arialabelledby="communityDrop1">
-										<?php if($this->isAdministrator($givenCommunity['id'], $this->getConnected()) || $this->isCreater($givenCommunity['id'], $this->getConnected())):?>
+										<?php if($this->isAdmin($givenCommunity['id'], $this->getConnected()) || $this->isCreater($givenCommunity['id'], $this->getConnected())):?>
 											<li>
 												<a href="/communities/deleteCommunityPost/<?=$post->id?>">Delete</a>
 											</li>
@@ -162,13 +219,13 @@ class CommunitiesCell extends Cell{
 							<div class="community-comment">
 								<form action="/CommunityPosts/commentPost/<?= $post->id?>" method="post">
 									<input type="text" class="community-post-comment comment-post form-control" name="mPostComment" placeholder="Put your comment right here!!!">
-									<input type="submit" name="subComment" value="Share" class=" community-post-submit">
+									<input type="submit" name="subComment" value="Comment" class=" community-post-submit">
 									
 								</form>
 								
 							</div>
 						</div>
-
+					
 						<div class="community-post-comments">
 							<?php $this->getCommunityPostComments($post->id);?><br/>
 						</div>

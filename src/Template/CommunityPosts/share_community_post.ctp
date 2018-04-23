@@ -12,7 +12,9 @@
     $this->assign('title', 'Share Community Post : ' . $postToShare->member_poster);
     $CommunityCell = $this->cell('Communities');
     $cInfos = $CommunityCell->getCommunityInfos($postToShare->target_community);
-    $rPictures = $CommunityCell->getPostRelatedPictures($postToShare->id)
+    $usersDetails = $this->cell('UserFriends');
+    $rPictures = $CommunityCell->getPostRelatedPictures($postToShare->id);
+
 ?>
 
 
@@ -63,6 +65,7 @@
           <form action="/CommunityPosts/newPostShare/<?= $postToShare->id ?>" method="post" enctype="multipart/form-data">
             
             <div class="row">
+
               <div class="col-md-12">
                   <span class="community-title">Share Post</span>
                   Creater : <span class="u-name"><?= $CommunityCell->getMemberInfos($postToShare->member_poster)['name']?></span><br> 
@@ -78,15 +81,18 @@
                       <?php endif;?>
                     
                   </div>
+                  <span>Tag friends : </span><br>
+                  <?php $usersDetails->getUserFriends($LoggedUser['User']['id']);?>
               </div>
               <div class="col-md-8">
                 
                   <span class="privacy-setter">Privacy</span>
                     <select name="sharePrivacy" class="community-post-privacy">
                       <option value="0">Public</option>
-                      <option value="1">Members</option>
+                      <option value="1">Friends</option>
                       <option value="2">Private</option> 
                     </select>
+
                   
               </div>
               <div class="col-md-4">

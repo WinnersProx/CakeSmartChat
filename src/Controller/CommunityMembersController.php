@@ -101,16 +101,70 @@ class CommunityMembersController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $communityMember = $this->CommunityMembers->get($id);
-        if ($this->CommunityMembers->delete($communityMember)) {
-            $this->Flash->success(__('The community member has been deleted.'));
-        } else {
-            $this->Flash->error(__('The community member could not be deleted. Please, try again.'));
+
+    public function addCommunityAdmin($communityId = null, $memberId = null){
+        $communityId = intval($communityId);
+        $memberId = intval($memberId);
+        $dB = $this->CommunityMembers->connectTocake();
+        $checkMember = $this->CommunityMembers->find()->where(['id_community' => $communityId, 'member_id' => $memberId])->count();
+        if($checkMember > 0){
+            $newAdmin = $dB->newQuery()->update('community_members')->set(['member_role' => 1])->where(['id_community' => $communityId, 'member_id' => $memberId])->execute();
+            if($newAdmin){
+                $this->Flash->success('Admin added successfully!');
+                return $this->redirect($this->referer());
+            }
+            else{
+                $this->Flash->success('Unable to add admin!');
+                return $this->redirect($this->referer());
+            }
+        }
+        else{
+            $this->Flash->success('The specified member does not exist!');
+            return $this->redirect($this->referer());
         }
 
-        return $this->redirect(['action' => 'index']);
     }
+
+    public function removeMember($memberId = null, $communityId = null)
+    {
+        $this->loadModel('CommunityMembers');
+        $this->loadModel('Communities');
+        $memberId = intval($memberId) ; $communityId = intval($communityId);
+        $connected = $this->Auth->user('id');
+        $connect = $this->CommunityMembers->connectTocake();
+        $checkAdmin = $this->CommunityMembers->find()->where(['id_community' => $communityId, 'member_id' => $connected, 'member_role' => 1])->count();
+        
+        //for the current user
+        $isCreater = $this->Communities->find()->where(['creater_id' => $connected])->count();$isCreater = boolval($isCreater);
+
+        if($checkAdmin > 0 || $isCreater){
+            //for the given user
+            $isCreater = $this->Communities->find()->where(['creater_id' => $memberId])->count();$isCreater = boolval($isCreater); 
+
+            if(!$isCreater){
+                $deleteMember = $connect->newQuery()->delete()->from('community_members')->where(['member_id' => $memberId, 'id_community' => $communityId])->execute();
+
+                if($deleteMember){
+                    $this->Flash->success(__('The member was removed successfully!'));
+                }
+                else{
+                    $this->Flash->error(__('Unable to remove member!')); 
+
+                }
+            }
+            else{
+                $this->Flash->error(__('You do not fulfill permissions to remove the prime Admin'));
+            }
+            
+        }
+        else{
+            $this->Flash->error(__('You are not allowed to remove a member!'));
+
+        }
+        
+        return $this->redirect($this->referer());
+        
+    }
+
+
 }

@@ -5,7 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-
+use Cake\Datasource\ConnectionManager;
 /**
  * CommunityMembers Model
  *
@@ -61,6 +61,13 @@ class CommunityMembersTable extends Table
             ->allowEmpty('member_role');
 
         return $validator;
+    }
+    
+    public function connectTocake(){
+        $dbb = ConnectionManager::get('default');
+        //Tests//
+        //$this->set(compact($user));
+        return $dbb;
     }
 
     /**

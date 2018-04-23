@@ -47,6 +47,12 @@ class CommunityPostsTable extends Table
         //$this->set(compact($user));
         return $dbb;
     }
+    public function connectTocake(){
+        $dbb = ConnectionManager::get('default');
+        //Tests//
+        //$this->set(compact($user));
+        return $dbb;
+    }
 
     /**
      * Default validation rules.

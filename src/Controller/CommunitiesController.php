@@ -209,13 +209,13 @@ class CommunitiesController extends AppController
             ->values(['id_community' => $communityId, 'member_id' => $connected])
             ->execute();
             if($newMember){
-                $this->Flash->success('Community joined successfully');
-                return $this->redirect(['action' => 'view', $communityId]);
+                $this->Flash->success('Community joined successfully');   
             }
             else{
-                $this->Flash->success('Please the community could not be joined');
-                return $this->redirect(['action' => 'view', $communityId]);
+                $this->Flash->success('Please the community could not be joined');  
             }
+
+            return $this->redirect($this->referer());
         }
         
     }
@@ -238,6 +238,7 @@ class CommunitiesController extends AppController
                 if(isset($postContent) && $postContent != null){
                     if(mb_strlen($postContent > 5) || mb_strlen($postContent < 500)){
                         $checkCommunity = $this->Communities->find()->where(['community_name' => $currentCommunity])->count();
+                        $checkCommunity = boolval($checkCommunity);
                         if($checkCommunity){
 
                             $newPost = $connect->newQuery()->insert(['member_poster', 'post_content', 'privacy', 'target_community'])->into('community_posts')->values(['member_poster' => $sessionUser, 'post_content' => $postContent, 'privacy' => $postPrivacy, 'target_community' => $currentCommunity])
@@ -317,15 +318,16 @@ class CommunitiesController extends AppController
         }
         
     }
+    
     public function deleteCommunityPost($postId = null){
         $connect = $this->Communities->connectTocake();
         $postId = intval($postId);
-        $checksPost = boolval($connect->newQuery()->select('*')->from('post_community_rates')->where(['id' => $postId])->execute()->count());
+        $checksPost = boolval($connect->newQuery()->select('*')->from('community_posts')->where(['id' => $postId])->execute()->count());
         if($checksPost){
             $postFolder = new Folder(WWW_ROOT.'img/communities/pictures/'.$postId);
             
             //delete post and all of its content;
-            $deletePost = $connect->newQuery()->delete()->from('post_community_rates')->where(['id' => $postId])->execute();
+            $deletePost = $connect->newQuery()->delete()->from('community_posts')->where(['id' => $postId])->execute();
             if($deletePost){
                 $postFolder->delete();
                 $this->Flash->success('Post deleted successfully!!!');

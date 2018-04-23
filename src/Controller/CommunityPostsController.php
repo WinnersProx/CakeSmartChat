@@ -88,19 +88,42 @@ class CommunityPostsController extends AppController
         $PostId = intval($postId);
 
         $currentMember = $this->Auth->user('id');
-        $connect = $this->CommunityPosts->connect();
+        $db = $this->CommunityPosts->connectTocake();
         $datas = $this->request->getData();
         $checkPost = $this->CommunityPosts->findById($postId);
-        
+
         if($checkPost->count() > 0){
             $checkPost = $checkPost->first();
+            
             if($this->request->is('post')){
+                
                 if(isset($datas['sharePostContent']) && $datas['sharePostContent'] != null){
                     $shareContent = $datas['sharePostContent'];
                     if(mb_strlen($shareContent) > 5){
-                        $newShare = $connect->insert(['related_cpost','share_content','privacy', 'member_sharing','dated'])
+                        $newShare = $db->newQuery()->insert(['related_cpost','share_content','privacy', 'member_sharing','dated'])
                         ->into('community_post_shares')->values(['related_cpost' => $postId, 'share_content' => $shareContent, 'privacy' => $datas['sharePrivacy'], 'member_sharing' => $currentMember, 'dated' => $curTime])->execute();
+                        
+
                         if($newShare){
+
+                            $lastShare = $db->newQuery()->select('id')->from('community_post_shares')->order(['id' => 'DESC'])->execute()->fetch('obj')->id;
+                            if(isset($datas['tagFriend'])){
+                                $tags = $datas['tagFriend'];
+                                foreach ($tags as $tag){
+                                    $checkTag = $db->newQuery()->select('user_tagged')
+                                    ->from('community_sharepost_tags')
+                                    ->where(['user_tagged' => $tag , 'related_post' => $lastShare])
+                                    ->execute()->count();
+
+                                    if($checkTag == 0){
+                                        $newTag = $db->newQuery()->insert(['user_tagged', 'related_post'])->into('community_sharepost_tags')->values(['user_tagged' => $tag, 'related_post' => $lastShare])->execute();
+                                    }
+                                    
+                                }
+
+
+                            }
+
                             $this->Flash->success('You have shared a post from this community');
                             return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
 
@@ -116,14 +139,24 @@ class CommunityPostsController extends AppController
                         return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
                     }
                 }
+                else{
+                    $this->Flash->error('Please fill required fields');
+                    return $this->redirect($this->referer());
+
+                }
                 
 
+
+            }
+            else{
+                $this->Flash->error('An error has occured Try again please!!!');
+                return $this->redirect(['controller' => 'communities', 'action' => 'view', $checkPost['target_community']]);
 
             }
 
         }
         else{
-            $this->Flash->error('Please the specified community does not exist!');
+            $this->Flash->error('Please the specified post does not exist!');
             return $this->redirect($this->referer());
         }
         

@@ -105,11 +105,10 @@
          <div class="box-members">
              <?php
                 $userInfos = $this->cell('UsersInfo'); 
-                $userMembers = $CommunityCell->listMembers($targetCommunity->id);
+                $userMembers = $CommunityCell->listCommunityMembers($targetCommunity->id);
                 
              ?>
             
-
          </div>
         </div>
     </div>
