@@ -36,7 +36,7 @@ class PostsTable extends Table
         $this->setTable('posts');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-
+        $this->hasMany('PostImages')->setForeignKey('r_post');
         $this->addBehavior('Timestamp');
     }
     public function dbConnect(){

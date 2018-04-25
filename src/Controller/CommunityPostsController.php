@@ -56,19 +56,20 @@ class CommunityPostsController extends AppController
     }
     public function shareCommunityPost($postId){
         //fetch the asked community to be shared
+        
         $connect = $this->CommunityPosts->connect();
-        $forwardCommunity = $connect
-        ->select('*')
-        ->from('community_posts cp')
-        ->where(['cp.id' => $postId])
+        
         //join is not the good way // use of another way customly in the case it is taking only one picture in all published pictures 
-        ->execute();
+        //->execute();
+        $postToShare = $this->CommunityPosts->find()->where(['id' => $postId])->contain('CommunityPictures')->first();
 
-        if($forwardCommunity->count() > 0){
-            $postToShare = $forwardCommunity->fetch('obj');
+        if($postToShare){
+            //$postToShare = $forwardCommunity->fetch('obj');
             //related pictures posted for this post
+            $rPictures = $postToShare->community_pictures;
             
             $this->set(compact('postToShare'));
+            $this->set(compact('rPictures'));
 
         }
         else{

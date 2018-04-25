@@ -20,6 +20,7 @@ class PostsCell extends Cell{
 		//$paginator = new Paginator;
 		//$posts = $paginator->paginate($this->Posts);
 		$connect = $this->Posts->dbConnect();
+		//$listPosts = $this->Posts->find()->wh
 		$listPosts = $connect->newQuery()
 		->select('*')
 		->from('posts')
@@ -63,18 +64,57 @@ class PostsCell extends Cell{
 		->where(['r_post' => $idPost])
 		->execute();
 		$imgCount = $postImgs->rowCount();
-		$imgsList = $postImgs->fetchAll('obj');
+		$imgsList = $postImgs->fetchAll('assoc');
 		if($imgCount > 0){
-			foreach ($imgsList as $img) {
-				if($imgCount == 1){
-					$img = '<img src="/img/'.$img->img_url.'" class="img-responsive s-img">';
-				}
-				else{
-					$img = '<img src="/img/'.$img->img_url.'" class="img-responsive r-imgs">';
-				}
-				
-				echo $img;
+			$pResult = '';
+			foreach ($imgsList as $imgV) {
+					if($imgCount == 1)
+						$img_class = 'img-responsive s-img';
+					else
+						$img_class = 'r-imgs';
+
+					$pResult .= '<img src="/img/'.$imgV['img_url'].'" class="'.$img_class.'">  ';
 			}
+			$pResult = trim($pResult, '  ');
+			switch ($imgCount) {
+				case 1:
+					$img = $pResult;
+					break;
+				case 2 :
+					//$mImg = $pResult;
+					$img = $pResult;
+					break;
+				case 3:
+					$pResult = trim($pResult, ' ');
+					$myArray = explode('  ', $pResult);
+					$lastItem = array_pop($myArray);
+					$toStringf = implode('  ', $myArray);
+					
+					$img = '<div class="r-post-imgs-left">'.$lastItem.'</div><div class="r-post-imgs-right">'.$toStringf.'</div>';
+					break;
+				case 4: 
+					$img = $pResult;
+					
+					$img = preg_replace('#  #', '', $img);
+					break;
+				default:
+					$myArray = implode('  ', $pResult);
+					$chunkArray = array_chunk($myArray, 3);
+					$count = $imgCount - 4;   
+					$firsts = $chunkArray[0];
+					$remains = $chunkArray[1];
+					$lastOne = array_chunk($remains, 1);
+					$lastOne = implode(',', $lastOne);
+					$toStringf = implode(',', $firsts);
+					$img = $toStringf.'<span class="more-pictures">'.$toStringf.'</span class="more-pictures-text"><span>+'.$count.'More</span>';
+					
+					break;
+			}
+
+			echo $img;
+		}
+		else{
+			echo 'no related p';
 		}
 	}
 

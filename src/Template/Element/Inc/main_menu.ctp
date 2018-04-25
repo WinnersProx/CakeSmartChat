@@ -1,14 +1,22 @@
+<?php
+	$usersEvents = $this->cell('UsersEvents');
+
+?>
 <div class="user-event">
+<?php if($usersEvents->checkUserBirthDay($LoggedUser['User']['id'])):?>
 	<div class="flash-render">
-		Welcome Here is a friendship app maker expand your acquaintances inviting your facebook friends!
 		<span class="flash"><?= $this->Flash->render()?></span>
+			<div class="text-center" class="u-birthDay" style="color: purple;">
+				Happy Birth Day <?= $LoggedUser['User']['name']?>
+			</div>
 	</div>
+<?php endif;?>
 </div>
 <div class="post">
 	<div id="post-baker">
 		<span class="post-title badge"><i class="fa fa-edit"></i> Edit a new post!</span>
 		<form method="post" enctype="multipart/form-data" action="/posts/newPost">
-			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="about"></textarea>
+			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text"></textarea>
 			<!--to append the modal -->
 			<span class="btn btn-success post-validator" data-toggle="modal" data-target="#poster-modal"><i class="fa fa-check-circle fa-lg"></i></span>
 			<!--End to appending the modal-->
@@ -35,7 +43,7 @@
 												<i class="fa fa-upload"></i> Upload
 											</span>
 											
-											<span class="uploader-text">Choose a picture</span>
+											<span class="uploader-text">Choose pictures</span>
 											
 										</div>
 										<div class="img-preview uploader-text">
@@ -104,6 +112,16 @@
 			<span class="tags">
 				with <?php $posts->postTags($post->id);?>
 			</span>
+			<span class="right dropdown" id="postDropMenu">
+				<span class="dropdown-toggle" id="PostMenusT"  data-toggle="dropdown"><i class="fa fa-cogs"></i></span>
+				<ul class="dropdown-menu" aria-labelledby="PostMenusT" id="ptMenu">
+					<li role="menuitem"><a>Delete Post</a></li>
+					<li role="menuitem"><a>Share Post</a></li>
+					<li role="menuitem"><a href="">View Post</a></li>
+				</ul>
+				
+
+			</span>
 			<div class="post-content-text">
 				<?= $post->content ?>
 			</div>
@@ -139,7 +157,7 @@
 				</span>
 				<span class="p-int share">
 					<span class="p-interaction p-share" data-share-post = "/posts/sharePost/<?= $post->id?>">
-						<i class="fa fa-share"></i> Share
+						<i class="fa fa-share"></i> <a href="/posts/share-post/<?= $post->id?>">Share</a>
 					</span>
 				</span>
 				<div class="comment-post">

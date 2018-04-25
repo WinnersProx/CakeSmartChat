@@ -57,17 +57,24 @@
             ?>
         </div>
         <div class="last-edit-block">
-            <?php
-                echo $this->Form->control('user_dob');
-            ?>
-            <div class="user-gender">
-                Your gender
-                <select class="user_sex">
-                    <option value="M">Man</option>
-                    <option value="W">Woman</option>
-                </select>
-            </div>
             
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dateOfB">Date of Birth</label>
+                    <input type="date" name="user_dob"  id="dateOfB">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="user-gender">
+                    Your gender
+                    <select class="user_sex">
+                        <option value="M">Man</option>
+                        <option value="W">Woman</option>
+                    </select>
+                </div>
+                
+            </div>
+                
             <?php
                 echo $this->Form->control('about');
             ?>

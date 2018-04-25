@@ -759,13 +759,17 @@ a:hover{
 	font-family: fantasy;
 	font-size: 23px;
 }
+textarea#p-content-text {
+    background-color: #fbf7f7;
+    color: #00072b;
+}
 .post-validator{
-	background-color:#9d91a0;
+	background-color:#82638a;
 	border: none;
 	float: right;
 }
 .post-validator:hover{
-	background-color:#9d91a0;
+	background-color:#82638a;
 }
 .post-title{
 	padding: 5px;
@@ -1058,10 +1062,55 @@ input[type="file"]{
 #post-infos{	
 	width: 486px;
 }
+/*Post images infos*/
+#ptMenu{
+	min-width: 80px;
+}
+#PostMenusT{
+	cursor: pointer;
+	color: #002301;
+}
+#postDropMenu{
+	z-index: 100;
+
+}
 .post-images {
 	padding: 2px;
 	width: 486px;
 }
+.r-post-imgs-left .r-imgs{
+	width: 258px;
+	height: 430px;
+	border: 1px solid #8e91a0;
+	background-blend-mode: overlay;
+	display: flex;
+
+}
+
+.r-post-imgs-right .r-imgs{
+	border: 1px solid #8e91a0;
+	display: block;
+	width: 215.5px;
+}
+
+.r-post-imgs-right, .r-post-imgs-left{
+	display: inline-block;
+}
+
+.r-imgs{
+	width: 237px;
+	/*border: 1px solid #8e91a0;*/
+	padding: 0;
+	display: inline-block;
+	background-blend-mode: overlay;
+}
+.s-img{
+	width: 478px;
+	border-radius: 4px;
+	border: 1px solid #8e91a0;
+
+}
+/*Posts images infos*/
 .poster-text{
 	font-family: quantify;
 	/*padding: 4px;*/
@@ -1072,32 +1121,17 @@ input[type="file"]{
 	padding: 4px;
 	background-color: #f7f7f7;
 	border-radius: 4px;
-	
 
 }
-
 
 .poster-text a:hover{
 	background-color: #e0dcdc;
 	cursor: pointer;
 	border-radius: 4px;
 	text-decoration: none;
-	
+	display: block;
 }
 
-.r-imgs{
-	width: 239px;
-	border: 1px solid #8e91a0;
-	border-radius: 4px;
-	display: inline-block;
-	background-blend-mode: overlay;
-}
-.s-img{
-	width: 478px;
-	border-radius: 4px;
-	border: 1px solid #8e91a0;
-
-}
 .post-lists{
 	padding-bottom: 4px;
 	

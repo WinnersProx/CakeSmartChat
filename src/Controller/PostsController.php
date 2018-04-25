@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Http\Client\FormData;
+use Cake\Chronos\Chronos;
 
 class PostsController extends AppController{
 	public function plists(){
@@ -190,6 +191,71 @@ class PostsController extends AppController{
 			$this->redirect(['controller' => 'Users', 'action' => 'timeline']);
 		}
 
+	}
+	public function sharePost($postId = null){
+		$postId = intval($postId);
+		$targetPost = $this->Posts->find()->where(['id' => $postId])->contain('PostImages')->first();
+		if($targetPost){
+			$rImgs = $targetPost->post_images;
+			$this->set(compact('rImgs'));
+			$this->set(compact('targetPost'));
+			
+		}
+		else{
+			$this->Flash->error("The specified post does not exist");
+			return $this->redirect($this->referer());
+		}
+		
+	}
+	public function newShare($postId = null){
+		$postId = intval($postId);
+		$currentUser = $this->Auth->user('id');
+		$checkPost = $this->Posts->find()->where(['id' => $postId])->first();
+		$connect = $this->Posts->dbConnect();
+		$Time = Chronos::parse('- 7 hours');
+		if($this->request->is('post')){
+			$datas = $this->request->getData();
+			if($checkPost){
+				if(mb_strlen($datas['ShareContent']) > 5){
+					//not using newQuery
+					$newShare = $connect->insert('post_shares', [
+						'related_post'  => $postId,
+						'user_Sharing'  => $currentUser,
+						'share_content' => $datas['ShareContent'],
+						'created'       => $Time,
+						'privacy'      	=> $datas['sharePrivacy']
+					]);
+					if($newShare){
+						$lastId = $connect->newQuery()->select('id')->from('post_shares')->order(['id' => 'DESC'])->execute()->fetch('obj')->id;
+
+						if(isset($datas['tagFriend'])){
+							$newTag = $datas['tagFriend'];
+							foreach ($newTag as $Tag) {
+								$tags = $connect->insert('post_shares_tags',[
+									'tagged' => $Tag,
+									'related_share' => $lastId
+								]);
+							}
+						}
+						$this->Flash->success(__('Post shares succesfully!'));
+						return $this->redirect($this->referer());
+					}
+				}
+				else{
+					$this->Flash->error("At least 5 characters long is needed!");
+					return $this->redirect($this->referer());
+				}
+			
+			}
+			else{
+				die("not found");
+			}
+		}
+		else{
+			$this->Flash->error("Sorry an error has occured try again");
+			return $this->redirect($this->referer());
+		}
+		
 	}
 
 }

@@ -40,6 +40,7 @@ class CommunityPostsTable extends Table
             'foreignKey' => 'target_community',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('CommunityPictures')->setForeignKey('target_post');
     }
     public function connect(){
         $dbb = ConnectionManager::get('default')->newQuery();

@@ -243,10 +243,5 @@ class CommunitiesCell extends Cell{
 		return $communityInfos;
 
 	}
-	public function getPostRelatedPictures($postId){
-		$this->loadModel('CommunityPosts');
-		$connect = $this->CommunityPosts->connect();
-		$checkPictures = $connect->select('picture_url')->from('community_pictures')->where(['target_post' => $postId])->execute();
-		return $checkPictures;
-	}
+	
 }

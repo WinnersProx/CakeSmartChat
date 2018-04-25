@@ -13,7 +13,6 @@
     $CommunityCell = $this->cell('Communities');
     $cInfos = $CommunityCell->getCommunityInfos($postToShare->target_community);
     $usersDetails = $this->cell('UserFriends');
-    $rPictures = $CommunityCell->getPostRelatedPictures($postToShare->id);
 
 ?>
 
@@ -74,9 +73,9 @@
                     <textarea class="form-control" name="sharePostContent" rows="2" placeholder="Write something about this or not!!!"></textarea>
                   </div>
                   <div class="pictures">
-                      <?php if($rPictures->count() > 0):?>
-                          <?php foreach($rPictures->fetchAll('obj') as $picture):?>
-                              <img src="/img/<?= $picture->picture_url?>" class="post-images">
+                      <?php if(isset($postToShare->community_pictures)):?>
+                          <?php foreach($rPictures as $picture):?>
+                              <img src="/img/<?= $picture['picture_url']?>" class="post-images">
                           <?php endforeach;?>
                       <?php endif;?>
                     
