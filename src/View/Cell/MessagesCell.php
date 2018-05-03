@@ -75,5 +75,11 @@ class MessagesCell extends Cell{
 		->rowCount();
 		return $newMessages;
 	}
+	public function countUserMessages($userId){
+		$this->loadModel('Messages');
+		$autUser = $this->request->session()->read('Auth')['User']['id'];
+		$countMessages = $this->Messages->find()->where(['m_sender' => $autUser, 'm_receiver' => $userId])->orwhere(['m_receiver' => $autUser, 'm_sender' => $userId])->count();
+		return $countMessages;
+	}
 }
 ?>

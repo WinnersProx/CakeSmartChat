@@ -17,6 +17,7 @@ class MessagesController extends AppController
 
     public function l($idReceiver = null){
         //setup messages status
+        //$idReceiver = intval($idReceiver);
         $connection = $this->Messages->connectTocake();
         $connected = $this->Auth->user('id');
         $newStatus = $connection->newQuery()
@@ -24,6 +25,8 @@ class MessagesController extends AppController
         ->set(['m_status' => 1])
         ->where(['m_receiver' => $connected, 'm_status !=' => 2])
         ->execute();
+
+
         if($idReceiver != null){
             $receiverId = intval($idReceiver);
             $connected = $this->Auth->user('id');
@@ -34,8 +37,12 @@ class MessagesController extends AppController
             ->execute();
            
             
-            $this->set(compact('receiverId'));
+            
         }
+        if($idReceiver == null){
+            $receiverId = $this->Messages->find()->where(['m_sender' => $connected])->last()['m_receiver'];
+        }
+        $this->set(compact('receiverId'));
     }
     public function delete($id = null)
     {

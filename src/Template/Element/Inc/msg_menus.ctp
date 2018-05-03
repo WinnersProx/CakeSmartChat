@@ -3,22 +3,7 @@
 		Welcome to SMI(SmartChat Instant Messaging) <i class="fa fa-spin"></i>
 		<span class="flash"><?= $this->Flash->render()?></span>
 	</div>
-	<div class="msgs-lists">
-		<?php if($this->request->pass):?>
-			<span class="target-user" data-user-target="<?= $receiverId?>"></span>
-			<div class="inst-conversations" data-user-m="<?= $LoggedUser['User']['id']?>">
-				<?php
-				$user = $this->request->pass[0];
-				$messages = $this->cell('Messages')->listMessages($user);
-				?>
-			</div>
-		<?php endif;?>
-		<div class="slidingMessages">
-			<span class="msg-box-error"></span>
-		</div>
-		<div id="endMsg">
-		</div>
-	</div>
+	
 	<div class="MsgBoxS">
 		<form action="/messages/sendMessage/<?= isset($user) ? $user : ""?>" method="post" id="MsgBoxSender">
 			<div class="MsgInputBox">

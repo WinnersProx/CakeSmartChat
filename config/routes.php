@@ -54,6 +54,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
+    $routes->connect('localhost/oven/app/', ['controller' => 'Pages', 'action' => 'index']);
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'index']);
     $routes->connect('/users/', ['controller' => 'Users', 'action' => 'timeline']);
     $routes->connect('/users/profile/', ['controller' => 'Users', 'action' => 'profile']);

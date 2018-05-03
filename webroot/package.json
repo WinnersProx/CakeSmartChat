@@ -1,0 +1,11 @@
+{
+  "name": "smartchat",
+  "version": "1.0.0",
+  "description": "a smartchat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "sockets.js"
+  },
+  "author": "WinnersProx",
+  "license": "ISC"
+}

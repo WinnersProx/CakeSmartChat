@@ -44,7 +44,7 @@ class PostsCell extends Cell{
 		$trueOne = implode(',', $true_date);
 		$inflected = $inflector->slug($trueOne);
 		
-
+		$inflected = preg_replace("#-#", " ", $inflected);
 		return $inflected;
 	}
 	public function userInfo($userId){
@@ -82,7 +82,9 @@ class PostsCell extends Cell{
 					break;
 				case 2 :
 					//$mImg = $pResult;
-					$img = $pResult;
+
+					$img = '<div id="II-Post-Imgs">'.$pResult.'</div>';
+					$img = preg_replace("#  #", '', $img);
 					break;
 				case 3:
 					$pResult = trim($pResult, ' ');
@@ -93,28 +95,31 @@ class PostsCell extends Cell{
 					$img = '<div class="r-post-imgs-left">'.$lastItem.'</div><div class="r-post-imgs-right">'.$toStringf.'</div>';
 					break;
 				case 4: 
-					$img = $pResult;
+					$toArray = explode('  ', $pResult);
+					$chunkArray = array_chunk($toArray, 2);
 					
-					$img = preg_replace('#  #', '', $img);
+					$firsts = $chunkArray[0]; $firsts = implode(',', $firsts);
+					$lasts = $chunkArray[1];$lasts = implode(',', $lasts);
+					$img = '<span id="IV-Post-imgs-left">'.$firsts.'</span><span id="IV-Post-imgs-right">'.$lasts.'</span>';
+					
+					$img = preg_replace('#,#', '', $img);
 					break;
 				default:
-					$myArray = implode('  ', $pResult);
+					$myArray = explode('  ', $pResult);
 					$chunkArray = array_chunk($myArray, 3);
 					$count = $imgCount - 4;   
 					$firsts = $chunkArray[0];
 					$remains = $chunkArray[1];
-					$lastOne = array_chunk($remains, 1);
-					$lastOne = implode(',', $lastOne);
 					$toStringf = implode(',', $firsts);
-					$img = $toStringf.'<span class="more-pictures">'.$toStringf.'</span class="more-pictures-text"><span>+'.$count.'More</span>';
-					
+					$lastOne = array_chunk($remains, 1)[0];
+					$lastOne = implode(',', $lastOne);
+					$img = '<span id="V-Post-imgs">'.$toStringf.'</span><span class="more-pictures">'.$lastOne.'<span class="more-pictures-text"> <i class="fa fa-plus-circle"></i> '.$count.' More Image</span></span>';
+
+					$img = preg_replace('#,#', '', $img);
 					break;
 			}
 
 			echo $img;
-		}
-		else{
-			echo 'no related p';
 		}
 	}
 

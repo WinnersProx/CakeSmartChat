@@ -18,7 +18,7 @@
     <?= $this->Html->css('adapts');?>
     <?= $this->Html->css('jquery.mCustomScrollbar.min'); ?>
     <?= $this->Html->css('font-awesome/css/font-awesome.min')?>
-    <!--<?= $this->Html->css('main');?>-->
+    <?= $this->Html->script('/js/node_modules/socket.io-client/dist/socket.io')?>
 </head>
  
  <body data-cont-name="<?= $this->name?>">
@@ -57,7 +57,7 @@
                                     $news = $this->cell('Messages')->countNewMessages();
                                 ?>
                                 <a href="/messages">
-                                    <strong><i class="fa fa-comment fa-lg"></i> Messages</strong>
+                                    <strong><i class="fa fa-envelope fa-lg"></i> Messages</strong>
                                     <?php if($news>0):?>
                                         <span class="m-counts"><?= $news?></span>
                                     <?php endif;?>
@@ -65,7 +65,7 @@
                             </li>
                             <li>
                                 <a href="/users/notificationsList" class="toggle-notifs">
-                                    <strong><i class="fa fa-envelope-o fa-lg"></i> Notifications</strong>
+                                    <strong><i class="fa fa-comment fa-lg"></i> Notifications</strong>
                                     <span class="notif"></span>
                                 </a>
                             </li>
@@ -78,25 +78,39 @@
                                 <?php else:?>
                                     <?= $this->Html->Image('user.png',['class' => 'user-avatar-lu'])?>
                                 <?php endif;?>
-
                                 <span class="fa fa-chevron-down"></span>
-                            <ul class="dropdown-menu menu-drop">
-                                <li><a href="/profiles/u/<?= $LoggedUser['User']['name']?>"><strong><i class="fa fa-user-md fa-lg"></i> Profile</strong></a></li>
-                                <li class="divider"></li>
-                                <li><a href="/users/logout"><strong><i class="fa fa-sign-out fa-lg"></i> Logout</strong></a></li>
                                 
-                            </ul>
+                                <ul class="dropdown-menu menu-drop">
+                                    <li><a href="/profiles/u/<?= $LoggedUser['User']['name']?>"><strong><i class="fa fa-user-md fa-lg"></i> Profile</strong></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/users/logout"><strong><i class="fa fa-power-off fa-lg"></i> Logout</strong></a></li>
+                                    
+                                </ul>
                         </li>
                         
                         <?php else:?>
-                            <li class="b"><a href="/users/login"><strong><i class="fa fa-login fa-lg"></i> Login</strong></a></li>
-                            <li class="b"><a href="/users/signup"><strong><i class="fa fa-sign-up fa-lg"></i> Sign Up</strong></a></li>
-                            <li class="b"><a href="/users/logout"><strong><i class="fa fa-password fa-lg"></i> Forgot Password</strong></a></li>
+                            <li class="b"><a href="/users/login"><strong><i class="fa fa-toggle-on fa-lg"></i> Login</strong></a></li>
+                            <li class="b"><a href="/users/signup"><strong><i class="fa fa-sign-in fa-lg"></i> Sign Up</strong></a></li>
+                            <li class="b"><a href="/users/logout"><strong><i class="fa fa-key fa-lg"></i> Forgot Password</strong></a></li>
                         <?php endif;?>     
                     <div id="notif-view">
                                                     
                     </div>
+                    
                     </ul>
+
+                </div>
+                <div class="mobx-nav-list">
+                    <?php if($LoggedUser) : ?>
+                        <span><i class="fa fa-envelope"> <a href="/messages/l">Message</a></i></span>
+                        <span><i class="fa fa-bell"> <a href="/users/notificationsList">Notifications</a></i></span>
+                        <span class="toggle-menus u-xs-options">
+                            <i class="fa fa-arrow-circle-left t-uxs-menus"></i>
+                        </span>
+                    <?php else:?>
+                        <span><i class="fa fa-toggle-on"></i> <a href="/users/login">Login</a></span>
+                        <span><i class="fa fa-sign-in"></i> <a href="/users/signup">Sign Up</a></span>
+                    <?php endif;?>
                 </div>
             </div>
             
@@ -105,41 +119,58 @@
     </div>
     <div class="container-fluid" id="main_wrapper">
         <?= $this->fetch('content');?>
-
-
-
+        
 <!--For the chat box once visible-->
-<div id="appendable-boxes">
-   <div class="chat-box row">
-    <div class="chat-box-header">
-        Chat with WinnersProx<span class="chat-box-alert"></span>
-    </div>
-    <div class="chat-contents">
-        <div class="chat-contents-msgs">
-            Vainqueur : salut monsieur sg
-            shg : wow hereux de revoir maitre
+        <div id="appendable-boxes">
+           <div class="chat-box row">
+            <div class="chat-box-header">
+                Chat with WinnersProx<span class="chat-box-alert"></span>
+            </div>
+            <div class="chat-contents">
+                <div class="chat-contents-msgs">
+                    Vainqueur : salut monsieur sg
+                    shg : wow hereux de revoir maitre
+                </div>
+                <div class="chat-contents-input">
+                    <form method="post">
+                        <form action="/messages/sendMessage/" method="post" id="MsgBoxSender">
+                            <div class="MsgInputBox">
+                                <input type="text" name="msgSender" class="msgSender" placeholder="Type your message here!! Click enter to send" autocomplete="off" />
+
+                            </div>
+                            <div class="custFsub">
+                                <i class="fa fa-send fa-lg fSender"></i>
+                            </div>
+                        </form>
+                    </form>
+                    <br>
+                    
+                </div>
+            </div>
+
+        </div> 
         </div>
-        <div class="chat-contents-input">
-            <form method="post">
-                <form action="/messages/sendMessage/" method="post" id="MsgBoxSender">
-                    <div class="MsgInputBox">
-                        <input type="text" name="msgSender" class="msgSender" placeholder="Type your message here!! Click enter to send" autocomplete="off" />
 
-                    </div>
-                    <div class="custFsub">
-                        <i class="fa fa-send fa-lg fSender"></i>
-                    </div>
-                </form>
-            </form>
-            <br>
-            
-        </div>
-    </div>
+        <!--Chat box end -->
+        <!--menus for xs mb users -->
+        <?php if($LoggedUser):?>
+         <div id="UxsSideMenu">
+              
+              <div class="connected-auth-menus">
+                <div>
 
-</div> 
-</div>
+                    <?= $this->Html->image('/img/'.$LoggedUser['User']['avatar'], ['class' => 'user-mobxs-avatar'])?>
+                </div>
+                 
+              </div>
+              <div class="u-xs-s-menus">
+                <?= $this->element('uxs_side_menu')?>
+                  
+              </div>
 
-<!--Chat box end -->
+         </div>
+         <?php endif;?>
+        <!--menus for xs mob users -->
         
         <!--Scripts javascript-->
 
@@ -151,7 +182,10 @@
         <script src="libraries/i18n/fr.js"></script>-->
         <?= $this->Html->script('main')?>
         <?= $this->Html->script('navig')?>
-        <?= $this->Html->script('customScrollbar/js/jquery.mCustomScrollbar.concat.min')?>
+      
+        
+
+
         <?=$this->fetch('script');?>
 
 </body>

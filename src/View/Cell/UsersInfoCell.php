@@ -136,7 +136,7 @@ class UsersInfoCell extends Cell{
 					echo 
 						'<a href="/messages/l/'.$sFriend->id.'">
 							<div class="userFriend">
-							<img src="/img/'.$sFriend->avatar.'" class="user-avatar-xs"/>'.$flag. ' ' .$sFriend->name. ' '.$newMessage.
+							<img src="/img/'.$sFriend->avatar.'" class="user-avatar-render"/>'.$flag. ' <span class="u-name">' .$sFriend->name. ' </span>'.$newMessage.
 							'</div>
 						</a>';
 				}

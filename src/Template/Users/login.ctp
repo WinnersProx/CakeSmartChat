@@ -25,7 +25,7 @@
         <div class="col-md-4 login-box">
             <div class="panel panel-primary">
                 <div class="logon-box">
-                    <span class="login-title text-center">Login to Smartchat!</span>
+                    <span class="login-title text-center">Smartchat Login!</span>
                 </div>
                
                 <?php if($this->request->referer() != null):?>
@@ -48,7 +48,7 @@
                         <?= $this->Form->button(__('Login'), ['class' => 'btn btn-primary btn-block'])?>
                     </fieldset>
                     <?= $this->Form->end() ?>
-                    <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">
+                    <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook" id="fb-connect">
                 </div>
             </div>
         </div>

@@ -18,13 +18,7 @@
         <div  id="main-p">
             <?= $this->element('Inc/main_menu');?>
             
-                    <!--<div id="tgglclass">
-                        <span>Friendship!</span><br>
-                        <span>Followship</span><br>
-                        <span>Acquaintances</span><br>
-                        <span>Knowledge</span>
-                        <span>Instant Messaging!</span>
-                    </div>-->
+            
         </div>
     </div>
     <div class="col-md-2 ">
@@ -32,6 +26,18 @@
            <?= $this->element('Inc/side_menu');?>
         </div>
     </div>
+    <script>
+          /*var socket = io("localhost:8765");
+          socket.on('connection', function (socket) {
+                console.log("New connection");
+          });
+
+          socket.on('reconnect_error', function () {
+            console.log('attempt to reconnect has failed');
+          });
+          */
+
+    </script>
 
 
 
