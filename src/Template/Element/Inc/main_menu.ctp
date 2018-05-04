@@ -17,9 +17,38 @@
 		<span class="post-title badge"><i class="fa fa-edit"></i> Edit a new post!</span>
 		<form method="post" enctype="multipart/form-data" action="/posts/newPost">
 			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text"></textarea>
+
 			<!--to append the modal -->
 			<span class="btn btn-success post-validator" data-toggle="modal" data-target="#poster-modal"><i class="fa fa-check-circle fa-lg"></i></span>
 			<!--End to appending the modal-->
+
+			<!--to upload a picture -->
+				<div id="liveImageUpload" data-toggle="modal" data-target="#liveImg"><i class="fa fa-camera"></i> Live Image</div>
+				<div class="modal fade" id="liveImg" tabindex="-1">
+					<div class="modal-dialog" id="pictureBakerM">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close closeImage" data-dismiss="modal" aria-hidden="true"> &times; </button>
+								<span class="modal-title">New live Image from <?= $connected['name']?></span>
+							</div>
+							<div class="modal-body img-body">
+								<div class="img-controllers">
+									<video id="myWebmedia"></video>
+									<!--<canvas id="canvas"></canvas>-->
+								</div>
+							</div>
+							<div class="modal-footer pictureB-footer">
+								<span class=" btn btn-default f-saver" id="StartLiveImage">Start</span>
+								<span class=" btn btn-default f-saver" id="recordImage">Take Picture</span>
+								<span class=" btn btn-default f-saver closeImage">Close</span>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+			<!-- to upload a picture -->
 			<div class="modal fade" tabindex="-1"  id="poster-modal">
 				<div class="modal-dialog">
 					<div class="modal-content">

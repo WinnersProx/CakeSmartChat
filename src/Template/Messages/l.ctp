@@ -75,7 +75,7 @@
                                 <input type="text" name="msgSender" class="msgSender" placeholder="Type your message here!! Click enter to send" autocomplete="off" />
                                 
                                 <span class="msg-submit">
-                                    <a href="#"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                    <a><i class="fa fa-send"></i></a>
                                 </span>
                                 
 

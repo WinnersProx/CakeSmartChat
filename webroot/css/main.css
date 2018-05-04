@@ -15,6 +15,15 @@ body{
     color: #6f6f6f;
 }
 
+.menu-drop li a:hover{
+	padding-left: 35px;
+	transition: padding-left 0.4s ease-in-out;
+}
+.menu-drop li a:focus{
+	padding-left: -35px;
+	transition: padding-left 0.4s ease-in-out;
+}
+
 /*for body customization scrollbar*/
 body::-webkit-scrollbar{
 	width: 7px;
@@ -231,6 +240,44 @@ textarea.parsley-error {
 .btn{
 	margin-top:-15px;
 }
+/*for the live image that a user  needs to upload  */
+#liveImageUpload {
+    margin-top: -15px;
+    cursor: pointer;
+    color: #631d54;
+    background-color: #997da2;
+    width: 125px;
+    font-family: quantify;
+    text-align: center;
+    padding: 4px;
+    border-radius: 0px 0px 6px 6px;
+}
+
+
+#pictureBakerM{
+	max-width: 400px;
+}
+#pictureBakerM .modal-content .modal-header{
+	text-align: center;
+}
+.pictureB-footer{
+	padding-bottom: 4px;
+}
+#myWebmedia{
+	background-color: #9869a9; 
+	border-radius: 8px;
+	width: 400px; 
+	height:400px;
+	margin-bottom: -6px;
+}
+.img-body{
+	margin: -12px;
+}
+.f-saver{
+	transition: all 0.8s ease-in-out;
+}
+
+/*for the live image that a user  needs to upload  */
 /* for status*/
 .status-media{
 	border-radius: 4px;
@@ -810,7 +857,7 @@ textarea#p-content-text {
     color: #00072b;
     border: 1px solid #ead7f1;
     margin-bottom: 15px;
-    border-radius: 0px 4px 0px 4px;
+    border-radius: 0px 4px 0px 0px;
 }
 .post-validator{
 	background-color:#82638a;

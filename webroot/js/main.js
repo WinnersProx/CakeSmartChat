@@ -35,15 +35,6 @@ $(document).ready(function(){
 		
 	});
 
-	
-	var menu = $('.menu-drop'),
-	children = $('.menu-drop li a');
-	children.on('mouseover',function(){
-		$(this).animate({
-			paddingLeft:25,
-
-		}, 1000, function(){ $(this).css('paddingLeft','-=10')});
-	});
 	$('.ajaxInvite').click(function(e){
 		var Url = $(this).attr('href');
 		e.preventDefault();
@@ -335,6 +326,9 @@ $(document).ready(function(){
 		}
 	})
 	//for sending messages // friends discussions
+	$('.msg-submit').click(function(){
+		$('#MsgBoxSender').trigger('submit');
+	})
 	$('#MsgBoxSender').submit(function(e){
 		e.preventDefault();
 		$this = $(this);

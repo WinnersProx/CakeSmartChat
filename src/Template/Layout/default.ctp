@@ -182,9 +182,7 @@
         <script src="libraries/i18n/fr.js"></script>-->
         <?= $this->Html->script('main')?>
         <?= $this->Html->script('navig')?>
-      
-        
-
+        <?= $this->Html->script('custom')?>
 
         <?=$this->fetch('script');?>
 
