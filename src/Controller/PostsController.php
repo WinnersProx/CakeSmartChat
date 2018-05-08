@@ -15,6 +15,7 @@ class PostsController extends AppController{
 		$this->loadModel('Users');
 		$sessionUser = $this->Auth->user('id');
 		$connect = $this->Posts->dbConnect();
+		dd($this->request->getData());
 		if($this->request->is('post')){
 			$datas = $this->request->getData();
 			$content = $datas['newpost'];

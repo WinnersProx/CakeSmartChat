@@ -6,6 +6,21 @@ body{
 	padding-top:60px;
 	overflow-x: hidden;
 }
+#scroller{
+	background-color: #2f1931;
+	color: white;
+	text-align: center;
+	width: 35px;
+	height: 35px;
+	line-height: 30px;
+	bottom: 0px;
+	right: 15px;
+	border-radius: 4px 4px 2px 2px;
+	border-bottom: 5px solid #4a3c56;
+	cursor: pointer;
+	position: fixed;
+	display: none;
+}
 .mobx-nav-list{
 	display: none;
 }
@@ -168,6 +183,7 @@ textarea.parsley-error {
 .users-side-nav{
 	color: #041258;
 	font-family: serif;
+	tra
 
 }
 #back .users-side-nav{
@@ -265,10 +281,13 @@ textarea.parsley-error {
 }
 #myWebmedia{
 	background-color: #9869a9; 
-	border-radius: 8px;
+	border-radius: 8px 8px 0px 0px;
 	width: 400px; 
 	height:400px;
 	margin-bottom: -6px;
+}
+#canvas{
+	display: none;
 }
 .img-body{
 	margin: -12px;
@@ -788,11 +807,14 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	padding-bottom: 2px;
 }
 #people a{
-	color: #8e98a0;
-	font-size: 14px;
-	float: right;
-	padding-top: 8px;
-	padding-right: 4px;
+	padding: 4px;
+    color: #6b1845;
+    font-size: 14px;
+    float: right;
+    padding-top: 8px;
+    padding-right: 4px;
+    border-radius: 4px;
+    background-color: #d7e3ec;
 }
 #people a:hover{
 	text-decoration: none;
@@ -863,6 +885,7 @@ textarea#p-content-text {
 	background-color:#82638a;
 	border: none;
 	float: right;
+	height: 30px;
 	border-radius: 0px 0px 4px 4px;
 }
 .post-validator:hover{
@@ -885,6 +908,11 @@ textarea#p-content-text {
 	width: 486px;
 	border-radius:4px;
 }
+/* about post shares */
+#sharePostOptions {
+	
+}
+/*about post shares */
 .content{
 	
 	font-family: cursive;
@@ -1046,7 +1074,6 @@ input[type="file"]{
 	z-index: 100;
 	position: absolute;
 	opacity: 0;
-
 	
 }
 .newCl{
@@ -1164,19 +1191,23 @@ input[type="file"]{
 /*Post images infos*/
 #ptMenu{
 	min-width: 80px;
+	font-family: cursive;
+	font-size: 13px;
+
 }
 #PostMenusT{
 	cursor: pointer;
 	color: #002301;
 	position: relative;
-	top: -25px;
+	font-size: 13px;
+	
 }
 #postDropMenu{
 	z-index: 100;
 
 }
 .post-images {
-	padding: 2px;
+	padding: 1.5px;
 	width: 486px;
 }
 .r-post-imgs-left .r-imgs{
@@ -1259,7 +1290,7 @@ input[type="file"]{
 }
 
 .r-imgs{
-	width: 237px;
+	width: 239px;
 	/*border: 1px solid #8e91a0;*/
 	padding: 0.5px;
 	display: inline-block;
@@ -2305,9 +2336,13 @@ input[name="community-post-submit"]{
 	position: fixed;
 	z-index: 100;
 	width: 225px;
-	height: 752px;
+	height: 100%;
+	overflow-x: hidden;
 	top: 50px;
 	left: 0;
+}
+#UxsSideMenu {
+
 }
 .connected-auth-menus{
 	background-image: linear-gradient(to bottom, #ae55ff, #f7f7f7);

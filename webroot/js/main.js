@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	
 	//user scrolling
+	
+
 	$(window).scroll(function(){
 		$targetNav = $('.navbar-inverse');
 		$NavOffsetTop = $targetNav.offset().top;
@@ -9,13 +11,22 @@ $(document).ready(function(){
 		$navbarHeight = parseInt($targetNav.css('height')) + 65;
 		if(parseInt($targetNav.css('width')) > 320){
 			if($NavOffsetTop > $navbarHeight){
-				$targetNav.css('opacity', 0.7);
+				$targetNav.fadeOut(200);
+				$('body').css('paddingTop', '0px');
 			}
 			else{
-				$targetNav.css('opacity', 1);
+				$('body').css('paddingTop', '63px');
+				$targetNav.fadeIn(500);
 
 			}
 		}
+		if($NavOffsetTop > 500){
+			$('#scroller').fadeIn(1000);
+		}
+		else{
+			$('#scroller').fadeOut(500);
+		}
+		
 		
 		//for profiles now
 		$imgProfile = $('#user-box-images');
@@ -34,7 +45,12 @@ $(document).ready(function(){
 		}
 		
 	});
-
+	$('#scroller').click(function(){
+		$('html, body').animate({
+				scrollTop : -($('#scroller').offset().top)
+			}, 
+		2000)
+	})
 	$('.ajaxInvite').click(function(e){
 		var Url = $(this).attr('href');
 		e.preventDefault();
@@ -511,7 +527,7 @@ $(document).ready(function(){
 				$targetMenu.css('width', $last + 'px')
 				
 				if($last < stockWIdth){
-					setTimeout(increaseWidth, 5)
+					setTimeout(increaseWidth, 2.5)
 				}
 
 

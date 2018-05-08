@@ -33,13 +33,14 @@
 							</div>
 							<div class="modal-body img-body">
 								<div class="img-controllers">
-									<video id="myWebmedia"></video>
-									<!--<canvas id="canvas"></canvas>-->
+									<video id="myWebmedia" width="400" height="400"></video>
+									<canvas id="canvas" width="400" height="400"></canvas>
+									<img id="preview" src=""/>
 								</div>
 							</div>
 							<div class="modal-footer pictureB-footer">
 								<span class=" btn btn-default f-saver" id="StartLiveImage">Start</span>
-								<span class=" btn btn-default f-saver" id="recordImage">Take Picture</span>
+								<span class=" btn btn-default f-saver" id="captureImg">Take Picture</span>
 								<span class=" btn btn-default f-saver closeImage">Close</span>
 							</div>
 							
@@ -129,6 +130,17 @@
 		
 		
 		<div class="t-post-lists">
+			<!-- here-->
+			<span class="right dropdown" id="postDropMenu">
+				<span class="dropdown-toggle" id="PostMenusT"  data-toggle="dropdown"><i class="fa fa-cogs"></i></span>
+				<ul class="dropdown-menu" aria-labelledby="PostMenusT" id="ptMenu">
+					<li role="menuitem"><a><i class="fa fa-minus-circle"></i> Delete Post</a></li>
+					<li role="menuitem"><a><i class="fa fa-share"></i> Share Post</a></li>
+					<li role="menuitem"><a href=""><i class="fa fa-expand"></i> View More</a></li>
+				</ul>
+
+			</span>
+			<!--here-->
 			<?php $Uinfos = $posts->userInfo($post->post_owner);?>
 			<img src="/img/<?= $Uinfos['avatar'] ? $Uinfos['avatar'] : '/userdefault.png';?>" 
 			class="user-avatar-xs">
@@ -141,16 +153,7 @@
 			<span class="tags">
 				with <?php $posts->postTags($post->id);?>
 			</span>
-			<span class="right dropdown" id="postDropMenu">
-				<span class="dropdown-toggle" id="PostMenusT"  data-toggle="dropdown"><i class="fa fa-cogs"></i></span>
-				<ul class="dropdown-menu" aria-labelledby="PostMenusT" id="ptMenu">
-					<li role="menuitem"><a>Delete Post</a></li>
-					<li role="menuitem"><a>Share Post</a></li>
-					<li role="menuitem"><a href="">View Post</a></li>
-				</ul>
-				
-
-			</span>
+			<!--post t-menus replaced removed-->
 			<div class="post-content-text">
 				<?= $post->content ?>
 			</div>

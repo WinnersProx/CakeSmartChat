@@ -6,6 +6,7 @@
     $this->assign('title', 'Share post : '.uniqid($targetPost->id));
     $userInfos = $this->cell('UsersInfo');
     $friendsInfos = $this->cell('UserFriends');
+    $postCell = $this->cell('Posts');
 ?>
 
 
@@ -18,24 +19,19 @@
     </div>
     <div class="col-md-6">
       <div id="main-p">
-        <span class="community-title">Post Sharing</span>
-        Posted by 
-        <span class="u-name"><?= $userInfos->getUserInfo($targetPost->post_owner)['name']?></span><br>
-        Post Content : 
-        <div>
-          <?= h($targetPost->content)?>
-        </div>
+        <span class="community-title">Share <?= $userInfos->getUserInfo($targetPost->post_owner)['name'] ?>'s Post</span>
         <div class="text-center">
             <?= $this->Flash->render();?>
-          </div>
-        <span class="community-title">Post Images</span>
-        <?php if(isset($rImgs)):?>
+        </div>
+
+        <div class="share-post-content">
+          <?= h($targetPost->content)?>
+        </div>
+        
+
           <div class="post-images">
-            <?php foreach($rImgs as $rImg):?>
-              <img src="/img/<?= $rImg->img_url?>" class="img-rounded post-images">
-            <?php endforeach;?>
+            <?= $postCell->postImages($targetPost->id) ?>
           </div>
-        <?php endif;?>
         <span class="community-title">Tag friends</span>
         <form action="/posts/new-share/<?= $targetPost->id?>" method="post">
           <div class="tag-friends row">

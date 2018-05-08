@@ -156,6 +156,76 @@ class CommunitiesCell extends Cell{
 		}
 	}
 
+	//from posts
+	public function postImages($idPost){
+		$this->loadModel('Posts');
+		$connect = $this->Posts->dbConnect();
+		$postImgs = $connect->newQuery()
+		->select('picture_url')
+		->from('community_pictures')
+		->where(['target_post' => $idPost])
+		->execute();
+		$imgCount = $postImgs->rowCount();
+		$imgsList = $postImgs->fetchAll('assoc');
+		if($imgCount > 0){
+			$pResult = '';
+			foreach ($imgsList as $imgV) {
+					if($imgCount == 1)
+						$img_class = 'img-responsive s-img';
+					else
+						$img_class = 'r-imgs';
+
+					$pResult .= '<img src="/img/'.$imgV['picture_url'].'" class="'.$img_class.'">  ';
+			}
+			$pResult = trim($pResult, '  ');
+			switch ($imgCount) {
+				case 1:
+					$img = $pResult;
+					break;
+				case 2 :
+					//$mImg = $pResult;
+
+					$img = '<div id="II-Post-Imgs">'.$pResult.'</div>';
+					$img = preg_replace("#  #", '', $img);
+					break;
+				case 3:
+					$pResult = trim($pResult, ' ');
+					$myArray = explode('  ', $pResult);
+					$lastItem = array_pop($myArray);
+					$toStringf = implode('  ', $myArray);
+					
+					$img = '<div class="r-post-imgs-left">'.$lastItem.'</div><div class="r-post-imgs-right">'.$toStringf.'</div>';
+					break;
+				case 4: 
+					$toArray = explode('  ', $pResult);
+					$chunkArray = array_chunk($toArray, 2);
+					
+					$firsts = $chunkArray[0]; $firsts = implode(',', $firsts);
+					$lasts = $chunkArray[1];$lasts = implode(',', $lasts);
+					$img = '<span id="IV-Post-imgs-left">'.$firsts.'</span><span id="IV-Post-imgs-right">'.$lasts.'</span>';
+					
+					$img = preg_replace('#,#', '', $img);
+					break;
+				default:
+					$myArray = explode('  ', $pResult);
+					$chunkArray = array_chunk($myArray, 3);
+					$count = $imgCount - 4;   
+					$firsts = $chunkArray[0];
+					$remains = $chunkArray[1];
+					$toStringf = implode(',', $firsts);
+					$lastOne = array_chunk($remains, 1)[0];
+					$lastOne = implode(',', $lastOne);
+					$img = '<span id="V-Post-imgs">'.$toStringf.'</span><span class="more-pictures">'.$lastOne.'<span class="more-pictures-text"> <i class="fa fa-plus-circle"></i> '.$count.' More Image</span></span>';
+
+					$img = preg_replace('#,#', '', $img);
+					break;
+			}
+
+			echo $img;
+		}
+	}
+	//from posts
+
 	public function getCommunityPosts($communityId){
 		$this->loadModel('Communities');
 		$connect = $this->Communities->connectTocake();
@@ -172,20 +242,16 @@ class CommunitiesCell extends Cell{
 			}
 			if($posts->count() > 0){
 				$posts = $posts->fetchAll('obj');
-				foreach ($posts as $post) {
-					$memberInfos = $this->getMemberInfos($post->member_poster);
-					//the avatar of the  user who created the post
-					echo '<img src="/img/'.$memberInfos['avatar'].'" class="user-avatar-xs"/> '.$memberInfos['name'].' Posted <br/>';
+					foreach ($posts as $post) {
+						$memberInfos = $this->getMemberInfos($post->member_poster);
+						//the avatar of the  user who created the post
+						echo '<img src="/img/'.$memberInfos['avatar'].'" class="user-avatar-xs"/> '.$memberInfos['name'].' Posted <br/>';
 
-					echo $post->post_content.'<br/>';
-					//now to get all related pictures to a given posts
-					$postAdds = $connect->newQuery()->select('*')->from('community_pictures')->where(['target_post' => $post->id])->execute();
-					if($postAdds->count() > 0){
-						$pictures = $postAdds->fetchAll('obj');
-						foreach ($pictures as $picture) {
-							echo '<img src="/img/'.$picture->picture_url.'" class="post-images"/>';
-						}
-					}
+						echo $post->post_content.'<br/>';
+						//now to get all related pictures to a given posts
+						$this->postImages($post->id);
+					
+					
 					//the interface for users to comment share and rate so on//
 					?>
 						<div class="member-interface">
@@ -230,13 +296,14 @@ class CommunitiesCell extends Cell{
 							<?php $this->getCommunityPostComments($post->id);?><br/>
 						</div>
 					<?php
+					}
 				}	
 			}
 			else{
 				echo "<br>No posts in this community";
 			}
-		}
 	}
+	
 	public function getCommunityInfos($communityName){
 		$this->loadModel('Communities');
 		$communityInfos = $this->Communities->find()->where(['community_name' => $communityName])->first();

@@ -16,9 +16,8 @@
     <?= $this->Html->css('base');?>
     <?= $this->Html->css('main');?>
     <?= $this->Html->css('adapts');?>
-    <?= $this->Html->css('jquery.mCustomScrollbar.min'); ?>
     <?= $this->Html->css('font-awesome/css/font-awesome.min')?>
-    <?= $this->Html->script('/js/node_modules/socket.io-client/dist/socket.io')?>
+    <!-- $this->Html->script('/js/node_modules/socket.io-client/dist/socket.io')?>-->
 </head>
  
  <body data-cont-name="<?= $this->name?>">
@@ -170,6 +169,9 @@
 
          </div>
          <?php endif;?>
+         <div id="scroller" title="click to go upper">
+             <i class="fa fa-arrow-circle-up fa-lg"></i>
+         </div>
         <!--menus for xs mob users -->
         
         <!--Scripts javascript-->
