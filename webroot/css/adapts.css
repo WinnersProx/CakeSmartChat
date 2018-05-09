@@ -65,10 +65,7 @@ object, embed, video {
 	/*all about the navbar*/
 	/*all about the navbar*/
 	#left-p{
-		width:224px;
-		height: 240px;
-		font-family: 4px;
-		border-radius: 0px;
+		display: none;
 	}
 	.p-int .p-interaction {
 		font-size: 8px;
