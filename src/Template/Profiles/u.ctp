@@ -5,10 +5,8 @@
   */
     $this->assign('title', 'Profile : '.$userInfos['name']);
 ?>
-
-
-
 <div class="container-customized">
+  <div class="row">
     <div class="col-md-3">
         <div id="left-p" class="left-one">
             <?= $this->element('Inc/left_menu');?>
@@ -73,4 +71,5 @@
            <?= $this->element('Inc/side_menu');?>
         </div>
     </div>
+  </div>
 </div>

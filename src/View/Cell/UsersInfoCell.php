@@ -2,8 +2,14 @@
 namespace App\View\Cell;
 use Cake\View\Cell;
 use Cake\Chronos\Chronos;
-
 class UsersInfoCell extends Cell{
+
+
+	public function initialise(){
+		parent::initialize();
+		$this->loadComponent('Auth');
+		$this->loadComponent('Paginator');
+	}
 
 	public function getCurrentUser(){
 		$sessionId = $this->request->session()->read('Auth')['User']['id'];
@@ -169,7 +175,10 @@ class UsersInfoCell extends Cell{
 		return $result;
 	}
 	public function getAllUserFriends($user_id){
+		
 		$this->loadModel('Users');
+
+		
 		$user_id = intval($user_id);
 		$dBC = $this->Users->connectTocake();
 		$frLists = $dBC->newQuery()

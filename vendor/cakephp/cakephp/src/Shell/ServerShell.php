@@ -17,7 +17,7 @@ namespace Cake\Shell;
 
 use Cake\Console\Shell;
 use Cake\Core\Configure;
-
+use Cake\Chronos\Chronos;
 /**
  * built-in Server Shell
  */
@@ -66,9 +66,12 @@ class ServerShell extends Shell
      */
     public function initialize()
     {
+
         $this->_host = self::DEFAULT_HOST;
         $this->_port = self::DEFAULT_PORT;
         $this->_documentRoot = WWW_ROOT;
+        $this->loadModel('Users');
+        $this->loadModel('Notifications');
     }
 
     /**
@@ -102,6 +105,50 @@ class ServerShell extends Shell
         }
 
         parent::startup();
+        //my customization
+        $connect = $this->Notifications->dbConnect();
+        $allUsers = $this->Users->find();
+        $currentTime = Chronos::parse('-7 hours');
+        $todayDate = $currentTime->day;
+        $todayMonth = $currentTime->month;
+
+        foreach ($allUsers as $sUser) {
+
+            $dob = new Chronos($sUser['user_dob']);
+            $birthDate = $dob->day;
+            $birthMonth = $dob->month;
+
+            if($birthDate == $todayDate && $birthMonth == $todayMonth)
+            {
+                
+                /*
+                $new = $connect->newQuery()
+                ->insert(['user_id', 'content'])
+                ->into('notifications')
+                ->values([
+                    'user_id' => $sUser['id'] , 'content' => 'happy birth day '. $sUser['name']
+                ])
+                ->execute();debug($new);
+                */
+                
+                $nentity = $this->Notifications->newEntity();
+                $datas = [
+                    'user_id' => $sUser['id'],
+                    'content' => 'happy birth day '. $sUser['name']
+
+                ];
+                $new = $this->Notifications->patchEntity($nentity, $datas);
+
+                if($this->Notifications->save($new)){
+                   $this->out("there's a birthday today!! ".$sUser['name']); 
+                }
+                else{
+                    $this->out("Unable to update users events");
+                }
+                
+            }
+        }
+        $this->out("winner it is now ". $currentTime);
     }
 
     /**

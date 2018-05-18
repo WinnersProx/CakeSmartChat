@@ -16,6 +16,7 @@
   <canvas id="canvas" width="400" height="400"></canvas>
 </div>-->
 <div class="container-customized">
+  <div class="row">
     <div class="col-md-3">
         <div id="left-p" class="left-one">
             <?= $this->element('Inc/left_menu');?>
@@ -33,6 +34,9 @@
            <?= $this->element('Inc/side_menu');?>
         </div>
     </div>
+    
+  </div>
+    
     <script>
           /*var socket = io("localhost:8765");
           socket.on('connection', function (socket) {

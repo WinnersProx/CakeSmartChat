@@ -73,6 +73,7 @@ class AppController extends Controller
             // Si pas autorisé, on renvoit sur la page précédente
             'unauthorizedRedirect' => $this->referer(),
         ]);
+        
         //Update the status of my users while logged in
         //change the status of live users
         $reloaded = $this->request->env('HTTP_CACHE_CONTROL');

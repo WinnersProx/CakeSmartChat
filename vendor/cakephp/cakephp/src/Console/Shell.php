@@ -528,7 +528,8 @@ class Shell
     public function getOptionParser()
     {
         $name = ($this->plugin ? $this->plugin . '.' : '') . $this->name;
-
+        
+        
         return new ConsoleOptionParser($name);
     }
 

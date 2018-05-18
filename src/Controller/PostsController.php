@@ -7,15 +7,13 @@ use Cake\Http\Client\FormData;
 use Cake\Chronos\Chronos;
 
 class PostsController extends AppController{
-	public function plists(){
 
-	}
 	
 	public function newPost(){
 		$this->loadModel('Users');
 		$sessionUser = $this->Auth->user('id');
 		$connect = $this->Posts->dbConnect();
-		dd($this->request->getData());
+		
 		if($this->request->is('post')){
 			$datas = $this->request->getData();
 			$content = $datas['newpost'];

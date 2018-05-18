@@ -17,43 +17,47 @@
 		<span class="post-title badge"><i class="fa fa-edit"></i> Edit a new post!</span>
 		<form method="post" enctype="multipart/form-data" action="/posts/newPost">
 			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text"></textarea>
+			<div class="bottom-menu">
+				<!--to append the modal -->
+				<div class="post-validator" data-toggle="modal" data-target="#poster-modal">
+					<i class="fa fa-check-circle fa-lg"></i>
+				</div>
+				<!--End to appending the modal-->
 
-			<!--to append the modal -->
-			<span class="btn btn-success post-validator" data-toggle="modal" data-target="#poster-modal"><i class="fa fa-check-circle fa-lg"></i></span>
-			<!--End to appending the modal-->
+				<!--to upload a picture -->
+				<div id="liveImageUpload" data-toggle="modal" data-target="#liveImg"><i class="fa fa-camera fa-lg"></i></div>
+			</div>
 
-			<!--to upload a picture -->
-				<div id="liveImageUpload" data-toggle="modal" data-target="#liveImg"><i class="fa fa-camera"></i> Live Image</div>
-				<div class="modal fade" id="liveImg" tabindex="-1">
-					<div class="modal-dialog" id="pictureBakerM">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close closeImage" data-dismiss="modal" aria-hidden="true"> &times; </button>
-								<span class="modal-title">New live Image from <?= $connected['name']?></span>
+			<div class="modal fade" id="liveImg" tabindex="-1">
+				<div class="modal-dialog" id="pictureBakerM">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close closeImage" data-dismiss="modal" aria-hidden="true"> &times; </button>
+							<span class="modal-title">New live Image from <?= $connected['name']?></span>
+						</div>
+						<div class="modal-body img-body">
+							<div class="img-controllers">
+								<video id="myWebmedia" width="400" height="400"></video>
+								<canvas id="canvas" width="400" height="400"></canvas>
+								<img id="preview" src=""/>
 							</div>
-							<div class="modal-body img-body">
-								<div class="img-controllers">
-									<video id="myWebmedia" width="400" height="400"></video>
-									<canvas id="canvas" width="400" height="400"></canvas>
-									<img id="preview" src=""/>
-								</div>
-							</div>
-							<div class="modal-footer pictureB-footer">
-								<span class=" btn btn-default f-saver" id="StartLiveImage">Start</span>
-								<span class=" btn btn-default f-saver" id="captureImg">Take Picture</span>
-								<span class=" btn btn-default f-saver closeImage">Close</span>
-							</div>
-							
+						</div>
+						<div class="modal-footer pictureB-footer">
+							<span class=" btn btn-default f-saver" id="StartLiveImage">Start</span>
+							<span class=" btn btn-default f-saver" id="captureImg">Take Picture</span>
+							<span class=" btn btn-default f-saver closeImage">Close</span>
 						</div>
 						
 					</div>
 					
 				</div>
+				
+			</div>
 			<!-- to upload a picture -->
 			<div class="modal fade" tabindex="-1"  id="poster-modal">
-				<div class="modal-dialog">
+				<div class="modal-dialog" id="postModal">
 					<div class="modal-content">
-						<div class="modal-header">
+						<div class="modal-header postModalHeader">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
 							<span class="modal-title">New Post From <?= $connected['name']?></span>
 						</div>
@@ -69,12 +73,13 @@
 										<span class="badge post-opts"><i class="fa fa-picture-o"></i> Post Images</span> 
 										<div class="img-transfer">
 											<input type="file" name="imgFile[]" class="img-upload" multiple="multiple">
-											<span class="post-img-baker">
-												<i class="fa fa-upload"></i> Upload
-											</span>
 											
-											<span class="uploader-text">Choose pictures</span>
-											
+											<span class="community-file-options">
+							                    <span class="post-img-baker">
+							                    <i class="fa fa-upload"></i> Upload
+							                    </span>
+							                    &nbsp;<span class="adds-text">Add images</span>
+						                  	</span>
 										</div>
 										<div class="img-preview uploader-text">
 											None!
@@ -82,7 +87,7 @@
 										
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-5">
 									<span class="badge post-opts"> <i class="fa fa-certificate"></i>Post Options</span><br/>
 									<div id="post-options">
 										<span class="badge post-opts-bdg tag">Tag with</span><span class="badge post-opts-bdg privacy">Post privacy</span><br>
@@ -122,10 +127,10 @@
 </div>
 <div id="post-infos">
 	<?php 
-			$posts = $this->cell('Posts'); $postLists = $posts->postLists();
+			$postsCell = $this->cell('Posts');
 
 	?>
-	<?php foreach($postLists as $post):?>
+	<?php foreach($posts as $post):?>
 	<div class="post-lists">
 		
 		
@@ -141,17 +146,17 @@
 
 			</span>
 			<!--here-->
-			<?php $Uinfos = $posts->userInfo($post->post_owner);?>
+			<?php $Uinfos = $postsCell->userInfo($post->post_owner);?>
 			<img src="/img/<?= $Uinfos['avatar'] ? $Uinfos['avatar'] : '/userdefault.png';?>" 
 			class="user-avatar-xs">
 			<span class="poster-text">
 				<a href="/profiles/u/<?= $Uinfos['slug'] ?>"><?= $Uinfos['name']?></a>
-				<span class="dated">posted in last <?= $posts->getDate($post->date_from);?> 
+				<span class="dated">posted in last <?= $postsCell->getDate($post->date_from);?> 
 				</span>
 
 			</span>
 			<span class="tags">
-				with <?php $posts->postTags($post->id);?>
+				with <?php $postsCell->postTags($post->id);?>
 			</span>
 			<!--post t-menus replaced removed-->
 			<div class="post-content-text">
@@ -160,21 +165,21 @@
 			 
 
 			<div class="post-images">
-				<?php $posts->postImages($post->id);?>
+				<?php $postsCell->postImages($post->id);?>
 			</div>
 			<div class="posts-interaction-bar">
 				<span class="p-int star">
-					<?php if($posts->checkUserStar($post->id)):?>
+					<?php if($postsCell->checkUserStar($post->id)):?>
 						<span class="p-interaction p-star"  data-mix-star="unstar-<?=$post->id?>">
 								<i class="fa fa-star"></i> 
 								<span class="ch-text">Unstar</span>
-								(<span class="ch-count"><?= $posts->countStars($post->id)?></span>)
+								(<span class="ch-count"><?= $postsCell->countStars($post->id)?></span>)
 
 						</span>	
 					<?php else:?>
 						<span class="p-interaction p-star" data-mix-star="star-<?=$post->id?>">
 							<i class="fa fa-star-o fa-rotate-180"></i> <span class="ch-text">Star</span>
-							(<span class="ch-count"><?= $posts->countStars($post->id)?></span>)
+							(<span class="ch-count"><?= $postsCell->countStars($post->id)?></span>)
 						</span>
 						
 					<?php endif;?>
@@ -183,13 +188,13 @@
 				<span class="p-int comment">
 					<span class="p-interaction p-comment" data-comment-post = "/posts/alterComment/<?= $post->id?>">
 
-						<i class="fa fa-comment"></i> Comment
-						(<span class="ch-count"><?= $posts->countComments($post->id)?></span>)
+						<i class="fa fa-comments"></i> Comment
+						(<span class="ch-count"><?= $postsCell->countComments($post->id)?></span>)
 					</span>
 				</span>
 				<span class="p-int share">
 					<span class="p-interaction p-share" data-share-post = "/posts/sharePost/<?= $post->id?>">
-						<i class="fa fa-share"></i> <a href="/posts/share-post/<?= $post->id?>">Share</a>
+						<i class="fa fa-share-alt"></i> <a href="/posts/share-post/<?= $post->id?>">Share</a>
 					</span>
 				</span>
 				<div class="comment-post">
@@ -198,13 +203,23 @@
 				</div>
 			</div>
 		</div>
-		<?php if($posts->countComments($post->id) >= 1) :?>
+		<?php if($postsCell->countComments($post->id) >= 1) :?>
 		<div class="post-comments-list">
-			<?php $posts->renderComments($post->id);?>
+			<?php $postsCell->renderComments($post->id);?>
 		</div>
 		<?php endif;?>
 	</div>
 	
 	<?php endforeach;?>
 
+</div>
+<div class="paginator">
+        <ul class="pagination">
+            
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <!--<p>< $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>-->
 </div>

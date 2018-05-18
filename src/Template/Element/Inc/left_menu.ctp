@@ -1,7 +1,7 @@
 <nav id="actions-sidebar">
-    <div class="row" id="profile-box">
+    <div id="profile-box">
         <?php if($this->name == 'Users' || $this->name == 'Communities'):?>
-        <div class="col-md-3 col-sm-3 col-xs-5" id="back">
+        <div id="back">
             <div class="back">   
             </div>
             
@@ -11,10 +11,12 @@
             <ul class="side-nav users-side-nav">
                 <li class="heading"><?= __('More') ?></li>
                      <li><a href="/communities"><i class="fa fa-group"></i> COMMUNITIES</a></li>
-                     <li><a href=""><i class="fa fa-comments-o fa-lg"></i> SIM</a></li>
+                     <li><a href=""><i class="fa fa-comments-o"></i> SIM</a></li>
                      <li><a href=""><i class="fa fa-picture-o"></i> ALBUMS</a></li>
-                     <li><a href=""><i class="fa fa-info-circle fa-lg"></i> EVENTS</a></li>
-                     <li class="last"><a href=""><i class="fa fa-user-plus fa-lg"></i> FIND FRIENDS</a></li>
+                     <li><a href=""><i class="fa fa-info-circle"></i> EVENTS</a></li>
+                     <li class="last">
+                        <a href=""><i class="fa fa-user-plus"></i> FIND FRIENDS</a>
+                    </li>
             </ul>   
               
         </div>

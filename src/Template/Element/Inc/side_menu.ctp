@@ -1,7 +1,7 @@
 <?php if($this->name == 'Users'):?>
-<div class="row" id="side-menu">
+<div  id="side-menu">
     <span class="side-title">Invitations</span>
-    <div class="col-md-12" id="people">
+    <div id="people">
         <?php 
             $users = $this->cell('UserAcquaintances')->listFriendRequests();
             $acquaintances = $this->cell('UserAcquaintances')->listAcquaintances();
@@ -16,7 +16,7 @@
     <?php endforeach;?> 
     </div>
 </div>
-<div class="row" id="side-menu">
+<div id="side-menu">
     <span class="side-title">People you may know!</span>
     <div class="col-md-12" id="people">
     <?php foreach($acquaintances as $people):?>
@@ -35,7 +35,7 @@
     </div>
 </div>
 <?php endif;?>
-<div class="row" id="side-menu">
+<div id="side-menu">
     <span class="side-title">Online Friends</span>
     <div class="col-md-12 users-online" id="people">
         <?= $this->cell('LiveUsers')->showOnlineUsers();?>

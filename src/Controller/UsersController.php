@@ -23,7 +23,16 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    /*To allow some pages to be accessed without Authentification*/       
+    /*To allow some pages to be accessed without Authentification*/   
+
+    public $paginate = [
+        
+        'limit' => 5, 
+        'order' => [
+            'Posts.id' =>  'DESC'
+        ]
+
+    ]; 
     
     public function beforeFilter(Event $event){
     	$this->Auth->allow(['signup','forgotPassword']);
@@ -35,6 +44,7 @@ class UsersController extends AppController
 		parent::initialize();
 		$this->loadComponent('Paginator');
 		$this->loadComponent('Flash'); // Inclusion of the FlashComponent
+        
 
 
 	}
@@ -219,37 +229,33 @@ class UsersController extends AppController
         
     }
     public function timeline(){
+
+
+        $this->loadModel('Posts');
+        $posts =  $this->paginate($this->Posts->find());
         
-        $loggedIn = $this->request->session()->read('Auth');
-        $id = $this->request->query('id');
-        $sessionUser = $loggedIn['User']['id'];
+        $sessionUser = $this->Auth->user('id');
 
         if($sessionUser){
 
             $dbb = $this->Users->connectTocake();//My function to connect to database named cake
-            $idLogged = $id;
            // for the loggedin uesr now
-            $userName = $dbb->newQuery()
-            ->select('*')
-            ->from('users')
-            ->where(['id' => $idLogged])
-            ->execute()
-            ->fetch('assoc');
+            $connected = $this->Users->find()->where(['id' => $sessionUser])->first();
             
-            $connected = $dbb->newQuery()
-            ->select('*')
-            ->from('users')
-            ->where(['id' => $sessionUser])
-            ->execute()
-            ->fetch('assoc');
         }
         else{
             $this->Flash->warning(__('Please you are not allowed to see this page!'));
-            $this->redirect(['controller' => 'Users', 'action' => 'timeline', 'id' => $sessionUser]);
+            $this->redirect(['controller' => 'Users', 'action' => 'login']);
         }
-         $this->set(compact('connected'));
-         $this->set(compact('acquaintances'));
-         $this->set(compact('users'));
+
+        
+        $this->set(compact('connected'));
+        $this->set([
+            'posts' => $posts,
+            'recipe'    => $posts,
+            ['_serialize']
+        ]);
+         
     }
     public function profile($userName = null){
         

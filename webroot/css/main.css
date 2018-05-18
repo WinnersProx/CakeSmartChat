@@ -6,6 +6,9 @@ body{
 	padding-top:60px;
 	overflow-x: hidden;
 }
+.custom-nav{
+	background-color: #1d132b!important;
+}
 #scroller{
 	background-color: #2f1931;
 	color: white;
@@ -20,6 +23,28 @@ body{
 	cursor: pointer;
 	position: fixed;
 	display: none;
+}
+.t-uxs-menus{
+	color: #a9a9a9;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #a9a9a9 !important;
+    font-family: quantify;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-light .navbar-nav .nav-link :hover {
+    color: #eeeeef;
+}
+.navbar-brand {
+    color: rgb(198, 176, 206) !important;
+    font-style: italic;
+    font-weight: bold;
+    font-size:22px;
+    transition: color 0.5s ease-in-out;
+    font-family: -webkit-pictograph;
+}
+.navbar-brand:hover{
+	color: rgb(248, 230, 255) !important;
 }
 .mobx-nav-list{
 	display: none;
@@ -181,15 +206,16 @@ textarea.parsley-error {
 	float: right;
 }
 .users-side-nav{
-	color: #041258;
+	color: #8f70cc;
 	font-family: serif;
-	tra
-
+	
+}
+#actions-sidebar .users-side-nav{
+	padding-left: 4px;
 }
 #back .users-side-nav{
     padding-top: 2px;
     width: 220px;
-    margin-left: -14px;
 }
 
 .c-badge-r{
@@ -257,16 +283,26 @@ textarea.parsley-error {
 	margin-top:-15px;
 }
 /*for the live image that a user  needs to upload  */
+.bottom-menu{
+	border-bottom:1px dashed #fbf3f3;
+	width: 100%;
+	margin-top: -15px;
+	height: 31px;
+	box-sizing: border-box;
+	border-radius: 0px 0px 4px 4px;
+}
 #liveImageUpload {
-    margin-top: -15px;
+    
     cursor: pointer;
-    color: #631d54;
-    background-color: #997da2;
-    width: 125px;
+    color: #726f73;
+    background-color: #e5e2e6;
+    width: 38px;
+    height: 30px;
+    font-size: 14px;
     font-family: quantify;
     text-align: center;
     padding: 4px;
-    border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 4px 4px;
 }
 
 
@@ -458,7 +494,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 }
 
 .side-nav li.heading {
-    color: #3c3254;
+    color: #140731;
     background-color: #e6e5e5;
     padding: 4px;
     margin-bottom: -2px;
@@ -614,7 +650,6 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 /*carousel*/
 #left-p{
 	background-color:#eae7e7;
-	padding-left: 4px;
 	border-radius: 0px 0px 4px 4px;
 	width:239px;
 	min-height: 450px;
@@ -630,9 +665,10 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 #side-p{
 	background-color:#eae7e7;
 	padding:4px 4px 4px 4px;
-	border-radius: 4px;
+	border-radius: 0px 0px 4px 4px;
 	font-family: cursive;
 	font-size: 12px;
+	width: 220px;
 	font-weight: bold;
 }
 /*customization of the side block*/
@@ -743,25 +779,23 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	height:50px;
 }
 /*avatar*/
-#actions-sidebar{
-	padding-top: 4px;
-}
+
 #profile-box{
 	height:300px;
-	width:58em;
+	width:240px;
 }
 #profile-user-box{
 	height:300px;
 	width:120em;
 }
 #back{
-	background-color:#9869a9;
-	width: 231px;
+	background-image: linear-gradient(to bottom, #9869a9, #f1f0f0);
+	margin-top: -1px;
+	width: 239px;
 	height:75px;
 	border-radius: 0px 0px 4px 4px;
 }
 .img-user{
-
 	border: 3px solid #eae7e7;
 }
 .img-user-b{
@@ -769,7 +803,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	padding-top: 30px;
 }
 .img{
-	padding-left:49px;
+	padding-left:69px;
 	padding-top: 18px;
 }
 .img-user-b,.optionsp
@@ -786,7 +820,6 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 }
 #side-menu{
 	padding-bottom: 3px;
-
 }
 .ajaxConfirm{
 	padding-right:4px;
@@ -867,9 +900,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 a:hover{
 	text-decoration: none;
 }
-.postfile{
-	
-}
+
 .s-name{
 	font-family: fantasy;
 	font-size: 23px;
@@ -882,14 +913,31 @@ textarea#p-content-text {
     border-radius: 0px 4px 0px 0px;
 }
 .post-validator{
-	background-color:#82638a;
+	background-color:#e5e2e6;
 	border: none;
+	color: #726f73;
+	padding: 4px;
+	font-size: 14px;
+	text-align: center;
 	float: right;
 	height: 30px;
+	width: 38px;
+	cursor: pointer;
 	border-radius: 0px 0px 4px 4px;
 }
+#postModal{
+	max-width: 500px;
+
+}
+.postModalHeader{
+	padding-bottom: 0px;
+}
+
+
+
+
 .post-validator:hover{
-	background-color:#82638a;
+	background-color:#e5e2e6;
 }
 .post-title{
 	padding: 5px;
@@ -903,8 +951,7 @@ textarea#p-content-text {
 }
 #post-baker{
 	background-color: #f9f9f9;
-	
-	padding:4px 3px 19px 3px;
+	padding:4px 3px 6px 3px;
 	width: 486px;
 	border-radius:4px;
 }
@@ -1145,11 +1192,11 @@ input[type="file"]{
 	padding: 4px;
 }
 .img-upload{
-	
 	position: absolute;
 }
 .img-preview{
-	padding: 4px;
+	padding-bottom: 4px;
+	width:300px;
 }
 /*post uploader input type*/
 /*new modifications related to smartchat after something occurence*/
@@ -1325,8 +1372,6 @@ input[type="file"]{
 	width: 478px;
 	max-height: 400px;
 	border-radius: 8px;
-	border: 1px solid #8e91a0;
-
 }
 /*Posts images infos*/
 .poster-text{
@@ -1351,12 +1396,12 @@ input[type="file"]{
 }
 
 .post-lists{
-	padding-bottom: 4px;
+	padding-bottom: 2px;
 	
 }
 .t-post-lists{
 	background-color: #f9f9f9;
-	padding: 2px 2px 2px 2px;
+	padding: 2px;
 	border-radius: 4px 4px 0px 0px;
 }
 span.dated{
@@ -1385,6 +1430,18 @@ i.sub{
 	cursor: zoom-in;
 
 }
+.pagination >  .active > a{
+	background-color: #ae94b7;
+	border-color: #ae94b7;
+	font-weight: bold;
+}
+.pagination >  .active > a:hover{
+	
+	background-color: #ae94b7;
+	border-color: #ae94b7;
+}
+
+
 .sub-tags{
 	display: none;
 	margin-top:-55px;
@@ -1409,8 +1466,8 @@ i.sub{
 	display: inline-block;
 }
 .p-int .p-interaction{
-	background-color:#eadcdc;
-	color: #87128e;
+	background-color:#eeecef;
+	color: #2e013e;
 	font-weight: bold;
 	font-family: quantify;
 	font-size: 14px;
@@ -1418,8 +1475,11 @@ i.sub{
 	line-height: 27px;
 	border-radius: 4px;
 }
+.p-star > i{
+	transition: all 0.3s ease-out; 
+}
 .p-int .p-interaction a{
-	color: #87128e;
+	color: #2e013e;
 }
 .comment-post{
 	padding-top: 6px;
@@ -1467,6 +1527,8 @@ span.post-erroneous {
 	padding: 4px;
 	margin-bottom: -8px;
 	color: #66247d;
+	font-family: initial;
+	transition: all 0.3s ease-in-out;
 	border:1px solid #f1f1f1;
 	width: 230px;
 }
@@ -1849,6 +1911,8 @@ input.msgSender:focus{
 .users-details{
 	background-color: #9869a9;
 	width: 230px;
+	max-height:30px;
+	margin: 4px;
 	padding: 4px;
 	color: #eef2fc;
 	border-radius: 4px 4px 0px 0px;
@@ -1862,11 +1926,11 @@ input.msgSender:focus{
 	padding: 4px 4px 4px 0px;
 }
 .profile-user-banner{
-	background-image: -webkit-linear-gradient(to bottom,#a01ea0,#e2e2e2);
-	background-image: -moz-linear-gradient(to bottom,purple,#e2e2e2);
-	background-image: -o-linear-gradient(to bottom,purple,#e2e2e2);
-	background-image: -ms-linear-gradient(to bottom,purple,#e2e2e2);
-	background-image: linear-gradient(to bottom,#a01ea0,#e2e2e2);
+	background-image: -webkit-linear-gradient(to bottom, #9869a9, #f1f0f0);
+	background-image: -moz-linear-gradient(to bottom, #9869a9, #f1f0f0);
+	background-image: -o-linear-gradient(to bottom, #9869a9, #f1f0f0);
+	background-image: -ms-linear-gradient(to bottom, #9869a9, #f1f0f0);
+	background-image: linear-gradient(to bottom, #9869a9, #f1f0f0);
 	
 	/*box-shadow: 0px 2px 1px #9498ad;*/
 	height: 100px;
@@ -2370,10 +2434,14 @@ input[name="community-post-submit"]{
 
 }
 .connected-auth-menus{
-	background-image: linear-gradient(to bottom, #ae55ff, #f7f7f7);
+	background-image: linear-gradient(to bottom, #9869a9, #f1f0f0);
 	height: 100px;
+	margin-bottom: 45px;
 	padding-top: 15px;
     padding-left: 37px;
+}
+ul.side-nav.users-side-nav li a {
+    padding-left: 8px;
 }
 .user-mobxs-avatar{
 	border-radius: 100%;

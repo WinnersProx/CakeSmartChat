@@ -44,6 +44,12 @@ use Cake\Routing\Route\DashedRoute;
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
+
+
+     //to connect in order to use rest ful alwaysy on top
+
+    $routes->extensions(['json', 'xml']);
+    $routes->resources('Recipes');
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
@@ -59,7 +65,11 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/users/', ['controller' => 'Users', 'action' => 'timeline']);
     $routes->connect('/users/profile/', ['controller' => 'Users', 'action' => 'profile']);
     $routes->connect('/messages/', ['controller' => 'Messages', 'action' => 'l']);
-     $routes->connect('/profiles/', ['controller' => 'Profiles', 'action' => 'u']);
+    $routes->connect('/profiles/', ['controller' => 'Profiles', 'action' => 'u']);
+
+
+
+
     /*for the users' controller route*/
     //$routes->connect('/users/', ['controller' => 'Users', 'action' => 'login']);
     /**

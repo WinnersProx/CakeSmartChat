@@ -430,3 +430,362 @@ Stack Trace:
 #16 {main}
 
 
+2018-05-10 03:40:41 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Greeting" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Greeting',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('greeting')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 03:45:16 Warning: Warning (2): Missing argument 1 for App\Shell\HelloShell::greeting(), called in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php on line 452 and defined in [C:\xampp\htdocs\oven\app\src\Shell\HelloShell.php, line 18]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Shell\HelloShell::greeting() - APP/Shell\HelloShell.php, line 18
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 452
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 03:54:16 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Users.user_name' in 'where clause' in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php on line 39
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(301): Cake\Database\Statement\MysqlStatement->execute()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(404): Cake\ORM\Query->all()
+#7 C:\xampp\htdocs\oven\app\src\Shell\HelloShell.php(32): Cake\ORM\Query->first()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(452): App\Shell\HelloShell->display('WinnersProx')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#12 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
+2018-05-10 04:56:09 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sea" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sea',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('sea')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 04:56:59 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sea" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sea',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('sea')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 04:57:21 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sea" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sea',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('sea')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 04:59:46 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sea" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sea',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('sea')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 05:03:59 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sea" could not be found. in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sea',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('sea')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2018-05-10 06:46:48 Error: [BadMethodCallException] Unknown method "dbConnect" in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php on line 2293
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(109): Cake\ORM\Table->__call('dbConnect', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(109): App\Model\Table\NotificationsTable->dbConnect()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#6 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#7 {main}
+
+
+2018-05-10 06:47:47 Error: [InvalidArgumentException] Unknown getter 'date' in C:\xampp\htdocs\oven\app\vendor\cakephp\chronos\src\Traits\MagicPropertyTrait.php on line 109
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(112): Cake\Chronos\Chronos->__get('date')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#5 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#6 {main}
+
+
+2018-05-10 06:51:02 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(user_id, content) VALUES ('3', 'happy birth day Kevin')' at line 1 in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php on line 39
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(301): Cake\Database\Statement\MysqlStatement->execute()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\Database\Query))
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(122): Cake\Database\Query->execute()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2018-05-10 06:54:47 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(user_id, content) VALUES ('3', 'happy birth day ')' at line 1 in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php on line 39
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(301): Cake\Database\Statement\MysqlStatement->execute()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\Database\Query))
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(124): Cake\Database\Query->execute()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2018-05-10 06:56:13 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(user_id, content) VALUES ('3', 'happy birth day Kevin')' at line 1 in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php on line 39
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(301): Cake\Database\Statement\MysqlStatement->execute()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\Database\Query))
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(127): Cake\Database\Query->execute()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2018-05-10 06:58:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(user_id, content) VALUES ('3', 'happy birth day Kevin')' at line 1 in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php on line 39
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(301): Cake\Database\Statement\MysqlStatement->execute()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\Database\Query))
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(127): Cake\Database\Query->execute()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2018-05-10 07:16:25 Error: [InvalidArgumentException] Unknown getter 'minutes' in C:\xampp\htdocs\oven\app\vendor\cakephp\chronos\src\Traits\MagicPropertyTrait.php on line 109
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(121): Cake\Chronos\Chronos->__get('minutes')
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#5 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#6 {main}
+
+
+2018-05-10 07:25:54 Warning: Warning (4096): Object of class Cake\Database\Statement\MysqlStatement could not be converted to string in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ConsoleOutput.php, line 186]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\ConsoleOutput::write() - CORE\src\Console\ConsoleOutput.php, line 186
+Cake\Console\ConsoleIo::out() - CORE\src\Console\ConsoleIo.php, line 169
+Cake\Console\Shell::out() - CORE\src\Console\Shell.php, line 656
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 131
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:25:54 Warning: Warning (4096): Object of class Cake\Database\Statement\MysqlStatement could not be converted to string in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ConsoleOutput.php, line 186]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\ConsoleOutput::write() - CORE\src\Console\ConsoleOutput.php, line 186
+Cake\Console\ConsoleIo::out() - CORE\src\Console\ConsoleIo.php, line 169
+Cake\Console\Shell::out() - CORE\src\Console\Shell.php, line 656
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 131
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:25:54 Warning: Warning (4096): Object of class Cake\Database\Statement\MysqlStatement could not be converted to string in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ConsoleOutput.php, line 186]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\ConsoleOutput::write() - CORE\src\Console\ConsoleOutput.php, line 186
+Cake\Console\ConsoleIo::out() - CORE\src\Console\ConsoleIo.php, line 169
+Cake\Console\Shell::out() - CORE\src\Console\Shell.php, line 656
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 131
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:25:54 Warning: Warning (4096): Object of class Cake\Database\Statement\MysqlStatement could not be converted to string in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ConsoleOutput.php, line 186]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\ConsoleOutput::write() - CORE\src\Console\ConsoleOutput.php, line 186
+Cake\Console\ConsoleIo::out() - CORE\src\Console\ConsoleIo.php, line 169
+Cake\Console\Shell::out() - CORE\src\Console\Shell.php, line 656
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 131
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:39:20 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Table::patchEntity() must be of the type array, null given, called in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php on line 140 and defined in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php, line 2484]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\ORM\Table::patchEntity() - CORE\src\ORM\Table.php, line 2484
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 140
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:39:20 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Marshaller::merge() must be of the type array, null given, called in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php on line 2491 and defined in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Marshaller.php, line 529]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\ORM\Marshaller::merge() - CORE\src\ORM\Marshaller.php, line 529
+Cake\ORM\Table::patchEntity() - CORE\src\ORM\Table.php, line 2491
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 140
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:39:20 Error: [InvalidArgumentException] Passed variable is not an array or object, using empty array instead in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Marshaller.php on line 270
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Marshaller.php(270): ArrayObject->__construct(NULL)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Marshaller.php(531): Cake\ORM\Marshaller->_prepareDataAndOptions(NULL, Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(2491): Cake\ORM\Marshaller->merge(Object(App\Model\Entity\Notification), NULL, Array)
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(140): Cake\ORM\Table->patchEntity(Object(App\Model\Entity\Notification), NULL)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2018-05-10 07:43:49 Error: [BadMethodCallException] Unknown method "allowMethod" in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php on line 2293
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(75): Cake\ORM\Table->__call('allowMethod', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(75): App\Model\Table\NotificationsTable->allowMethod(Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(228): Cake\Shell\ServerShell->initialize()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#5 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#6 {main}
+
+
+2018-05-11 00:05:17 Error: [BadMethodCallException] Unknown method "create" in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php on line 2293
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\src\Shell\HelloShell.php(65): Cake\ORM\Table->__call('create', Array)
+#1 C:\xampp\htdocs\oven\app\src\Shell\HelloShell.php(65): App\Model\Table\NotificationsTable->create()
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(452): App\Shell\HelloShell->notify()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#6 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#7 {main}
+
+
+2018-05-12 22:51:53 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(355): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(110): Cake\ORM\Table->find()
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#15 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#16 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#17 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#18 {main}
+
+
+2018-05-12 23:16:43 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.recipes' doesn't exist in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'recipes', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('recipes', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('recipes')
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(217): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'recipes', 'Recipes')
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Recipes')
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(472): Bake\Shell\Task\ModelTask->main('recipes')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(465): Cake\Console\Shell->runCommand(Array, false, Array)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#13 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+

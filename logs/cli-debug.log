@@ -20,3 +20,158 @@ Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line
 
 
 
+2018-05-10 05:29:11 Notice: Notice (8): Undefined variable: parser in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php, line 533]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\Shell::getOptionParser() - CORE\src\Console\Shell.php, line 533
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 422
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 06:45:25 Notice: Notice (8): Undefined property: Cake\Shell\ServerShell::$Notifications in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\Shell::__get() - CORE\src\Console\Shell.php, line 553
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 107
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 06:51:02 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 122
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 06:54:47 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 124
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 06:56:13 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 127
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 06:58:00 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\QueryCompiler.php, line 317]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Database\QueryCompiler::_buildInsertPart() - CORE\src\Database\QueryCompiler.php, line 317
+Cake\Database\QueryCompiler::Cake\Database\{closure}() - CORE\src\Database\QueryCompiler.php, line 142
+Cake\Database\Query::traverse() - CORE\src\Database\Query.php, line 311
+Cake\Database\QueryCompiler::compile() - CORE\src\Database\QueryCompiler.php, line 100
+Cake\Database\Driver::compileQuery() - CORE\src\Database\Driver.php, line 359
+Cake\Database\Connection::compileQuery() - CORE\src\Database\Connection.php, line 287
+Cake\Database\Query::sql() - CORE\src\Database\Query.php, line 282
+Cake\Database\Driver\Mysql::prepare() - CORE\src\Database\Driver\Mysql.php, line 136
+Cake\Database\Connection::prepare() - CORE\src\Database\Connection.php, line 246
+Cake\Database\Connection::run() - CORE\src\Database\Connection.php, line 299
+Cake\Database\Query::execute() - CORE\src\Database\Query.php, line 213
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 127
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:39:20 Notice: Notice (8): Undefined variable: data in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php, line 140]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 140
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 07:46:08 Notice: Notice (8): Undefined property: Cake\Shell\ServerShell::$users in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\Shell::__get() - CORE\src\Console\Shell.php, line 553
+Cake\Shell\ServerShell::startup() - CORE\src\Shell\ServerShell.php, line 134
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 470
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
+2018-05-10 23:48:14 Notice: Notice (8): Undefined property: App\Shell\HelloShell::$Notifications in [C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Console\Shell::__get() - CORE\src\Console\Shell.php, line 553
+App\Shell\HelloShell::notify() - APP/Shell\HelloShell.php, line 63
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 452
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+

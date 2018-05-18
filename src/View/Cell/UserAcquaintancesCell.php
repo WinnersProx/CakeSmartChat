@@ -3,6 +3,7 @@ namespace App\View\Cell;
 use Cake\View\Cell;
 use Cake\Utility\Inflector;
 class UserAcquaintancesCell extends Cell{
+	
 	public function authUser(){
 		return $this->request->session()->read('Auth')['User']['id'];
 	}

@@ -14,6 +14,7 @@ object, embed, video {
 		display: none;
 	}
 }
+
 @media (min-width: 151px) and (max-width: 298px){
 
 	body{
@@ -38,8 +39,6 @@ object, embed, video {
 	.u-xs-options{
 		padding-left: 8px;
 		cursor: pointer;
-		background-color: gray;
-		padding: 4px;
 		font-weight: bold;
 	}
 	.mobx-nav-list{
@@ -68,7 +67,7 @@ object, embed, video {
 		display: none;
 	}
 	.p-int .p-interaction {
-		font-size: 8px;
+		font-size: 10px;
 		width: 55px;
 	}
 	span.p-interaction.p-comment {
@@ -281,9 +280,7 @@ object, embed, video {
 		padding-right: 2px;
 	}
 	.u-xs-options{
-		background-color: #443b3b;
-        border: 2px dashed #7b7b7b;
-		padding: 2px;
+		
 		color: white;
 		cursor: pointer;
 		border-radius: 4px;
@@ -292,8 +289,12 @@ object, embed, video {
     	margin-left: -3px;
 	}
 	.t-uxs-menus{
-		
+		color: #efefef;
 		font-weight: bold;
+		
+	}
+	.toggle-menus >  i{
+		transition: all 0.3s ease-in-out;
 	}
 
 	.mobx-nav-list{
@@ -326,8 +327,7 @@ object, embed, video {
 		display: none;
 	}
 	.p-int .p-interaction {
-		font-size: 10px;
-		width: 55px;
+		font-size: 11px;
 	}
 	span.p-interaction.p-comment {
     	width: 103px;
@@ -526,24 +526,42 @@ object, embed, video {
 	}
 
 }
+@media(min-width: 150px) and (max-width: 321px){
+	.p-star > i, .p-share > i, .p-comment > i{
+		font-size: 11.5px;
+	}
+
+}
+
 /*for phones having 320px <--End-->*/
 #community-side-m.side-one{
 	border-radius: 0px;
 }
-@media (min-width: 900px) and (max-width: 1500px){
-	.left-one{
-		background-color:#eae7e7;
-		position: fixed;
-		border-radius: 4px;
-		width:239px;
+@media (min-width: 400px) and (max-width: 774px){
+	#side-p{
+		display: none;
 	}
-	.side-one{
-		position: fixed;
-		right: 30px;
-		width:200px;
-	}
+	
 }
+@media (min-width: 900px) and (max-width: 1500px){
 
+	.p-star > i, .p-share > i{
+		font-size: 15px;
+	}
+	.p-comment > i{
+		font-size: 16px;
+	}
+
+	
+}
+.left-one{
+	background-color:#eae7e7;
+	position: fixed;
+}
+.side-one{
+	position: fixed;
+	right: 30px;
+}
 
 
 #t-menu{

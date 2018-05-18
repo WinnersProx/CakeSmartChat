@@ -4,18 +4,19 @@ $(document).ready(function(){
 	
 
 	$(window).scroll(function(){
-		$targetNav = $('.navbar-inverse');
+		$targetNav = $('.custom-nav');
 		$NavOffsetTop = $targetNav.offset().top;
 		$bodyOffsetTop = $('body').css('paddingTop')
 
-		$navbarHeight = parseInt($targetNav.css('height')) + 65;
+		$navbarHeight = parseInt($targetNav.css('height'));
+		
 		if(parseInt($targetNav.css('width')) > 320){
 			if($NavOffsetTop > $navbarHeight){
 				$targetNav.fadeOut(200);
 				$('body').css('paddingTop', '0px');
 			}
 			else{
-				$('body').css('paddingTop', '63px');
+				$('body').css('paddingTop', $navbarHeight);
 				$targetNav.fadeIn(500);
 
 			}
@@ -168,7 +169,7 @@ $(document).ready(function(){
 							"width" : "146",
 							"height" : "200",
 							"title" : fName + 'Has '+ fSize + 'bytes, type: ' + fType,
-							"class" : "img-thumbnail"
+							"class" : "img-thumbnail img-th-style"
 						}).appendTo($previewImg);
 
 					}
@@ -515,7 +516,7 @@ $(document).ready(function(){
 		if($invisible){
 			
 			
-			$(this).removeClass('fa-arrow-circle-left').addClass('fa-arrow-circle-right');
+			$(this).removeClass('fa-align-justify').addClass('fa-times fa-rotate-180');
 			$targetMenu.css('width', stockWIdth + 'px');
 			$targetMenu.css('display','block');
 			$w = 0;
@@ -538,7 +539,7 @@ $(document).ready(function(){
 
 		}
 		else{
-			$(this).removeClass('fa-arrow-circle-right').addClass('fa-arrow-circle-left');
+			$(this).removeClass('fa-times fa-rotate-180').addClass('fa-align-justify');
 			$targetMenuWidth = stockWIdth, $w = stockWIdth;
 			$opacity = 0.4;
 			function decreaseWidth(){
@@ -573,6 +574,7 @@ $(document).ready(function(){
 
 
 });
+
 //
 $('.ajaxConfirm').click(function(e){
 		e.preventDefault();

@@ -14,23 +14,9 @@ class PostsCell extends Cell{
 		$logged = $this->request->session()
 			   ->read('Auth')['User']['id'];
 		return $logged;
-	}
-	public function postLists(){
-		$this->loadModel('Posts');
-		//$paginator = new Paginator;
-		//$posts = $paginator->paginate($this->Posts);
-		$connect = $this->Posts->dbConnect();
-		//$listPosts = $this->Posts->find()->wh
-		$listPosts = $connect->newQuery()
-		->select('*')
-		->from('posts')
-		->order(['id' => 'DESC'])
-		->execute()
-		->fetchAll('obj');
 		
-
-		return $listPosts;
 	}
+	
 	public function getDate($date){
 		$inflector = new Inflector;
 		$Chronos = new Chronos($date);

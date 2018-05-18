@@ -38,7 +38,7 @@
                 <div class="fr-tags">
                   <?= $friendsInfos->getUserFriends($LoggedUser['User']['id'])?>
                 </div>
-                
+                <?= $this->Form->unlockField('upload_image'); ?>
               </div>
               <div class="col-md-6">
                 <span class="community-title">Share Privacy</span>
