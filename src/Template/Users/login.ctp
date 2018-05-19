@@ -4,15 +4,9 @@
   */
     $this->assign('title', 'Login-Users');
 ?>
-<!--  <nav class="large-3 medium-4 columns" id="actions-sidebar">
-        <ul class="side-nav">
-            <li class="heading"><?= __('Actions') ?></li>
-            <li><?= $this->Html->link(__('Sign Up'), ['action' => 'signup']) ?></li>
-        </ul>
-    </nav>-->
 
 <div class="row">
-    <div class="col-md-6 smartchat-infos visible-md">
+    <div class="col-md-6 smartchat-infos">
         <div class="rm-box">Welcome back login and discover what's going on all over the world
         </div>
         <div class="connect-people">
@@ -22,17 +16,23 @@
         </div>
     </div>
     <div class="myLogonTab col-md-6">
-        <div class="col-md-4 login-box">
-            <div class="panel panel-primary">
+        <div class="col-md-12">
+            <div class="panel panel-primary login-box">
                 <div class="logon-box">
-                    <span class="login-title text-center">Smartchat Login!</span>
+                    <div class="login-title text-center">
+                        Smartchat Login!
+                    </div>
                 </div>
                
                 <?php if($this->request->referer() != null):?>
                     <span class="flash l-flash"><?= $this->Flash->render()?></span>
                 <?php endif;?>
+                <div id="imgHome">
+                    <?= $this->Html->image('Bootsnback.jpg', ['class' => 'userLogonHome']);?>
+                </div>
                 <div class="panel-body login-bd">
                     <?= $this->Form->create()?>
+
                     <fieldset>
                         <div class="form-group">
                             <?= $this->Form->control('email',['placeholder' => 'yourmail@gmail.com','required','class'])?>

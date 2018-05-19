@@ -31,6 +31,9 @@ object, embed, video {
 	textarea#p-content-text{
 		height: 20px;
 	}
+	.smartchat-infos{
+		display: none;
+	}
 	/*all about the navbar*/
 		/*all about the navbar*/
 	.container{
@@ -272,6 +275,15 @@ object, embed, video {
 		font-size: 11px !important;
 		overflow-x: hidden;
 	}
+	.smartchat-infos{
+		display: none;
+	}
+	.nav-description{
+		display: none;
+	}
+	.dropdown{
+		display: none;
+	}
 	.dropdown-menu{
 		right: 0 !important;
 	}
@@ -280,13 +292,12 @@ object, embed, video {
 		padding-right: 2px;
 	}
 	.u-xs-options{
-		
 		color: white;
 		cursor: pointer;
 		border-radius: 4px;
 	}
 	.u-xs-s-menus {
-    	margin-left: -3px;
+    	/*margin-left: -3px;*/
 	}
 	.t-uxs-menus{
 		color: #efefef;

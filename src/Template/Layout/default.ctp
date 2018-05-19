@@ -34,13 +34,13 @@
         
                 <?php if($LoggedUser):?>
                     <li class="nav-item">
-                        <a href="/users/timeline" class="nav-link"><strong><i class="fa fa-home fa-lg"></i> Home</strong></a></li>
+                        <a href="/users/timeline" class="nav-link"><strong><i class="fa fa-home fa-lg"></i><span class="nav-description"> Home</span></strong></a></li>
                     <li>
                         <?php
                             $news = $this->cell('Messages')->countNewMessages();
                         ?>
                         <a href="/messages" class="nav-link">
-                            <strong><i class="fa fa-envelope fa-lg"></i> Messages</strong>
+                            <strong><i class="fa fa-envelope fa-lg"></i> <span class="nav-description">Messages</span></strong>
                             <?php if($news>0):?>
                                 <span class="m-counts"><?= $news?></span>
                             <?php endif;?>
@@ -48,15 +48,16 @@
                     </li>
                     <li class="nav-item">
                         <a href="/users/notificationsList" class="toggle-notifs nav-link">
-                            <strong><i class="fa fa-bell fa-lg"></i> Notifications</strong>
+                            <strong><i class="fa fa-bell fa-lg"></i> <span class="nav-description">Notifications</span>
+                            </strong>
                             <span class="notif"></span>
                         </a>
                     </li>
                 
                 <?php else:?>
-                    <li class="b nav-item"><a href="/users/login" class="nav-link"><strong><i class="fa fa-toggle-on fa-lg"></i> Login</strong></a></li>
-                    <li class="b nav-item"><a href="/users/signup" class="nav-link"><strong><i class="fa fa-sign-in fa-lg"></i> Sign Up</strong></a></li>
-                    <li class="b nav-item"><a href="/users/logout" class="nav-link"><strong><i class="fa fa-key fa-lg"></i> Forgot Password</strong></a></li>
+                    <li class="b nav-item"><a href="/users/login" class="nav-link"><strong><i class="fa fa-toggle-on fa-lg"></i><span class="nav-description"> Login</span></strong></a></li>
+                    <li class="b nav-item"><a href="/users/signup" class="nav-link"><strong><i class="fa fa-sign-in fa-lg"></i><span class="nav-description">Sign Up</span></strong></a></li>
+                    <li class="b nav-item"><a href="/users/logout" class="nav-link"><strong><i class="fa fa-key fa-lg"></i> <span class="nav-description">Forgot Password</span></strong></a></li>
                 <?php endif;?>     
                 <div id="notif-view">
                                                 
