@@ -140,7 +140,7 @@ textarea.parsley-error {
 }
 
 .myUsersSignUp{
-	width: 550px;
+	max-width: 550px;
 	color: black;
 	font-family: quantify;
 }
@@ -153,6 +153,7 @@ textarea.parsley-error {
 }
 .Sign-Avatar{
 	background-color: #bbbbbb;
+	max-height: 350px;
 	border-radius: 4px;
 	padding-top: 4px;
 }
@@ -203,9 +204,10 @@ textarea.parsley-error {
 .contacts, .about-me{
 	padding-top: 4px;
 }
+.sign-custom-btn:before{
+	content: "@|";
+}
 .sign-custom-btn{
-	background-color: #78909c;
-	color: #c1c1c1;
 	margin-top: 4px;
 	border-radius: 4px;
 }
@@ -371,6 +373,66 @@ textarea.parsley-error {
 
 
 }
+/*rebuild the users propfile
+*/
+#SideBarTasks{
+	position: fixed;
+	background-color: #eae7e7;
+	height: 100%;
+	width: 220px;
+	left: 0;
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+}
+.user-card-identity{
+	background-color: #eae7e7;
+	padding: 4px;
+	height: 400px;
+	margin-left: 35px;
+	border-radius: 0px 0px 4px 4px; 
+}
+.card-header{
+	margin-bottom: 2px;
+}
+.card-header span.p-intro{
+	font-family: quantify;
+}
+.user-profile-name{
+	text-align: center;
+	font-family: quantify;
+	color: rgb(80, 16, 105);
+}
+span.email{
+	font-family: cursive;
+}
+#user-call-to-action{
+	padding-top: 12px;
+}
+#user-call-to-action .btn{
+	border-radius: 20px;
+	color: white;
+	border-color:rgba(139, 69, 202,0.5); 
+	border-width: 2px;
+	font-family: quantify;
+	transition: all 0.3s ease-in-out;
+}
+#user-call-to-action .btn.invite-me{
+	background-color: rgba(139, 69, 202,0.5);
+}
+#user-call-to-action .btn:hover{
+	background-color:rgba(139, 69, 202,0.5);
+}
+.fixed-top-menus{
+	background-color: white;
+	position: fixed;
+	margin-bottom: 15px;
+	border-bottom: 3px solid rgb(243, 243, 243);
+	padding-left: 4px;
+	height: 35px;
+	width: 100%;
+}
+/*profile of the users profile*/
 /*for the users profile*/
 /**/
 input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
@@ -770,7 +832,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	width:120em;
 }
 #back{
-	background-image: linear-gradient(to bottom, #9869a9, #f1f0f0);
+	background-image: linear-gradient(to bottom, #9869a9, #d2a7e2);
 	margin-top: -1px;
 	width: 239px;
 	height:75px;
@@ -998,9 +1060,10 @@ textarea#p-content-text {
 	font-family: cursive;
 	width:250px;
 	height: 250px;
-	top:63px;
-	display: none;
+	top:59px;
 	right:80px;
+	alignment-baseline: auto;
+	display: none;
 	position: absolute;
 	border-radius: 0px 0px 8px 4px;
 	padding: 4px;
@@ -1411,10 +1474,16 @@ i.sub{
 	cursor: zoom-in;
 
 }
+ul.pagination li a, ul.pagination li button{
+	background-color:#d0d0d0; 	
+}
+
 .pagination >  .active > a{
 	background-color: #ae94b7;
 	border-color: #ae94b7;
 	font-weight: bold;
+	color: white;
+    font-family: quantify;
 }
 .pagination >  .active > a:hover{
 	
@@ -1919,11 +1988,16 @@ input.msgSender:focus{
 	padding: 4px;
 	border-radius: 4px 4px 0px 0px;
 }
+.profile-b{
+	text-align: center;
+}
 .user-avatar-banner{
 	width: 150px;
 	height:180px;
+	margin: 0 auto;
 	border-radius: 100%;
 }
+.
 .profile-menus{
 	padding-left: 189px;
 	font-family: quantify;
@@ -1943,10 +2017,11 @@ input.msgSender:focus{
 }
 .profile-opts a{
 	color: #571e61;
-	background-color: #cacaca;
+	text-transform: uppercase;
+	font-family: georgia;
 	border-bottom: 3px solid white;
+	background-color: rgb(243, 243, 243);
     padding: 4px;
-    border-radius: 0px 0px 4px 4px;
 }
 .profile-opts a:focus{
 	text-decoration: none;

@@ -132,6 +132,16 @@ $(document).ready(function(){
 		});
 
 	});
+	$('body:not(#notif-view):not(.navbar):not(.t-uxs-menus)').click(function(){
+		if($('#notif-view').css('display') != "none"){
+			$('#notif-view').slideToggle();
+		}
+		if($('#UxsSideMenu').css('display') != "none"){
+			//$('.t-uxs-menus').trigger('click');
+			console.log("me");
+		}
+		
+	})
 	//now for the innovations after a period
 	$('.post-validator').click(function(e){
 		var $content = $('.content').val();

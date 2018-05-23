@@ -59,7 +59,7 @@
                     <li class="b nav-item"><a href="/users/signup" class="nav-link"><strong><i class="fa fa-sign-in fa-lg"></i><span class="nav-description">Sign Up</span></strong></a></li>
                     <li class="b nav-item"><a href="/users/logout" class="nav-link"><strong><i class="fa fa-key fa-lg"></i> <span class="nav-description">Forgot Password</span></strong></a></li>
                 <?php endif;?>     
-                <div id="notif-view">
+                <div id="notif-view" class="">
                                                 
                 </div>
         

@@ -45,10 +45,9 @@ object, embed, video {
 		font-weight: bold;
 	}
 	.mobx-nav-list{
-		display: inline-block;
 	    color: #b77fca;
 	    font-size: 13px;
-	    float: right;
+	    cursor: pointer;
 	}
 	#psearch{
 		display: none;
@@ -268,7 +267,7 @@ object, embed, video {
 /*for phones having 320px */
 @media (min-width: 299px) and (max-width: 320px){
 	body{
-		width: 320px;
+		max-width: 320px;
 		background-color:#c1c1c1;
 		padding-top: 45px;
 		margin-left:-30px;
@@ -283,6 +282,10 @@ object, embed, video {
 	}
 	.dropdown{
 		display: none;
+	}
+	#notif-view{
+		width: 300px;
+		left: 2%;
 	}
 	.dropdown-menu{
 		right: 0 !important;
@@ -309,11 +312,9 @@ object, embed, video {
 	}
 
 	.mobx-nav-list{
-		width: 180px;
-		display: inline-block;
 	    color: #e0c2c2;
 	    font-size: 13px;
-	    float: right;
+	    cursor: pointer;
 	}
 	#psearch{
 		display: none;
@@ -561,6 +562,9 @@ object, embed, video {
 	}
 	.p-comment > i{
 		font-size: 16px;
+	}
+	.mobx-nav-list{
+		display: none;
 	}
 
 	
