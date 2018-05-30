@@ -57,6 +57,7 @@ class UsersController extends AppController
     }
      public function sendRequest($id = null)
     {
+        dd($this->request);
         $db = $this->Users->connectTocake();
         $connectedId = $this->Auth->user('id');
         if(isset($id)){

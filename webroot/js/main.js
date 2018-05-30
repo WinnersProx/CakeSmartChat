@@ -46,6 +46,21 @@ $(document).ready(function(){
 		}
 		
 	});
+
+    $newWidth = ($(window).width());
+    //
+    if($newWidth <= 900){
+
+    	$('#myProfile').css('width',$newWidth + 'px');
+    }
+	$(window).resize(function(){
+		$newWidth = ($(window).width());
+		if($newWidth <= 900){
+			$('#myProfile').css('width',$newWidth + 'px');
+		}
+		
+		console.log("resized");
+	})
 	$('#scroller').click(function(){
 		$('html, body').animate({
 				scrollTop : -($('#scroller').offset().top)
@@ -428,8 +443,8 @@ $(document).ready(function(){
 			$targetBlock = $('#user-box-'+ $focusForward);
 			
 			$allMenus = $('.profile-opts');
-			$allMenus.children().css('borderBottom','2px solid white');
-			$this.children().css('borderBottom','3px solid #b45bb4');
+			$allMenus.css('borderBottom','2px solid white');
+			$this.css('borderBottom','3px solid #b45bb4');
 			$ABox = $('.user-informations');
 
 			$offsetH = $targetBlock.offset().top - 65;

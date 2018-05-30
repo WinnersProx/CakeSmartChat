@@ -269,10 +269,14 @@ object, embed, video {
 	body{
 		max-width: 320px;
 		background-color:#c1c1c1;
-		padding-top: 45px;
+		padding-top:55px;
 		margin-left:-30px;
 		font-size: 11px !important;
 		overflow-x: hidden;
+	}
+	.btn-custom {
+	    width: 80px;
+	    font-size: 12px;
 	}
 	.smartchat-infos{
 		display: none;
@@ -502,8 +506,17 @@ object, embed, video {
 	}
 	#post-baker{
 		width: 305px;
+		font-size: 14px;
 		margin-bottom: -2px;
 
+	}
+	#myProfile{
+		padding-top: 8px;
+	}
+	.profile-opts{
+		background-color: white;
+	    border-right: 2px solid #f3f0f0;
+	    padding: 5px;
 	}
 	.flash-render{
 		font-size: 11px;
