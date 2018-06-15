@@ -227,3 +227,5 @@ if (Configure::read('debug')) {
     Plugin::load('CakeDC/Mixer', ['bootstrap' => true, 'routes' => true]);
 }
 */
+Plugin::load('Media');
+

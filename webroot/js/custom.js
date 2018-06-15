@@ -1,4 +1,6 @@
 (function(){
+
+
 	$('#StartLiveImage').click(function(){
 		$Url = window.URL || window.webkitURL, 
 		$canvas = document.getElementById('canvas'), 

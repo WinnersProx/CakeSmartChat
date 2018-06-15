@@ -148,8 +148,12 @@ class CommunitiesCell extends Cell{
 			foreach ($comments as $comment) {
 				$memberInfos = $this->getMemberInfos($comment->member_id);
 				?>
-					<img src="/img/<?= $memberInfos['avatar']?>" class="user-avatar-xs"><span class="u-name"><?= $memberInfos['name']?></span> 
-					<span class="comment-texts"><?= $comment->content ?></span><br>
+					<img src="/img/<?= $memberInfos['avatar']?>" class="user-avatar-xs">
+					<span class="users-comments">
+						<span class="u-name"><?= $memberInfos['name']?></span> 
+						<span class="comment-texts"><?= $comment->content ?></span>
+					</span><br>
+					
 
 				<?php
 			}
@@ -244,57 +248,76 @@ class CommunitiesCell extends Cell{
 				$posts = $posts->fetchAll('obj');
 					foreach ($posts as $post) {
 						$memberInfos = $this->getMemberInfos($post->member_poster);
-						//the avatar of the  user who created the post
-						echo '<img src="/img/'.$memberInfos['avatar'].'" class="user-avatar-xs"/> '.$memberInfos['name'].' Posted <br/>';
 
-						echo $post->post_content.'<br/>';
-						//now to get all related pictures to a given posts
-						$this->postImages($post->id);
-					
-					
-					//the interface for users to comment share and rate so on//
-					?>
-						<div class="member-interface">
-							<span><i class="fa fa-thumbs-o-up"></i> <a href="/communityPosts/ratePost/<?= $post->id?>">Rate</a></span>
-							<span>
-								<i class="fa fa-comment"></i> <a href="/communities/communityComment/<?= $post->id?>">Comment</a>
-							</span>
-							<span>
-								<i class="fa fa-share"></i> <a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">Share</a> 
-							</span>
-							<?php if($this->checkCommunityMembership($communityId)):?>
-								<span class="right tools dropdown">
-									<span class="dropdown-toggle" id="communityDrop1" data-toggle="dropdown">
-										<i class="fa fa-cog"></i><i class="fa fa-caret-down"></i>
+						?>
+							<div class="community-post-container">
+								<div class="community-post-topbar">	
+									<img src="/img/<?=$memberInfos->avatar?>" class = "user-avatar-md top-img">
+									<span class="u-name"><?= $memberInfos->name ?></span> Posted
+									<?= $post->post_content ?>
+								</div>
+								<div class="post-body">
+									<?= $this->postImages($post->id)?>	
+								</div>
+								<div class="post-bottom-menu">
+									<!-- for members to comment rate and so on interface -->
+								<?php if($this->checkCommunityMembership($communityId)):?>
+								
+							
+									<span class="comm-interactive-button">
+										<a href="/communityPosts/ratePost/<?= $post->id?>">
+										<i class="fa fa-handshake-o fa-lg"></i> Rate
+										</a>
 									</span>
-									<ul class="dropdown-menu" role="menu" arialabelledby="communityDrop1">
-										<?php if($this->isAdmin($givenCommunity['id'], $this->getConnected()) || $this->isCreater($givenCommunity['id'], $this->getConnected())):?>
+									<span class="comm-interactive-button">
+										<a href="/communities/communityComment/<?= $post->id?>">
+											<i class="fa fa-comments fa-lg"></i> Comment
+										</a>
+									</span>
+									<span class="comm-interactive-button"> 
+										<a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">
+										<i class="fa fa-share-alt fa-lg"></i> Share
+										</a> 
+									</span>
+									<!--The toggle menus for other options-->
+									<span class="right tools dropdown">
+										<a class="dropdown-toggle" id="communityDrop1" data-toggle="dropdown">
+											<span class="customized-toggler">
+												<i class="fa fa-circle-o"></i>
+												<i class="fa fa-circle-o"></i>
+												<i class="fa fa-circle-o"></i>
+											</span>
+										</a>
+										<ul class="dropdown-menu" role="menu" arialabelledby="communityDrop1">
+											<?php if($this->isAdmin($givenCommunity['id'], $this->getConnected()) || $this->isCreater($givenCommunity['id'], $this->getConnected())):?>
+												<li>
+													<a href="/communities/deleteCommunityPost/<?=$post->id?>">Delete</a>
+												</li>
+											<?php endif;?>
 											<li>
-												<a href="/communities/deleteCommunityPost/<?=$post->id?>">Delete</a>
+												<a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">Share</a>
 											</li>
-										<?php endif;?>
-										<li>
-											<a href="/communityPosts/shareCommunityPost/<?= $post->id ?>">Share</a>
-										</li>
-										
-									</ul>
-								</span>
-							<?php endif;?>
-						</div>
-						<div class="member-comment">
-							<div class="community-comment">
-								<form action="/CommunityPosts/commentPost/<?= $post->id?>" method="post">
-									<input type="text" class="community-post-comment comment-post form-control" name="mPostComment" placeholder="Put your comment right here!!!">
-									<input type="submit" name="subComment" value="Comment" class=" community-post-submit">
+											
+										</ul>
+									</span>
+									<!--End toggling for other sub menus -->
+									<div class="community-comment">
+										<form action="/CommunityPosts/commentPost/<?= $post->id?>" method="post">
+											<input type="text" class="community-post-comment comment-post form-control" name="mPostComment" placeholder="Put your comment right here!!!">
+										</form>
+								
+									</div>
+									<div class="community-post-comments">
+										<?php $this->getCommunityPostComments($post->id);?><br/>
+									</div>
+
+								<?php endif;?>
 									
-								</form>
+								</div>
 								
 							</div>
-						</div>
-					
-						<div class="community-post-comments">
-							<?php $this->getCommunityPostComments($post->id);?><br/>
-						</div>
+						<?php?>
+						
 					<?php
 					}
 				}	

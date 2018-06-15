@@ -19,14 +19,24 @@
         <legend class="badge-custom"><?= __('Sign Up!') ?></legend>
         <fieldset>
             <?= $this->Form->create($user) ?>
-            <?php
-                echo $this->Form->control('name',['placeholder' => 'Your name']);
-                echo $this->Form->control('email',['placeholder' => 'Your email']);
-                echo $this->Form->control('password',['placeholder' => 'Your password']);
-                echo $this->Form->control('phone',['placeholder' => 'Your phone number']);
-                echo $this->Form->control('about', ['placeholder' => 'All about me!', 'style'=> 'resize:none','rows' => '2']);
+            <?= $this->Form->control('name',['placeholder' => 'Your name']);?>
+            <div class="mb-3">
+              <label for="username">Email</label> 
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control" id="email" placeholder="your email" required name="email">
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your mail required.
+                </div>
+            </div>
+            </div>
+            
 
-            ?>
+            <?=$this->Form->control('password',['placeholder' => 'Your password']);?>
+            <?= $this->Form->control('phone',['placeholder' => 'Your phone number']);?>
+            <?= $this->Form->control('about', ['placeholder' => 'All about me!', 'style'=> 'resize:none','rows' => '2']);?>
             <?= $this->Form->submit(__('Sign Up'),['class' => 'btn btn-custom sign-custom-btn right']) ?>
             <?= $this->Form->end() ?>
         </fieldset>

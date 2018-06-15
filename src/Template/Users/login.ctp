@@ -6,12 +6,44 @@
 ?>
 
 <div class="row">
-    <div class="col-md-6 smartchat-infos">
-        <div class="rm-box">Welcome back login and discover what's going on all over the world
-        </div>
+    <div class="col-md-6" id="smartchat-templates">
+        
         <div class="connect-people">
-            <div class="people-pictures">
-              <?php $this->cell('Files')->getAllpngFiles();?>  
+            <div class="smartchat-desktop">
+                <div class="desktop-toolbar">
+                    <span class="camera-desk"><i class="fa fa-dot-circle-o"></i></span>
+                </div>
+                <div class="desktop-contents">
+                    <?=$this->Html->image("smartchat_desktop2.png", ["title" =>"mobile version", "id" => "desktop_image", "class" => " animated infinite fadeIn"])?>
+                    
+                    <div class="desktop_bottom-bar">
+                        <span class="camera-desk">
+                            <i class="fa fa-power-off"></i>
+                        </span>
+                    </div>
+                    
+                </div>
+                
+                <div class="desktop-cane"></div>
+            </div>
+            <div class="smartchat-mobile">
+                <div class="mobile-toolbar">
+                    <span class="speaker"></span>
+                    <span class="camera">
+                        <i class="fa fa-dot-circle-o"></i>
+                    </span>
+                </div>
+                <div class="mobile-contents">
+                    <div class="contents-top-bar">
+                        <time class="time" id="time">---</time>
+                    </div>
+                    <?=$this->Html->image("smartchat_mobile2.png", ["title" => "mobile-version", "id" => "mobile_image", "class" => "animated infinite fadeIn"])?>
+                    
+                </div>
+                <span>
+                    <i class="fa fa-circle"></i>
+                </span>
+                
             </div>
         </div>
     </div>
@@ -20,7 +52,7 @@
             <div class="panel panel-primary login-box">
                 <div class="logon-box">
                     <div class="login-title text-center">
-                        Smartchat Login!
+                        <?= __("Smartchat Login!")?>
                     </div>
                 </div>
                
@@ -54,4 +86,3 @@
         </div>
     </div>
 </div>
-<?= $this->Html->script('smartcakeAnim',['block' => true]);?>

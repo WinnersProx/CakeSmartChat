@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 			}
 		}
-		if($NavOffsetTop > 500){
+		if($NavOffsetTop > 500 && parseInt($(window).width())>400){
 			$('#scroller').fadeIn(1000);
 		}
 		else{
@@ -29,30 +29,12 @@ $(document).ready(function(){
 		}
 		
 		
-		//for profiles now
-		$imgProfile = $('#user-box-images');
-		$avatarsBox = $('.user-inf-avatars');
-
-		if($('body').attr('data-cont-name') === 'Profiles'){
-			$imgProfileOffset = $imgProfile.offset().top - 65;
-			$imgProfileHeight = parseInt($avatarsBox.css('height')) + $NavOffsetTop;//to test overflow of its height
-			
-			if($NavOffsetTop >= $imgProfileOffset && $NavOffsetTop <= $imgProfileHeight){
-				$imgProfile.css('borderBottom','3px solid #b45bb4');
-			}
-			else{
-				$imgProfile.css('borderBottom','3px solid white');
-			}
-		}
-		
 	});
 
-    $newWidth = ($(window).width());
-    //
-    if($newWidth <= 900){
+	
 
-    	$('#myProfile').css('width',$newWidth + 'px');
-    }
+    $newWidth = ($(window).width());
+    
 	$(window).resize(function(){
 		$newWidth = ($(window).width());
 		if($newWidth <= 900){
@@ -60,13 +42,13 @@ $(document).ready(function(){
 		}
 		
 		console.log("resized");
-	})
+	});
 	$('#scroller').click(function(){
 		$('html, body').animate({
 				scrollTop : -($('#scroller').offset().top)
 			}, 
 		2000)
-	})
+	});
 	$('.ajaxInvite').click(function(e){
 		var Url = $(this).attr('href');
 		e.preventDefault();
@@ -159,8 +141,12 @@ $(document).ready(function(){
 	})
 	//now for the innovations after a period
 	$('.post-validator').click(function(e){
-		var $content = $('.content').val();
-		if($content == ' '){
+		
+		$content = $('.content').val();
+		$content === "undifined" ? $content = $('.custom-text-field').val() : $content = $content;
+		console.log($content);
+		if($content.trim().length < 1){
+
 			$('.post-text').html('<p class="erroneous">please write something about your post!</p>');
 		}
 		$('.post-text').html($content);
@@ -207,10 +193,6 @@ $(document).ready(function(){
 			$previewImg.append("This extension is not allowed");
 		}
 		
-		
-
-
-
 	});
 	//uploading the image post end now
 
@@ -288,10 +270,6 @@ $(document).ready(function(){
 			$previewImg.html($newError);
 		}
 		
-		
-
-
-
 	});
 	//for uploading the user avatar quickly<<End!!!<<>><<end>>
 	//for displaying remaining tags
@@ -376,7 +354,7 @@ $(document).ready(function(){
 		$this = $(this);
 
 		$listMsgs = $('.msgs-lists');
-		console.log($listMsgs); 
+		
 		$lists = $listMsgs.children('.slidingMessages');
 		$endMsg = $('#endMsg').offset().top;
 		
@@ -385,11 +363,11 @@ $(document).ready(function(){
 		$contentMessage = $children.val();
 		$msgLength = $contentMessage.length;
 		$dataTarget = $('.target-user').attr('data-user-target');
-		
+		 
 		if($msgLength >= 2 && $msgLength <= 255){
 			$senderUrl = '/messages/sendMessage/'+ $dataTarget;
 			if($dataTarget != 'undifined'){
-				$('span.msg-box-error').fadeOut(1000);
+				$('.msg-box-error').fadeOut(1000);
 				$.ajax({
 						url:$senderUrl,
 						type:"POST",
@@ -401,20 +379,17 @@ $(document).ready(function(){
 							$children.attr('placeholder', 'message sent successfully!');
 							$children.blur();
 							$t_page = window.location.href;
-
+							
 							$t_u_id = $t_page.substr($t_page.lastIndexOf('/') + 1);
 							$('.inst-conversations').load('/messages/list_messages/'+ $t_u_id);
-							// $tW = window.location.href;
-							// $l_Ind = $tW.substr(0, $tW.lastIndexOf('/') + 1);
-							// $trUrl = $l_Ind + $('.inst-conversations').attr('data-user-m');
-							//load($trUrl);
+							$('#msgSent').trigger('play');
 
 						}
 				});
 
 			}
 			else{
-				$('span.msg-box-error').fadeIn(2000).html('please select a friend');
+				$('.msg-box-error').fadeIn(2000).html('please select a friend');
 			}
 			
 			$listMsgs.animate({
@@ -428,39 +403,24 @@ $(document).ready(function(){
 			$listMsgs.animate({
 			scrollTop : $endMsg
 			}, 1000);
-			$('span.msg-box-error').fadeIn(2000).html('the message must be at least 2 characters long');
+			$('.msg-box-error').fadeIn(2000).html('the message must be at least 2 characters long');
 		}
 		
 		
 	});
 	$('.profile-opts').click(function(e){
 		$this = $(this);
-		$exclude = $(this).attr('data-exclude');
-		if(!$exclude){
-			e.preventDefault();
-			$focusForward = $this.children().attr('data-focus');
-			
-			$targetBlock = $('#user-box-'+ $focusForward);
-			
-			$allMenus = $('.profile-opts');
-			$allMenus.css('borderBottom','2px solid white');
-			$this.css('borderBottom','3px solid #b45bb4');
-			$ABox = $('.user-informations');
-
-			$offsetH = $targetBlock.offset().top - 65;
-			$('html, body').animate({
-				scrollTop : $offsetH
-			}, 2000);
-			
-			
-		}
-		
+		//e.preventDefault();
+		$allMenus = $('.profile-opts');
+		$allMenus.css('borderBottom','none');
+		$this.css('borderBottom','3px solid hsla(274, 8%, 8%, 0.5)');
+				
 	});
 	/*Start ==> editing my profile script*/
-	$backColor = $('body').css('backgroundColor');
+	
 	$('#next').click(function(e){
 		$firstDisplayed = true;
-		$('body').css('backgroundImage', 'linear-gradient(to bottom, #251725,#b5b5b5)');
+		
 		
 		$('#profile-edition').css('color','white');
 		$('label').css('color','#fff4f4');
@@ -475,8 +435,7 @@ $(document).ready(function(){
 		}
 	});
 	$('#prev').click(function(e){
-		$('body').css('backgroundImage', '');
-		$('body').css('backgroundColor', $backColor);
+		
 		$('.Notify-changes').fadeOut(2000);
 		$('.last-edit-block').hide();
 		$('.first-edit-block').fadeIn(1000);
@@ -520,15 +479,6 @@ $(document).ready(function(){
 		$targetChildren.slideUp(500);
 	});
 	
-
-		/*
-		$targetMenu.animate({
-
-
-		}, function(){
-			alert("appended successfully");
-		})
-		*/
 	
 
 	$invisible = true;
@@ -595,7 +545,171 @@ $(document).ready(function(){
 
 		
 	});
-	// about messages
+	// end about messages
+
+	//staring a timeline post
+	$('.star-tmn').click(function(){
+		$targetTmn = $(this).attr('data-star-tmn').split('-')[1];
+		$to_url = "/timelines/star_timeline/" + $targetTmn;
+		$countStars = 1;
+		$targetCountStars = 
+		$(this).parent().parent().parent().
+		parent().next().children('.count-stars-bytmn').children('.count-tmn-stars');
+		
+		
+		if(parseInt($targetTmn) > 0){
+			$count = $targetCountStars.text();
+			$sent = true;
+
+			$.post($to_url, {}, function($stared){
+				$sent = !($stared.error) ? true : false;
+			});
+
+			if($sent){
+				if($(this).attr('data-object') === "star" ){
+					$(this).children('i.fa-star').removeClass('animated rotateInDownRight').addClass('animated rotateInDownLeft');
+					$(this).attr('data-object', 'unstar');
+					$count = parseInt($targetCountStars.text()) + 1;
+					$targetCountStars.text($count);
+
+				}
+				else{
+
+					$(this).children('i.fa-star').removeClass('animated rotateInDownLeft').addClass('animated rotateInDownRight');
+					$(this).attr('data-object', 'star');
+					$count = parseInt($targetCountStars.text()) - 1;
+					$targetCountStars.text($count);
+				}
+
+			}		
+		}
+
+	});
+
+	$('.commentTmln').keypress(function(e){
+		$kCode = e.which || e.keyCode;
+		if($kCode == 13){
+			$this = $(this);
+			$tmln = $(this).attr('data-related-tmn');
+			$comment = $this.val();
+			if($comment.trim().length > 0){
+				$tUrl = "/timelines/new_comment/" + $tmln;
+				$.post($tUrl, {comment : $comment}, function(sent){
+					if(!sent.error){
+						$this.val("");
+						$this.attr("placeholder", "sent successfully!");
+						$this.next().text("");
+						
+					}
+					else{
+						$this.next().text("Error");
+					}
+				})
+				
+			}
+			else{
+				$this.next().text("Please Too short comment!");
+			}
+		}
+	});
+
+
+	//pure javascript with jquery
+	
+	$('.panel').fadeIn(1000);
+	$imgs = $('.people-pictures imgs');
+		$imgs = $('.people-pictures');
+		$imgs.fadeIn(2000);
+
+
+	var loginRender =  {
+		
+		desktopImg : $("#desktop_image"),//document.querySelector(),
+		mobileImg  : $("#mobile_image"),
+		time       : $("#time"),
+		next       : $("#nextImg"),
+		index      : 0,
+		
+
+		start : () => {
+			var $this  = loginRender;
+			$this.initialize();
+			$this.slideStart();
+
+		},
+
+		initialize : () => {
+			var $this = loginRender;
+			$this.time.text($this.getCurrentTime());
+		},
+
+		slideStart : () => {
+			
+			var $this = loginRender;
+			$this.index = 0;
+			setInterval(() => {
+				
+				$this.next.attr("src", $this.desktopImg.attr("src"));
+				$this.desktopImg.attr("src",$this.images[$this.index].desktop);
+				
+				$this.mobileImg.attr("src",$this.images[$this.index].mobile);
+				
+				$this.updateIndex();
+				$this.time.text($this.getCurrentTime());
+
+			}, 4000)
+			
+		},
+		updateIndex : () => {
+			
+			var $this = loginRender;
+			if($this.index < ($this.images.length)-1){
+				$this.index++;
+			}
+			else{
+				$this.index = 0;
+			}
+		},
+
+		getCurrentTime : () => {
+			var date = new Date();
+
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var mer = hours >= 12 ? "PM" : "AM";
+			hours = hours % 12;
+			hours = hours ? hours : 12;
+			hours = hours < 10 ? "0" + hours : hours;
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+
+			var time = hours + ":" + minutes + " " +  mer;
+
+			return time;
+
+
+		},
+
+		images : [
+			{
+				desktop : "/img/smartchat_desktop.png",
+				mobile  : "/img/smartchat_mobile.png"
+			},
+			{
+				desktop : "/img/smartchat_desktop2.png",
+				mobile  : "/img/smartchat_mobile2.png"
+
+			},
+			{
+				desktop : "/img/smartchat_desktop3.png",
+				mobile  : "/img/smartchat_mobile3.png"
+
+			}
+		]
+	}
+	loginRender.start();
+	//pure javascript with jquery
+
+
 
 
 });

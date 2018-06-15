@@ -6,7 +6,7 @@
 <?php if($usersEvents->checkUserBirthDay($LoggedUser['User']['id'])):?>
 	<div class="flash-render">
 		<span class="flash"><?= $this->Flash->render()?></span>
-			<div class="text-center" class="u-birthDay" style="color: purple;">
+			<div class="text-center" class="u-birthDay">
 				Happy Birth Day <?= $LoggedUser['User']['name']?>
 			</div>
 	</div>
@@ -32,17 +32,17 @@
 				<div class="modal-dialog" id="pictureBakerM">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close closeImage" data-dismiss="modal" aria-hidden="true"> &times; </button>
 							<span class="modal-title">New live Image from <?= $connected['name']?></span>
+							<span class="close closeImage" data-dismiss="modal" aria-hidden="true"> &times; </span>
 						</div>
-						<div class="modal-body img-body">
+						<div class="modal-body">
 							<div class="img-controllers">
 								<video id="myWebmedia" width="400" height="400"></video>
 								<canvas id="canvas" width="400" height="400"></canvas>
 								<img id="preview" src=""/>
 							</div>
 						</div>
-						<div class="modal-footer pictureB-footer">
+						<div class="modal-footer">
 							<span class=" btn btn-default f-saver" id="StartLiveImage">Start</span>
 							<span class=" btn btn-default f-saver" id="captureImg">Take Picture</span>
 							<span class=" btn btn-default f-saver closeImage">Close</span>
@@ -58,31 +58,29 @@
 				<div class="modal-dialog" id="postModal">
 					<div class="modal-content">
 						<div class="modal-header postModalHeader">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
 							<span class="modal-title">New Post From <?= $connected['name']?></span>
+							<span class="close" data-dismiss="modal" aria-hidden="true"> &times; </span>
 						</div>
 						<div class="modal-body">
 							<div class="row">
 								<div class="col-md-7">
 									<span class="badge post-opts"><i class="fa fa-font"></i> Post Content </span>
 									<div class="post-text">
-
-									</div><br/>
+									</div>
+									<br/>
 									<div class="post-images">
 
 										<span class="badge post-opts"><i class="fa fa-picture-o"></i> Post Images</span> 
 										<div class="img-transfer">
 											<input type="file" name="imgFile[]" class="img-upload" multiple="multiple">
-											
-											<span class="community-file-options">
-							                    <span class="post-img-baker">
-							                    <i class="fa fa-upload"></i> Upload
+											<span >
+							                    <span class="post-img-baker custom-baker">
+							                    <i class="fa fa-upload"></i> Pictures
 							                    </span>
-							                    &nbsp;<span class="adds-text">Add images</span>
 						                  	</span>
 										</div>
 										<div class="img-preview uploader-text">
-											None!
+											<i>None selected!</i>
 										</div>
 										
 									</div>
@@ -117,7 +115,7 @@
 							</div>	
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-success submit-b" name="new">Poster</button>
+							<button type="submit" class="btn btn-success submit-b" name="new"><i class="fa fa-edit fa-lg"></i> New Post</button>
 						</div>
 					</div>
 				</div>
@@ -136,19 +134,28 @@
 		
 		<div class="t-post-lists">
 			<!-- here-->
-			<span class="right dropdown" id="postDropMenu">
-				<span class="dropdown-toggle" id="PostMenusT"  data-toggle="dropdown"><i class="fa fa-cogs"></i></span>
-				<ul class="dropdown-menu" aria-labelledby="PostMenusT" id="ptMenu">
-					<li role="menuitem"><a><i class="fa fa-minus-circle"></i> Delete Post</a></li>
-					<li role="menuitem"><a><i class="fa fa-share"></i> Share Post</a></li>
-					<li role="menuitem"><a href=""><i class="fa fa-expand"></i> View More</a></li>
-				</ul>
+			<div class="dropdown align-items-baseline right" id="postDropMenu">
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#">
+					<span class="customized-toggler">
+						<i class="fa fa-circle-o"></i>
+						<i class="fa fa-circle-o"></i>
+						<i class="fa fa-circle-o"></i>
+					</span>
+				</a>
+					
+				<div class="dropdown-menu">
+					<a class="dropdown-menu"><i class="fa fa-minus-circle"></i> Delete Post</a>
+					<a class="dropdown-menu"><i class="fa fa-share"></i> Share Post</a>
+					<a class="dropdown-menu" href=""><i class="fa fa-expand"></i> View More</a>
 
-			</span>
+				</div>
+			</div>
+
+
 			<!--here-->
 			<?php $Uinfos = $postsCell->userInfo($post->post_owner);?>
 			<img src="/img/<?= $Uinfos['avatar'] ? $Uinfos['avatar'] : '/userdefault.png';?>" 
-			class="user-avatar-xs">
+			class="user-avatar-md">
 			<span class="poster-text">
 				<a href="/profiles/u/<?= $Uinfos['slug'] ?>"><?= $Uinfos['name']?></a>
 				<span class="dated">posted in last <?= $postsCell->getDate($post->date_from);?> 
@@ -163,12 +170,12 @@
 				<?= $post->content ?>
 			</div>
 			 
-
-			<div class="post-images">
+			<div class="post-contents-show">
+				<div class="post-images">
 				<?php $postsCell->postImages($post->id);?>
-			</div>
-			<div class="posts-interaction-bar">
-				<span class="p-int star">
+				</div>
+				<div class="posts-interaction-bar">
+					<span class="p-int star">
 					<?php if($postsCell->checkUserStar($post->id)):?>
 						<span class="p-interaction p-star"  data-mix-star="unstar-<?=$post->id?>">
 								<i class="fa fa-star"></i> 
@@ -202,6 +209,8 @@
 					<span class="post-erroneous"></span>
 				</div>
 			</div>
+			</div>
+			
 		</div>
 		<?php if($postsCell->countComments($post->id) >= 1) :?>
 		<div class="post-comments-list">

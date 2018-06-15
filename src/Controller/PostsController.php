@@ -77,11 +77,13 @@ class PostsController extends AppController{
 		                //type not allowed
 		            	}
 					}
-					$this->redirect(['controller' => 'users', 'action' => 'timeline']);
+
+					return $this->redirect(['controller' => 'users', 'action' => 'timeline']);
 				}
 				else{
+
 					$this->Flash->error(__('The post could not be added try again!'));
-					$this->redirect(['controller' => 'users', 'action' => 'timeline']);
+					return $this->redirect(['controller' => 'users', 'action' => 'timeline']);
 
 				}
 
@@ -89,7 +91,7 @@ class PostsController extends AppController{
 			else{
 
 				$this->flash->error(__('The post could not be uploaded'));
-				$this->redirect(['controller' => 'users', 'action' => 'timeline']);
+				return $this->redirect(['controller' => 'users', 'action' => 'timeline']);
 			}
 		}
 		

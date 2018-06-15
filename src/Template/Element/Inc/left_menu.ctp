@@ -6,7 +6,7 @@
             </div>
             
             <div class="img">
-                <?= $this->Html->Image($LoggedUser['User']['avatar'],['class' => 'user-avatar-md img-user'])?>
+                <?= $this->Html->Image($LoggedUser['User']['avatar'],['class' => 'user-mobxs-avatar img-user'])?>
             </div>
             <ul class="side-nav users-side-nav">
                 <li class="heading"><?= __('More') ?></li>

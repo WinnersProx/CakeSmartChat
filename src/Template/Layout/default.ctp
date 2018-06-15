@@ -17,11 +17,15 @@
     <?= $this->Html->css('base');?>
     <?= $this->Html->css('main');?>
     <?= $this->Html->css('adapts');?>
+    <?= $this->Html->css('Animate');?>
     <?= $this->Html->css('font-awesome/css/font-awesome.min')?>
+    <?= $this->Html->script('angularjs/angular.min')?>
+    <?= $this->Html->script('angularjs/angular-route.min')?>
+
     <!-- $this->Html->script('/js/node_modules/socket.io-client/dist/socket.io')?>-->
 </head>
  
- <body data-cont-name="<?= $this->name?>">
+ <body data-cont-name="<?= $this->name ?>">
     <nav class="navbar navbar-expand navbar-light custom-nav fixed-top">
     <a class="navbar-brand" href="/users/timeline">SmartChat</a>
     <button class="navbar-toggler p-0 b-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,50 +67,45 @@
                                                 
                 </div>
         
-                <!---->
-        
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>-->
         
       </ul>
-      <!--<form class="form-inline my-2 my-lg-0">
+      <!--
+      <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           
       </form>-->
-    
     </div>
-    
     <div class="collapse navbar-collapse justify-content-md-end mobx-nav-list">
-        <li class="nav-item dropdown align-items-baseline">
-                    
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" class="nav-link dropdown-toggle">
-                        <?php if($LoggedUser['User']['avatar']):?>
-                            <?= $this->Html->Image($LoggedUser['User']['avatar'],['class' => 'user-avatar-lu'])?>
-                        <?php else:?>
-                            <?= $this->Html->Image('user.png',['class' => 'user-avatar-lu'])?>
-                        <?php endif;?>
+        <?php if($LoggedUser) : ?>
+            <li class="nav-item dropdown  top-dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" class="nav-link dropdown-toggle">
+
+                    <?php if($LoggedUser['User']['avatar']):?>
+                        <?= $this->Html->Image($LoggedUser['User']['avatar'],['class' => 'user-avatar-lu'])?>
+                    <?php else:?>
+                        <?= $this->Html->Image('user.png',['class' => 'user-avatar-lu'])?>
+                    <?php endif;?>
+                </a>
+                <div class="dropdown-menu custom-dropdown">
+                    <a href="/profiles/u/<?= $LoggedUser['User']['name']?>" class="dropdown-item">
+                        <i class="fa fa-user"></i> Profile
                     </a>
-                        
-                    <div class="dropdown-menu menu-drop">
-                        <a href="/profiles/u/<?= $LoggedUser['User']['name']?>" class="dropdown-item">
-                            Profile
-                        </a>
-                        <a href="/users/logout" class="dropdown-item">    Logout
-                        </a>    
-                    </div>
-        </li>
-        <span class="toggle-menus u-xs-options">
-            <i class="fa fa-align-justify fa-lg t-uxs-menus"></i>
-        </span>
+                    <a href="/communities" class="dropdown-item">
+                        <i class="fa fa-group"></i> Communities
+                    </a>
+                    <hr>
+                    <a href="/users/logout" class="dropdown-item">
+                        <i class="fa fa-power-off"></i> Logout
+                    </a> 
+                    
+                </div>
+                
+            </li>
+            <span class="toggle-menus u-xs-options">
+                    <i class="fa fa-align-justify fa-lg t-uxs-menus"></i>
+            </span>
+        <?php endif;?>
+
         
     </div>
     
@@ -164,7 +163,7 @@
 
          </div>
          <?php endif;?>
-         <div id="scroller" title="click to go upper">
+         <div id="scroller" title="click to go upper"  >
              <i class="fa fa-arrow-circle-up fa-lg"></i>
          </div>
         <!--menus for xs mob users -->
@@ -180,8 +179,7 @@
         <?= $this->Html->script('main')?>
         <?= $this->Html->script('navig')?>
         <?= $this->Html->script('custom')?>
-
-        <?=$this->fetch('script');?>
+        <!--for dropdown dependecies-->
 
 </body>
 

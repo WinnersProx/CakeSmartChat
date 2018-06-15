@@ -22,16 +22,21 @@ object, embed, video {
 		background-color:#c1c1c1;
 		padding-top: 50px;
 		margin-left:-30px;
-		font-size: 11px !important;
+		font-size: 13px;
 		overflow-x: hidden;
+	}
+	.fixed-top{
+		width: 320px;
 	}
 	#ptMenu{
 		right: 0;
 	}
 	textarea#p-content-text{
 		height: 20px;
+		font-family: normal;
 	}
-	.smartchat-infos{
+	
+	#smartchat-templates{
 		display: none;
 	}
 	/*all about the navbar*/
@@ -123,9 +128,13 @@ object, embed, video {
 		padding-left:40px;
 		padding-top: 18px;
 	}
+	.container-customized{
+		min-width: 151px;
+		max-width: 298px;
+	}
 	#main-p{
 		background-color:#eae7e7;
-		width:224px;
+		width:230px;
 		padding-left:4px;
 		border-radius: 0px;
 	}
@@ -150,7 +159,9 @@ object, embed, video {
 	.post-images {
 		padding: 2px;
 		width: 230px;
+		text-align: center;
 	}
+
 
 	#IV-Post-imgs-left .r-imgs:nth-child(odd){
 		border-radius:8px 8px 0px 0px; 
@@ -236,7 +247,7 @@ object, embed, video {
 	}
 	.flash-render{
 		font-size: 11px;
-		width: 216px;
+		width: 305px;
 		color: #09212b;
 	}
 	.comment-post input[type="text"]{
@@ -247,7 +258,7 @@ object, embed, video {
 	}
 	.side-nav li:not(.button) {
 	    font-size: 9px;
-	    font-weight: normal;
+	    font-weight: bold;
 	    width: 100px;
 	    padding-right: 10px;
 	    display: inline-block;
@@ -267,24 +278,50 @@ object, embed, video {
 /*for phones having 320px */
 @media (min-width: 299px) and (max-width: 320px){
 	body{
-		max-width: 320px;
 		background-color:#c1c1c1;
 		padding-top:55px;
 		margin-left:-30px;
 		font-size: 11px !important;
 		overflow-x: hidden;
 	}
+	.container-customized{
+		width: 318px;
+	}
+	.fixed-top{
+		width: 320px;
+	}
+	.modal-dialog{
+		width: 318px;
+		margin: 1px;
+	}
+	.modal-body{
+		padding: 4px;
+	}
+	
+	textarea#p-content-text{
+		height: 20px;
+		font-family: normal;
+	}
+	.btn.btn-customized{
+		width: 95px;
+		margin-top: -27px;
+		font-size: 12px;
+	}
+	.myStatus{
+		font-size: 12px;
+		height: 50px;
+	}
 	.btn-custom {
 	    width: 80px;
 	    font-size: 12px;
 	}
-	.smartchat-infos{
+	#smartchat-templates{
 		display: none;
 	}
 	.nav-description{
 		display: none;
 	}
-	.dropdown{
+	.top-dropdown{
 		display: none;
 	}
 	#notif-view{
@@ -398,8 +435,8 @@ object, embed, video {
 	}
 	#main-p{
 		background-color:#eae7e7;
-		width:313px;
-		padding-left:4px;
+		width:327px;
+		padding:8px 0px 0px 8px;
 		border-radius: 0px;
 	}
 	.right-menu{
@@ -411,7 +448,7 @@ object, embed, video {
 		margin-top: -30px;
 	}
 	#post-infos{	
-		width: 305px;
+		width: 316px;
 		font-size: 11px;
 	}
 	.s-img{
@@ -424,6 +461,9 @@ object, embed, video {
 	.post-images {
 		padding: 0px;
 		width: 300px;
+	}
+	.post-contents-show{
+		padding-left: 5px;
 	}
 
 	/*#IV-Post-imgs-left .r-imgs:nth-child(odd){
@@ -502,29 +542,30 @@ object, embed, video {
 		width: 200px;
 	}
 	.post{
-		width: 224px;
+		width: 327px;
 	}
 	#post-baker{
-		width: 305px;
+		width: 316px;
 		font-size: 14px;
 		margin-bottom: -2px;
 
 	}
 	#myProfile{
 		padding-top: 8px;
+		width: 327px;
 	}
 	.profile-opts{
 		background-color: white;
-	    border-right: 2px solid #f3f0f0;
 	    padding: 5px;
 	}
 	.flash-render{
 		font-size: 11px;
-		width: 216px;
+		width: 305px;
 		color: #09212b;
 	}
 	.comment-post input[type="text"]{
 		height: 34px;
+		font-family: normal;
 	}
 	.side-nav li.heading{
 		margin:50px 2px 15px 4px;
@@ -538,7 +579,7 @@ object, embed, video {
 	    font-size: 12px;
 	    font-weight: bold;
 	    margin-left: 8px;
-	    font-weight: normal;
+	    font-weight: bold;
 	    width: 214px;
 	}
 	.side-nav li a:hover{
@@ -549,6 +590,60 @@ object, embed, video {
 		display: none;
 		border-radius: 0px 0px 4px 4px;
 	}
+	.MainProfileMenus{
+		padding: 4px;
+		width: 327px;
+	}
+	.user-identify-avatar{
+		display: none;
+	}
+	.profile-menus{
+		width: 320px;
+		margin-top: -18px;
+	}
+	.profile-opts{
+		width: 80px;
+		font-size: 12px;
+		line-height: 18px;
+	}
+	.btn.btn-customized-sm{
+		width: 139px;
+	}
+	.container-fluid {
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+
+	/*
+	communities
+	*/
+	.community-banner{
+		width: 323px;
+		padding-left: 3px;
+		margin-top: -5px;
+	}
+	.btn-community{
+		width: 80px;
+	}
+	#community-image{
+		font-size: 35px;
+		padding: 55px 42px;
+	}
+	.community-menus .profile-opts{
+		width: 81.5px;
+		font-weight: bold;
+	}
+	.community-menus .profile-opts a{
+		color:hsla(274, 58%, 6%, 0.9);
+	}
+	input[name="community-post-submit"]{
+		line-height: 8px;
+		padding: 4px;
+		margin-top: -95px;
+	}
+	/*
+	communities end */
+
 
 }
 @media(min-width: 150px) and (max-width: 321px){
@@ -562,9 +657,12 @@ object, embed, video {
 #community-side-m.side-one{
 	border-radius: 0px;
 }
-@media (min-width: 400px) and (max-width: 774px){
+@media (min-width: 298px) and (max-width: 774px){
 	#side-p{
 		display: none;
+	}
+	.toggle-menus{
+		display: inline-block;
 	}
 	
 }
@@ -576,10 +674,14 @@ object, embed, video {
 	.p-comment > i{
 		font-size: 16px;
 	}
-	.mobx-nav-list{
+	.toggle-menus{
 		display: none;
 	}
-
+	.timeline-imgs img{
+		padding-top: 4px;
+		min-width: 350px;
+		max-width: 350px;
+	}
 	
 }
 .left-one{

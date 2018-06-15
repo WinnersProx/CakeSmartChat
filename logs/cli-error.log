@@ -837,3 +837,118 @@ Stack Trace:
 #18 {main}
 
 
+2018-06-02 21:34:52 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(355): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(110): Cake\ORM\Table->find()
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#15 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#16 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#17 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#18 {main}
+
+
+2018-06-04 00:53:18 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(355): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(110): Cake\ORM\Table->find()
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#15 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#16 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#17 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#18 {main}
+
+
+2018-06-04 20:49:56 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(355): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(110): Cake\ORM\Table->find()
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#15 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#16 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#17 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#18 {main}
+
+
+2018-06-06 07:22:01 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.timeline_stars;' doesn't exist in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'timeline_stars;', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('timeline_stars;', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('timeline_stars;')
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(217): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'timeline_stars;', 'TimelineStars;')
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('TimelineStars;')
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(472): Bake\Shell\Task\ModelTask->main('timeline_stars;')
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(465): Cake\Console\Shell->runCommand(Array, false, Array)
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#13 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2018-06-09 23:15:33 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Database\Connection.php(355): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Shell\ServerShell.php(110): Cake\ORM\Table->find()
+#13 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\Shell.php(470): Cake\Shell\ServerShell->startup()
+#14 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#15 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#16 C:\xampp\htdocs\oven\app\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#17 C:\xampp\htdocs\oven\app\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#18 {main}
+
+

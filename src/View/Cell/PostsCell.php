@@ -263,4 +263,20 @@ class PostsCell extends Cell{
 		}
 	}
 
+	public function getNumberOfStars($tmnId = null){
+		$tmnId = intval($tmnId);
+		$this->loadModel('TimelineStars');
+
+		$count = $this->TimelineStars->find()->where(['r_timeline' => $tmnId])->count();
+		return $count;
+	}
+
+	public function timelineImages($tmnId){
+		$this->loadModel('Timelines');
+		$this->loadModel('TimelinesImages');
+		$Image = $this->Timelines->TimelinesImages->find()->where(['related_tmn' => $tmnId])->first();
+
+		return $Image;
+	}
+
 }

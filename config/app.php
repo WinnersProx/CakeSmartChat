@@ -118,6 +118,14 @@ return [
             'duration' => '+1 years',
             'url' => env('CACHE_CAKEMODEL_URL', null),
         ],
+
+        'userInfos' => [
+            'className' => 'File',
+            'prefix' => 'cake_short_',
+            'path' => CACHE ,
+            'duration' => '+1 hours',
+            'url' => env('CACHE_CAKECORE_URL', null),
+        ],
     ],
 
     /**

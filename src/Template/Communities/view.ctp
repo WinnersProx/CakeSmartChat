@@ -18,7 +18,8 @@
 
 
 <div class="container-customized">
-    <div class="col-md-3">
+    <div class="row">
+      <div class="col-md-3">
         <div id="left-p" class="left-one">
             <?= $this->element('Inc/left_menu');?>
         </div>
@@ -26,21 +27,29 @@
     <div class="col-md-6">
         <div  id="main-p">
         <div class="community-banner">
-        <div class="row">
-            <div class="col-md-4" id="community-image">
+          <div class="top-community-description">
+            <i class="fa fa-cog"></i>
+          </div>
 
-                <?= $CommunityCell->generateCommunityIcons($targetCommunity->id)?>
-
-            </div>
-            <div class="col-md-8">
-            <div id="comm-text">
-                
-                Welcome to <?= $targetCommunity->community_name ?> Community!!!
-                <?php if(!$CommunityCell->checkCommunityMembership($targetCommunity->id)):?>
-                  <span class="custom-button"><a href="/communities/joinCommunity/<?= $targetCommunity->id ?>">Join</a></span>
-                <?php endif;?>
-            </div>
-            <div class="comm-menus">
+          <div class="main-community-description">
+            <span class="btn btn-community btn-outline-primary">
+              <i class="fa fa-level-up"></i> Rate
+            </span>
+            <span id="community-image">
+              <?= $CommunityCell->generateCommunityIcons($targetCommunity->id)?>
+            </span>
+            <span class="btn btn-community btn-outline-primary">
+              <?php if(!$CommunityCell->checkCommunityMembership($targetCommunity->id)):?>
+                  <a href="/communities/joinCommunity/<?= $targetCommunity->id ?>"><i class="fa fa-link"></i> Join</a>
+              <?php else :?>
+                  <a href="/communities/joinCommunity/<?= $targetCommunity->id ?>"><i class="fa fa-unlink"></i> Leave</a>
+              <?php endif;?>
+              
+            </span>
+          </div>  
+        </div>
+        <!--end of banner now menus -->
+        <div class="community-menus">
                <span class="profile-opts">
                    <a href="">Posts</a>
                </span> 
@@ -54,48 +63,126 @@
                    <a href="">Members</a>
                </span>  
             </div>
-            </div>
-        </div>
-             
-        </div>
-        <span class="community-title">Bake Posts</span>
-        <div class="community-posts row">
+        <div class="community-posts" id="post-baker">
           <form action="/communities/newPost/<?=$targetCommunity->community_name?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <textarea class="form-control new-community-post" name="community-post-content" placeholder="New Post in <?= $targetCommunity->community_name ?> community " required></textarea>
+              <textarea class="form-control custom-text-field" name="community-post-content" placeholder="New Post in <?= $targetCommunity->community_name ?> community " required></textarea>
+              <div class="bottom-menu">
+              <!--to append the modal -->
+              <div class="post-validator" data-toggle="modal" data-target="#CommunityPostOpts">
+                <i class="fa fa-check-circle fa-lg"></i>
+              </div>
+              <!--End to appending the modal-->
+
+              <!--to upload a picture -->
+              <div id="liveImageUpload" data-toggle="modal" data-target="#liveImg"><i class="fa fa-camera fa-lg"></i></div>
             </div>
+            </div>
+            <!--the modal now concerning the new post in this community-->
+            <div class="modal fade" tabindex="-1"  id="CommunityPostOpts">
+        <div class="modal-dialog" id="postModal">
+          <div class="modal-content">
+            <div class="modal-header postModalHeader">
+              <span class="modal-title">
+                <i class="fa fa-check"></i> Validate your new post in <?= $targetCommunity->community_name?> community</span>
+              <span class="close" data-dismiss="modal" aria-hidden="true"> &times; </span>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7">
+                  <span class="badge post-opts"><i class="fa fa-font"></i> Post Content </span>
+                  <div class="post-text">
+                  </div>
+                  <br/>
+                  <div class="post-images">
+
+                    <span class="badge post-opts"><i class="fa fa-picture-o"></i> Post Images</span> 
+                    <div class="img-transfer">
+                      <input type="file" name="post-pictures[]" class="img-upload" multiple="multiple">
+                      <span >
+                                  <span class="post-img-baker custom-baker">
+                                  <i class="fa fa-upload"></i> Pictures
+                                  </span>
+                                </span>
+                    </div>
+                    <div class="img-preview uploader-text">
+                      <i>None selected!</i>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <span class="badge post-opts"> <i class="fa fa-certificate"></i>Post Options</span><br/>
+                  <div id="post-options">
+                    <span class="badge post-opts-bdg tag">Tag with</span><span class="badge post-opts-bdg privacy">Post privacy</span><br>
+                    <!-- for my tags-->
+                    <div class="tag-infos">
+                      <?php
+                        $this->cell('UserFriends')->getUserFriends($LoggedUser['User']['id']);
+                      ?>
+                    </div>
+                    
+                    <!--for my tags-->
+                    
+                    <!--for my privacy infos-->
+                    
+                      <span class="privacy-setter">Privacy</span>
+                      <select name="post-privacy" class="community-post-privacy">
+                        <option value="0">Public</option>
+                        <option value="1">Members</option>
+                        <option value="2">Private</option> 
+                      </select>
+                    
+                    <!--for my privacy infos-->
+                  </div>  
+                </div>
+                
+              </div>
+              
+              <div class="poster">
+
+              </div>  
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success submit-b" name="community-post-submit"><i class="fa fa-edit fa-lg"></i> New Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!--To put in the modal
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-8 col-xs-7">
                 <div class="post-pictures">
                   <input type="file" name="post-pictures[]" class="picture-baker" value="Add Pictures" multiple="multiple">
-                  <span class="community-file-options">
-                    <span class="post-img-baker">
-                    <i class="fa fa-upload"></i> Upload
+                  <span>
+                    <span class="post-img-baker customized-uploader">
+                    <i class="fa fa-upload"></i> Image
                     </span>
-                    &nbsp;<span class="adds-text">Add images</span>
                   </span>
                   <span class="privacy-setter">Privacy</span>
                     <select name="post-privacy" class="community-post-privacy">
                       <option value="0">Public</option>
                       <option value="1">Members</option>
                       <option value="2">Private</option> 
-                    </select>
+                  </select>
                   
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 col-xs-3">
                 <div class="bottom-button right">
-                  <input type="submit" name="community-post-submit" class="btn btn-primary community-post-submit" value="New Post">
+                  <button type="submit" name="community-post-submit" class="btn btn-secondary community-post-submit">
+                    <i class="fa fa-edit"></i> New Post
+                  </button>
                 </div>
                 
               </div>  
-            </div>
+            </div>-->
           </form>
         </div>
         <div class="render">
           <?= $this->Flash->render()?>
         </div>
-        <div class="community-posts-lists">
+        <div class="post-lists">
             <?php
                 $CommunityCell->getCommunityPosts($targetCommunity->id);
             ?>
@@ -116,6 +203,8 @@
         <div id="side-p" class="side-one">
            <?= $this->element('Inc/side_menu');?>
         </div>
+    </div>
+      
     </div>
     
 </div>

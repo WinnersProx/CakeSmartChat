@@ -4,7 +4,8 @@
   */
     $this->assign('title', 'Edit my Profile');
 ?>
-<div class="col-md-3" id="left-side-advices">
+<div class="row">
+    <div class="col-md-3" id="left-side-advices">
     <div class="block-adds-one">
         Thanks <?= $user->name?> For visiting this page
         hence you can update your profile easily!
@@ -14,10 +15,11 @@
         </div>
     </div>
 </div>
-<div id="profile-edition">
-    <nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __($user->name."'s Profile") ?></li>
+<div class="col-md-9">
+    <div id="profile-edition" class="row">
+    
+    <div class="side-nav col-md-4">
+        <li class="heading" ><?= __($user->name."'s Profile") ?></li>
 
         <div class="upl-block">
             <div class="avatar-update">
@@ -41,9 +43,9 @@
             </div>
         </div>
         
-    </ul>
-</nav>
-<div class="users form large-10 medium-8 columns" id="p-edit">
+    </div>
+
+<div class="users col-md-8" id="p-edit">
     <?= $this->Form->create($user,['enctype' => 'multipart/form-data']) ?>
     <fieldset>
         <legend class="badge-custom"><?= __('Profile Edition') ?></legend>
@@ -96,4 +98,10 @@
     
 </div>
 
+    
 </div>
+
+</div>
+    
+</div>
+
