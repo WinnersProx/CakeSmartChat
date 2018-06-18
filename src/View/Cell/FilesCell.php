@@ -78,8 +78,8 @@ class Filescell extends Cell{
 		// ♦♦ to reformulate not far for it is like disorder ♦♦
 
 		$query = $this->CommunityPosts->find()->contain('CommunityPictures')->where(['member_poster' => $userId])->last();
-		
-		$lastImg = $query->community_pictures[0]->picture_url;
+		$lastImg = $query != null ? $query->community_pictures[0]->picture_url : '/themes/snow.jpg';
+		//$lastImg = $query->community_pictures[0]->picture_url;
 		return $lastImg;
 		
 	}
@@ -93,7 +93,8 @@ class Filescell extends Cell{
 		$this->loadModel('Timelines');
 		$this->loadModel('TimelinesImages');
 		$lastTmln = $this->Timelines->find()->contain('TimelinesImages')->where(['target_id' => $userId])->last();
-		$last = $lastTmln->timelines_images[0]->img_url;
+
+		$last = $lastTmln != null ? $lastTmln->timelines_images[0]->img_url : '/themes/lights.jpg';
 
 		return $last;
 	}
@@ -109,7 +110,7 @@ class Filescell extends Cell{
 		$this->loadModel('Posts');
 		$this->loadModel('PostImages');
 		$lastPost = $this->Posts->find()->contain('PostImages')->where(['post_owner' => $userId])->last();
-		$last = $lastPost->post_images[0]->img_url;
+		$last = $lastPost != null && count($lastPost->post_images) != 0 ? $lastPost->post_images[0]->img_url : '/themes/mountains.jpg';
 
 		return $last;
 	}

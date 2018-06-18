@@ -98,15 +98,19 @@
     .when('/pictures', {
       templateUrl : "/profiles/pictures"
       //controller  : "ProfilesController"
-    })
-
+    });
 
   });
+
   $profileApp.controller('ProfilesController', function($scope){
     $scope.scrollTo = () => {
       $('#scroller').click(function(){
         alert("clicked");
       })
+    }
+
+    $scope.commentTimeline = () => {
+      console.log($('.commentTmln').val());
     }
   })
   

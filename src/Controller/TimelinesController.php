@@ -88,7 +88,7 @@ class TimelinesController extends AppController{
                     }
                     
                 }
-                $this->Flash->error('posted successfully');
+                $this->Flash->success('posted successfully');
                 return $this->redirect($this->referer());
                 
 

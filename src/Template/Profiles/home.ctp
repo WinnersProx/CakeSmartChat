@@ -9,10 +9,8 @@ $TargetUserInfos = $this->cell('usersInfo');
 
       <div class="form-group" id="userTmlns">
         <div class="row">
-          <div class="col-md-1">
-            <?= $this->Html->image($userInfos['avatar'], ['class' => 'user-avatar-xs user-identify-avatar'])?>
-          </div>
-          <div class="col-md-11 col-xs-8">
+          <div class="col-md-12 col-xs-8">
+            
              <textarea class="form-control myStatus" placeholder="Write on <?= $userInfos['name']?>'s Profile" name="statusContent" rows="1" required></textarea>
             <div class="bottom-menu">
               <div id="container">
@@ -20,7 +18,7 @@ $TargetUserInfos = $this->cell('usersInfo');
               </div>
               <!--developped in case of communities -->
               <div class="img-transfer profile-transfer">
-                <input type="file" name="imgFile[]" class="img-upload" multiple="multiple">
+                <input type="file" name="statusImg" class="img-upload">
                 <span class="post-img-baker custom-img-baker">
                       <i class="fa fa-upload"></i> Image
                 </span>
@@ -79,7 +77,7 @@ $TargetUserInfos = $this->cell('usersInfo');
             </div>
             <span>No comment right now please</span>
 
-            <input type="text" name="commentTimeln" class="form-control custom-input commentTmln" placeholder="comment this timeline" data-related-tmn="<?= $tmn->id ?>">
+            <input type="text" name="commentTimeln" class="form-control custom-input commentTmln" placeholder="comment this timeline" data-related-tmn="<?= $tmn->id ?>" ng-click="commentTimeline()">
             <span class="post-erroneous"></span>
           </div>
         </div>
@@ -87,4 +85,5 @@ $TargetUserInfos = $this->cell('usersInfo');
     <?php endforeach ?>
   </div>
 </div>
+
 <!--case home -->

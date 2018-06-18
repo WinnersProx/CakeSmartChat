@@ -16,7 +16,8 @@
 	<div id="post-baker">
 		<span class="post-title badge"><i class="fa fa-edit"></i> Edit a new post!</span>
 		<form method="post" enctype="multipart/form-data" action="/posts/newPost">
-			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text"></textarea>
+			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text">
+			</textarea>
 			<div class="bottom-menu">
 				<!--to append the modal -->
 				<div class="post-validator" data-toggle="modal" data-target="#poster-modal">
@@ -144,13 +145,12 @@
 				</a>
 					
 				<div class="dropdown-menu">
-					<a class="dropdown-menu"><i class="fa fa-minus-circle"></i> Delete Post</a>
-					<a class="dropdown-menu"><i class="fa fa-share"></i> Share Post</a>
-					<a class="dropdown-menu" href=""><i class="fa fa-expand"></i> View More</a>
+					<a class="dropdown-item"><i class="fa fa-minus-circle"></i> Delete Post</a>
+					<a class="dropdown-item"><i class="fa fa-share"></i> Share Post</a>
+					<a class="dropdown-item" href=""><i class="fa fa-expand"></i> View More</a>
 
 				</div>
 			</div>
-
 
 			<!--here-->
 			<?php $Uinfos = $postsCell->userInfo($post->post_owner);?>
