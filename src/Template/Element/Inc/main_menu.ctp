@@ -16,8 +16,7 @@
 	<div id="post-baker">
 		<span class="post-title badge"><i class="fa fa-edit"></i> Edit a new post!</span>
 		<form method="post" enctype="multipart/form-data" action="/posts/newPost">
-			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text">
-			</textarea>
+			<textarea name="newpost" placeholder="What's up <?= $connected['name']?>!" class="content" rows="2" required="required" id="p-content-text"></textarea>
 			<div class="bottom-menu">
 				<!--to append the modal -->
 				<div class="post-validator" data-toggle="modal" data-target="#poster-modal">
@@ -116,7 +115,7 @@
 							</div>	
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-success submit-b" name="new"><i class="fa fa-edit fa-lg"></i> New Post</button>
+							<button type="submit" class="btn btn-default submit-b" name="new"><i class="fa fa-edit fa-lg"></i> New Post</button>
 						</div>
 					</div>
 				</div>
@@ -222,13 +221,6 @@
 	<?php endforeach;?>
 
 </div>
-<div class="paginator">
-        <ul class="pagination">
-            
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            
-        </ul>
-        <!--<$this->Paginator->last(__('last') . ' >>') ?><p>< $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>-->
+<div class="bottom" data-nbr-pages="<?= $this->Paginator->counter(['format' => '{{pages}}'])?>">
+	<?=$this->Html->image('loader.svg')?>
 </div>

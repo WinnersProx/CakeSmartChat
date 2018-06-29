@@ -6,11 +6,35 @@ body{
 	padding-top:60px;
 	overflow-x: hidden;
 }
+
+.bodyOverlay{
+	width: 120%;
+	height: 120%;
+	position: fixed;
+	top: 50;
+	z-index: 100;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+	background-attachment: fixed;
+	display: none;
+}
+.progression{
+	margin-left: -2px;
+	margin-top: -2px;
+	background-color: gray;
+	display: none;
+}
+.progress-contents{
+	background-color: blue;
+	height: 5px;
+	transition: width ease-in-out 0.5s;
+}
 .custom-dropdown{
 	right: 0;
 }
 .custom-nav{
 	background-color: #1d132b!important;
+	transition: opacity ease-in-out 0.5s;
 }
 .custom-nav li{
 	list-style: none;
@@ -450,7 +474,6 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	color: gray;
 	border-radius: none;
 }
-
 #show_results{
 	width: 410px;
 	height: 100px;
@@ -562,6 +585,15 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 /*profiles related styles*/
 
 /*for my good messages*/
+.row-1{
+
+}
+.ror-2{
+
+}
+.row-3{
+
+}
 #contentm{
 	resize: none;
 	border: 1px solid #c7b2b3;
@@ -608,24 +640,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	font-weight: bold;
 
 }
-#email, #password{
-	font-family: cursive;
-    background-color: beige;
-    border-radius: 0px 4px 4px 0px;
-    border:none;
-    color: black;
-}
-#email:focus, #password:focus{
-	border: none;
-}
-.panel{
-	padding: 15px 2px 2px 2px;
-	font-family: quantify;
-	color: #583f3f;
-    font-weight: bold;
-    display: none;
 
-}
 .connect-people{
 	margin-top: 60px;
 	height: 470px;
@@ -686,14 +701,17 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 	text-align: left;
 }
 
-.desktop-contents img{
+#desktop_image{
 	padding: 1px;
 	height: 92%;
 	border-radius: 4px;
 	margin-bottom: 3px;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
+	transition: background-image ease-in-out 0.8s;
+	background-size: cover;
 	z-index: 10;
 }
+
 .desktop_bottom-bar{
 	text-align: center;
 	
@@ -755,6 +773,7 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 
 .mobile-contents{
 	padding: 2px;
+	max-width: 40%
 	min-height: 380px;
 	max-height: 380px;
 	overflow: hidden;
@@ -776,8 +795,10 @@ input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
 }
 
 
-.mobile-contents img{
-	display: inline-block;
+#mobile_image{
+	height: 380px;
+	background-size: cover;
+	transition: background-image ease-in-out 0.8s;
 }
 
 
@@ -1277,7 +1298,7 @@ textarea#p-content-text {
 
 }
 .submit-b{
-	background-color:#584258;
+	background-color:hsla(274, 8%, 32%, 0.9);
 	border: none;
 	border-radius: 4px;
 }
@@ -1285,10 +1306,10 @@ textarea#p-content-text {
 	margin-bottom:12px;
 }
 .submit-b:hover{
-	background-color:#8e91a0;
+	background-color:hsla(274, 8%, 32%, 0.9);
 }
 .submit-b:focus{
-	background-color:#8e91a0;
+	background-color:hsla(274, 8%, 32%, 0.9);
 }
 #post-options{
 	padding: 5px;
@@ -1723,6 +1744,13 @@ span.post-erroneous {
     font-weight: bold;
     font-family: monospace;
 }
+.tmln-error{
+    color: #ff4b4b;
+    margin: 2px;
+    font-weight: bold;
+    font-family: monospace;
+    
+}
 .post-comments-list{
 	padding: 4px;
 	background-color: #f9f8f8;
@@ -1845,11 +1873,10 @@ input.msgSender:focus{
 }
 .msg-box-error {
     background-color: #fafbfc;
-    border: 1px solid #f3c7d5;
-    padding: 8px;
-    color: #da7c9a;
+    padding: 5px;
+    color: #b9564a;
     border-radius: 16px;
-    font-family: monospace;
+    font-family: sans-serif;
     display: none;
 }
 
@@ -2678,6 +2705,7 @@ select:focus{
 	border: none;
 	box-shadow: none;
 	font-family: verdana;
+	font-size: 14px;
 	border-radius: 4px 4px 0px 0px;
 }
 .customized-uploader{
@@ -2752,27 +2780,24 @@ select:focus{
 /*End for users communities*/
 /*U-xs-menu*/
 #UxsSideMenu{
-	display: none;
+	width: 0px;
 	background-color:white;
     background-attachment: fixed;
+    transition: width ease-in-out 0.4s;
     color: #270071;
 	position: fixed;
-	z-index: 100;
-	width: 225px;
-	height: 100%;
+	z-index: 120;
+	height: 120%;
 	overflow-x: hidden;
 	top: 50px;
 	left: 0;
 }
-#UxsSideMenu {
 
-}
 .connected-auth-menus{
 	background-color: hsla(274, 8%, 32%, 0.9);
-	height: 110px;
-	margin-bottom: 45px;
+	height: 130px;
+	text-align: center;
 	padding-top: 15px;
-    padding-left: 37px;
 }
 ul.side-nav.users-side-nav li a {
     padding-left: 8px;
@@ -2826,3 +2851,141 @@ ul.side-nav.users-side-nav li a {
 	background-color:hsla(274, 8%, 8%, 0.5);
 	padding: 8px;
 }
+.bottom{
+	text-align: center;
+}
+.bottom img{
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	display: none;
+}
+
+
+/*For the users sign up page and login page*/
+input.login-input{
+	height: 40px;
+}
+.login-body{
+	padding-top: 15px;
+}
+i.remember-me{
+	color: #a5a5d4;
+	font-size: 18px;
+}
+.checkbox{
+	cursor: pointer;
+	color: black;
+	font-size: 14px;
+	padding-bottom: 8px;
+	position: relative
+}
+.input-remember{
+	display: none;
+}
+.signupbox{
+	font-family: sans-serif;
+	overflow-y: hidden;
+	width:320px;
+	height: 470px;
+	background-color:rgba(255, 255, 255, 0.8);
+	color:#fff;
+	transform:translate(-30%,-30%);
+	box-sizing: border-box;
+	padding:70px 30px;
+	border-radius: 10px;
+}
+.user-error{
+	font-size: 12px;
+	font-family: sans-serif;
+	text-align: center;
+	cursor: pointer;
+}
+.signupbox label{
+	color: #000000;
+	font-weight: bold;
+	margin:0;
+	padding:0;
+}
+.own-design{
+	width:150px;
+	height:150px;
+	border-radius: 50%;
+	position: absolute;
+	top:-80px;
+	left: 26%;
+	/*left:calc(50% - 60px);*/
+	vertical-align: middle;
+	background:#e6e6ef;
+	text-align: center;
+	padding-top: 80px;
+	color: black;
+	font-weight: bold;
+}
+.signupbox input[type="text"], input[type="password"],input[type="email"]{
+	border-radius:4px;
+	border-bottom:1px solid #FFF;
+	background:white;
+	outline: none;
+	border:none;
+	color: gray;
+	font-weight: bold;
+}
+.signupbox input[type="password"]:focus,input[type="email"]:focus{
+	outline: none;
+	border:none;
+	background-color: white;
+}
+.signupbox .btn-action{
+	border:none;
+	outline:none;
+	margin-bottom: 2px;
+	height:40px;
+	text-align: center;
+	color:#fff;
+	font-size: 18px;
+}
+.user-called-to-action{
+	text-align: center;
+	padding-top:12px;
+}
+.btn-action:nth-child(odd){
+	background:#292944;
+}
+.btn-action:nth-child(even){
+	background:#a5a5d4;
+}
+.signupbox .btn-action:hover{
+	cursor: pointer;
+	background:#d01d1d;
+	
+}
+.signupbox a{
+	text-decoration:none;
+	font-size:12px;
+	line-height:20px;
+	color:darkgrey;
+}
+.signupbox a:hover{
+	color:#fff;
+}
+.signupbox .btn-action:active{
+	cursor: pointer;
+	background:#fb2525;
+	
+}
+.bottom-button button {
+  background-color: #2a1f3a;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.bottom-button button:hover{
+	background-color: #2a1f3a;
+	opacity: 0.9;
+	
+	border: none;
+	outline: none;
+}
+
+/*for the users sign up page */

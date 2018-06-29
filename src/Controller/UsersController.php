@@ -27,7 +27,7 @@ class UsersController extends AppController
 
     public $paginate = [
         
-        'limit' => 5, 
+        'limit' => 3, 
         'order' => [
             'Posts.id' =>  'DESC'
         ]
@@ -150,17 +150,16 @@ class UsersController extends AppController
     public function signup()
     {
         
-        if($this->request->session()->read('Auth')){
-            $this->Flash->warning(__('You are not allowed to access this page,logout first!'));
-            return $this->redirect(['controller' => 'Users', 'action' => 'index']);
-        }
+       
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            $data = $this->request->getData();
+            $data = $this->request->getData();     
             $user = $this->Users->patchEntity($user, $data);
             if($this->Users->save($user)){
                 $this->Flash->success(__('The user has been saved.Edit your profile here Login now!'));
-                return $this->redirect(['action' => 'login']);
+                $user = $this->Auth->identify();
+                $this->Auth->setUser($user);
+                return $this->redirect(['action' => 'timeline']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }

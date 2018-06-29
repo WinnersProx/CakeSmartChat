@@ -19,54 +19,25 @@
 
 
 <div class="container-customized">
+  <div class="row">
     <div class="col-md-3">
         <div id="left-p" class="left-one">
             <?= $this->element('Inc/left_menu');?>
         </div>
     </div>
     <div class="col-md-6">
-        <div  id="main-p">
-        <div class="community-banner">
-        <div class="row">
-            <div class="col-md-4" id="community-image">
-
-                <?= $CommunityCell->generateCommunityIcons($cInfos['id'])?>
-
-            </div>
-            <div class="col-md-8">
-            <div id="comm-text">
-                
-                Welcome to <?= $postToShare->target_community ?> Community!!!
-                
-            </div>
-            <div class="comm-menus">
-               <span class="profile-opts">
-                   <a href="">Posts</a>
-               </span> 
-                <span class="profile-opts">
-                   <a href="">Settings</a>
-               </span> 
-                <span class="profile-opts">
-                   <a href="">Images</a>
-               </span>
-               <span class="profile-opts">
-                   <a href="">Members</a>
-               </span>  
-            </div>
-            </div>
-        </div>
-             
-        </div>
+      <div  id="main-p">
+        <span class="community-title">Share Community Post</span>
         <div class="render">
           <?= $this->Flash->render()?>
         </div>
-        <div class="community-posts row">
+        <div class="community-posts">
           <form action="/CommunityPosts/newPostShare/<?= $postToShare->id ?>" method="post" enctype="multipart/form-data">
             
             <div class="row">
 
               <div class="col-md-12">
-                  <span class="community-title">Share Post</span>
+                  
                   Creater : <span class="u-name"><?= $CommunityCell->getMemberInfos($postToShare->member_poster)['name']?></span><br> 
                   Content : <?= h($postToShare->post_content)?>
                   <div class="form-group">
@@ -83,7 +54,9 @@
                   <span>Tag friends : </span><br>
                   <?php $usersDetails->getUserFriends($LoggedUser['User']['id']);?>
               </div>
-              <div class="col-md-8">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                 
                   <span class="privacy-setter">Privacy</span>
                     <select name="sharePrivacy" class="community-post-privacy">
@@ -92,36 +65,25 @@
                       <option value="2">Private</option> 
                     </select>
 
+                  <div class="bottom-button">
+                    <button type="submit" name="community-post-submit" class="btn btn-primary btn-block">
+                      <i class="fa fa-edit fa-lg"></i> Share This Post
+                    </button>
+                    
+                  </div>
                   
               </div>
-              <div class="col-md-4">
-                <div class="bottom-button right">
-                  <input type="submit" name="community-post-submit" class="btn btn-primary community-post-submit" value="Share">
-                </div>
-                
-              </div> 
-              </div>
-               
             </div>
-          </form>
+            </form>   
+          </div>
+          
         </div>
-        
-        <div class="community-posts-lists">
-            
-        </div>
-        <span class="community-title">Members</span>
-        
-         <div class="box-members">
-            
-            
-
-         </div>
-        </div>
-    </div>
+      </div>
     <div class="col-md-2" id="community-side-m">
         <div id="side-p" class="side-one">
            <?= $this->element('Inc/side_menu');?>
         </div>
     </div>
     
+  </div>
 </div>

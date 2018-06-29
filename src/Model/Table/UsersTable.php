@@ -107,8 +107,7 @@ class UsersTable extends Table
             ->requirePresence('phone', 'create')
             ->notEmpty('phone');
         $validator
-            ->requirePresence('about', 'create')
-            ->notEmpty('about');
+            ->allowEmpty('about', 'create');
         return $validator;
     }
 

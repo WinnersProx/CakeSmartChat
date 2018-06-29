@@ -20,7 +20,7 @@ object, embed, video {
 	body{
 		width: 320px;
 		background-color:#c1c1c1;
-		padding-top: 50px;
+		padding-top: 40px;
 		margin-left:-30px;
 		font-size: 13px;
 		overflow-x: hidden;
@@ -88,7 +88,7 @@ object, embed, video {
 	}
 
 	input.msgSender{
-		width: 200px;
+		width: 203px;
 	}
 	.msg-header{
 		width: 216px;
@@ -96,7 +96,10 @@ object, embed, video {
 	.msg-box-error{
 		padding: 0;
 		margin: 0;
-		width: 150px;
+		width: 200px;
+		border:none;
+		background: transparent;
+		font-size: 13px;
 	}
 	span.dated{
 		font-size: 11px;
@@ -279,13 +282,13 @@ object, embed, video {
 @media (min-width: 299px) and (max-width: 320px){
 	body{
 		background-color:#c1c1c1;
-		padding-top:55px;
+		padding-top:44px;
 		margin-left:-30px;
 		font-size: 11px !important;
 		overflow-x: hidden;
 	}
 	.container-customized{
-		width: 318px;
+		overflow: hidden;
 	}
 	.fixed-top{
 		width: 320px;
@@ -393,15 +396,73 @@ object, embed, video {
 	}
 
 	input.msgSender{
-		width: 200px;
+		width: 203px;
+		border-radius: 4px;
+	}
+	.main-section{
+		/*height: 155px;*/
+		width: 320px;
+
+	}
+	.userFriend img.user-avatar-render{
+		display: none;
+	}
+	.userFriend .new-m{
+		display: none;
+	}
+	.userFriend .u-name{
+		font-size: 14px;
+	}
+	.left-sidebar{
+		width: 120px;
+		height: 594px;
+		padding-left: 12px;
+		margin-top: 14px;
+	}
+	.msgs-lists{
+		height: 480px;
+	}
+	.right-chat-textbox{
+		width: 212px;
+		height: 54px;
+	}
+	.msg-submit{
+		display: none;
+	}
+	.right-header{
+		width: 212px;
+	}
+	.right-sidebar{
+		position: absolute;
+		top: 58px;
+		left: 137px;
+	}
+	.me{
+		width: 155px;
+		margin-right: -5px;
+	}
+	.users-messages{
+		width:155px;
 	}
 	.msg-header{
 		width: 216px;
 	}
+	.connect-status{
+		padding: 5px;
+		margin-top: 5px;
+	}
 	.msg-box-error{
 		padding: 0;
 		margin: 0;
-		width: 150px;
+		width: 212px;
+		font-size: 13px;
+		border:none;
+		background-color: transparent;
+	}
+	ul.side-nav.users-side-nav li a{
+		font-size: 14px;
+		font-family: sans-serif;
+		color: #2d003c;
 	}
 	span.dated{
 		font-size: 11px;
@@ -419,7 +480,7 @@ object, embed, video {
 		font-size: 10px;
 	}
 	.msgs-lists{
-		width: 216px;
+		width: 212px;
 	}
 	#about{
 		height: 40px;
@@ -661,8 +722,13 @@ object, embed, video {
 	#side-p{
 		display: none;
 	}
+	.visible-md{
+		display: none;
+	}
 	.toggle-menus{
 		display: inline-block;
+		margin-right: -40px;
+		font-size: 17px;
 	}
 	
 }

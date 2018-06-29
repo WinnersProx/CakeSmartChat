@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div  id="main-p">
+      <div  id="main-p">
         <div class="community-banner">
           <div class="top-community-description">
             <i class="fa fa-cog"></i>
@@ -62,7 +62,7 @@
                <span class="profile-opts">
                    <a href="">Members</a>
                </span>  
-            </div>
+        </div>
         <div class="community-posts" id="post-baker">
           <form action="/communities/newPost/<?=$targetCommunity->community_name?>" method="post" enctype="multipart/form-data">
             <div class="form-group">

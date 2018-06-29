@@ -75,44 +75,4 @@
        
   </div>
 </div>
-
-<script>
-  
-  var $profileApp = angular.module('Profiles', ['ngRoute']);
-
-  $profileApp.config(($routeProvider) => {
-    $routeProvider
-    .when('/', {
-      templateUrl : "/profiles/home"
-    }, function(success){
-      alert("Done successfully");
-    })
-    .when('/friends', {
-      templateUrl : "/profiles/friends"
-      //controller  : "ProfilesController"
-    })
-    .when('/edition', {
-      templateUrl : "/users/edit"
-      //controller  : "ProfilesController"
-    })
-    .when('/pictures', {
-      templateUrl : "/profiles/pictures"
-      //controller  : "ProfilesController"
-    });
-
-  });
-
-  $profileApp.controller('ProfilesController', function($scope){
-    $scope.scrollTo = () => {
-      $('#scroller').click(function(){
-        alert("clicked");
-      })
-    }
-
-    $scope.commentTimeline = () => {
-      console.log($('.commentTmln').val());
-    }
-  })
-  
-</script>
 <!---->

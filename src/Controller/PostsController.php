@@ -8,6 +8,20 @@ use Cake\Chronos\Chronos;
 
 class PostsController extends AppController{
 
+	public $paginate = [
+        
+        'limit' => 3, 
+        'order' => [
+            'Posts.id' =>  'DESC'
+        ]
+
+    ]; 
+
+    public function loadPosts(){
+
+		$myposts =  $this->paginate($this->Posts->find());
+    	$this->set(compact('myposts'));
+    }
 	
 	public function newPost(){
 		$this->loadModel('Users');

@@ -56,7 +56,7 @@ $TargetUserInfos = $this->cell('usersInfo');
             </div>
             <div class="bottom-tmn-menus">
                 <span>
-                    <span class="btn btn-sm btn-customized-sm btn-outline-success star-tmn" data-star-tmn="tmn-<?=$tmn->id?>" data-object="star">
+                    <span class="btn btn-sm btn-customized-sm btn-outline-success star-tmn" data-star-tmn="tmn-<?=$tmn->id?>" data-object="star" ng-click="starTimeline(name)" #name>
                     <i class="fa fa-star"></i> Star
                   </span>
                 </span>
@@ -77,8 +77,7 @@ $TargetUserInfos = $this->cell('usersInfo');
             </div>
             <span>No comment right now please</span>
 
-            <input type="text" name="commentTimeln" class="form-control custom-input commentTmln" placeholder="comment this timeline" data-related-tmn="<?= $tmn->id ?>" ng-click="commentTimeline()">
-            <span class="post-erroneous"></span>
+            <input type="text" name="commentTimeln" class="form-control custom-input commentTmln" placeholder="comment this timeline" data-related-tmn="<?= $tmn->id ?>" ng-keypress="commentTimeline($event)" ng-blur="commentBlured($event)">
           </div>
         </div>
     <?php endif;?>

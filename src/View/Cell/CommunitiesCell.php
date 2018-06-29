@@ -83,6 +83,7 @@ class CommunitiesCell extends Cell{
 
 	}
 	public function checkCommunityMembership($communityId){
+		$this->loadModel('CommunityMembers');
 		$userId = $this->request->session()->read('Auth')['User']['id'];
 		$checks = $this->CommunityMembers->find()->where(['member_id' => $userId, 'id_community' => $communityId])->count();
 		$checks = boolval($checks);

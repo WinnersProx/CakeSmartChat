@@ -1,8 +1,17 @@
 $(document).ready(function(){
 	
 	//user scrolling
-	
+	var r = Math.floor(Math.random() * 256);
+	var g = Math.floor(Math.random()* 256);
+	var b = Math.floor(Math.random() * 256);
+	var a = 0.5;
+	Imagebackground = 'rgba('+ r + ',' + g + ',' + b + ',' + a + ')';
 
+	for(i=0;i<= $('img').length; i++){
+		$('img').css('background-color', '#eeecef');
+	}
+	
+	$targetPage = 1;
 	$(window).scroll(function(){
 		$targetNav = $('.custom-nav');
 		$NavOffsetTop = $targetNav.offset().top;
@@ -12,12 +21,12 @@ $(document).ready(function(){
 		
 		if(parseInt($targetNav.css('width')) > 320){
 			if($NavOffsetTop > $navbarHeight){
-				$targetNav.fadeOut(200);
+				$targetNav.css('opacity', 0);
 				$('body').css('paddingTop', '0px');
 			}
 			else{
 				$('body').css('paddingTop', $navbarHeight);
-				$targetNav.fadeIn(500);
+				$targetNav.css('opacity', 1);
 
 			}
 		}
@@ -28,7 +37,27 @@ $(document).ready(function(){
 			$('#scroller').fadeOut(500);
 		}
 		
-		
+		if($('body').attr('data-vw-name') == 'timeline'){
+
+			$windowHeight = $(window).height(), 
+			$documentHeight = $(document).height();
+			
+			$target = $documentHeight - $windowHeight;
+			$target = parseInt($targetNav.css('width')) <= 475 ? $target - 78 : $target
+			console.log($target);
+			
+			if($target == $(window).scrollTop()){
+				$targetPage += 1;
+				if($targetPage <= $('.bottom').attr('data-nbr-pages')){
+					$('.bottom img').fadeIn(600).fadeOut(200);
+					$.get('/posts/load_posts?page='+$targetPage, {}, function($newposts){
+						if(!$newposts.error){
+								$('#post-infos').append($newposts);
+						}
+					});
+				}
+			}
+		}
 	});
 
 	
@@ -72,13 +101,15 @@ $(document).ready(function(){
 
 	//For getting the number of notifications
 	var notifUrl = '/users/notifications';
-	$.get(notifUrl ,{},function(notif){
+	if($('body').attr('data-vw-name') != 'login'){
+		$.get(notifUrl ,{},function(notif){
 			if(!notif.error){
 				$('.notif').append(notif);
 			}
-	$.ajaxSetup({cache:false});
-	setInterval(function(){$('.notif').load(notifUrl)},6000);
-	});
+		$.ajaxSetup({cache:false});
+		setInterval(function(){$('.notif').load(notifUrl)},6000);
+		});
+	}
 	//For getting the number of notifications
 
 
@@ -129,16 +160,13 @@ $(document).ready(function(){
 		});
 
 	});
-	$('body:not(#notif-view):not(.navbar):not(.t-uxs-menus)').click(function(){
-		if($('#notif-view').css('display') != "none"){
-			$('#notif-view').slideToggle();
-		}
-		if($('#UxsSideMenu').css('display') != "none"){
-			//$('.t-uxs-menus').trigger('click');
-			console.log("me");
+	$('.bodyOverlay').click(function(){
+		if($('#UxsSideMenu').css('width') > 0 + 'px'){
+			$('.t-uxs-menus').trigger('click');
 		}
 		
-	})
+		//
+	});
 	//now for the innovations after a period
 	$('.post-validator').click(function(e){
 		
@@ -199,7 +227,7 @@ $(document).ready(function(){
 	//for uploading the user avatar quickly
 	$('.avatar-update').click(function(e){
 		$('.avatarSetter').trigger('click');
-	})
+	});
 	$('.avatarSetter').change(function(e){
 		var $files = $(this)[0].files, imgCount = $files.length,
 		imgPath = $(this)[0].value, imgExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1).toLowerCase(),
@@ -276,6 +304,7 @@ $(document).ready(function(){
 	$('.sub').mouseover(function(e){
 		var $target = $(this).next(), $parent = $(this).parent();
 		$target.fadeIn(1000).css('display', 'inline-block');
+
 		$parent.mouseleave(function(e){
 			$target.fadeOut(1000);
 		});
@@ -284,7 +313,7 @@ $(document).ready(function(){
 	$('.p-comment').click(function(e){
 		var $this = $(this);
 		$this.parent().next().next().slideToggle().children().focus();
-	})
+	});
 	//for commenting the post
 
 	//
@@ -344,11 +373,11 @@ $(document).ready(function(){
 				console.log($this.parent().children('span.post-erroneous').html('Too short comment!'));
 			}
 		}
-	})
+	});
 	//for sending messages // friends discussions
 	$('.msg-submit').click(function(){
 		$('#MsgBoxSender').trigger('submit');
-	})
+	});
 	$('#MsgBoxSender').submit(function(e){
 		e.preventDefault();
 		$this = $(this);
@@ -447,28 +476,26 @@ $(document).ready(function(){
 	if($contName == 'Messages'){
 
 		$('.Messsages-opts').ready(function(){
-		$listMsgs = $('.msgs-lists');
-		$endMsg = $('#endMsg').offset().top;
-		$listMsgs.animate({
-					scrollTop : $endMsg
-			}, 500);
+			$listMsgs = $('.msgs-lists');
+			$endMsg = $('#endMsg').offset().top;
+			$listMsgs.animate({
+						scrollTop : $endMsg
+				}, 500);
 		});
 	}
 	//Live users instant chat with chatbox chatbox chatbox chatbox
 	$('.user-online').click(function(){
 		$receiverId = $(this).attr('data-liveuid');
-		console.log($receiverId)
 		$tBox = $('.appendable-boxes');
 		$tBox.append($('.chat-box'));
 		$('.chat-box').show();
 		$('.chat-box .chat-box-header').attr('id', $receiverId);
 		
-	})
+	});
 	//Live users instant chat with chatbox chatbox chatbox chatbox
 	$('.community-block').mouseenter(function(e){
 		$this = $(this);
 		$targetChildren = $this.children('.community-description');
-		console.log($targetChildren);
 		$targetChildren.slideDown(1000);
 		
 
@@ -479,72 +506,6 @@ $(document).ready(function(){
 		$targetChildren.slideUp(500);
 	});
 	
-	
-
-	$invisible = true;
-	
-	$('.t-uxs-menus').click(function(){
-
-		$targetMenu = $('#UxsSideMenu'), 
-		$targetMenuWidth = $targetMenu.css('width'); 
-		stockWIdth = parseInt($targetMenuWidth);
-		if($invisible){
-			
-			
-			$(this).removeClass('fa-align-justify').addClass('fa-times fa-rotate-180');
-			$targetMenu.css('width', stockWIdth + 'px');
-			$targetMenu.css('display','block');
-			$w = 0;
-
-			function increaseWidth(){
-				$w += 5;
-				$last = $w + 5;
-				$('#main-p').css('opacity', 0.8);
-				$targetMenu.css('width', $last + 'px')
-				
-				if($last < stockWIdth){
-					setTimeout(increaseWidth, 2.5)
-				}
-
-
-			}
-			increaseWidth()
-
-			$invisible = false;
-
-		}
-		else{
-			$(this).removeClass('fa-times fa-rotate-180').addClass('fa-align-justify');
-			$targetMenuWidth = stockWIdth, $w = stockWIdth;
-			$opacity = 0.4;
-			function decreaseWidth(){
-				$w -= 5;
-				$opacity += 0.1;
-				$last = $w - 5;
-
-				$('#main-p').css('opacity', $opacity);
-				$targetMenu.css('width', stockWIdth + 'px');
-				$targetMenu.css('width', $last + 'px')
-				if($last > 0){
-					
-					setTimeout(decreaseWidth, 0.5);
-				}
-				else{
-
-					$targetMenu.css('display','none');
-					$targetMenu.css('width', $targetMenuWidth + 'px')
-					
-				}
-
-			}
-			decreaseWidth();
-
-			$invisible = true;
-
-		}
-
-		
-	});
 	// end about messages
 
 	//staring a timeline post
@@ -585,43 +546,9 @@ $(document).ready(function(){
 		}
 
 	});
-
-	$('.commentTmln').keypress(function(e){
-		$kCode = e.which || e.keyCode;
-		if($kCode == 13){
-			$this = $(this);
-			$tmln = $(this).attr('data-related-tmn');
-			$comment = $this.val();
-			if($comment.trim().length > 0){
-				$tUrl = "/timelines/new_comment/" + $tmln;
-				$.post($tUrl, {comment : $comment}, function(sent){
-					if(!sent.error){
-						$this.val("");
-						$this.attr("placeholder", "sent successfully!");
-						$this.next().text("");
-						
-					}
-					else{
-						$this.next().text("Error");
-					}
-				})
-				
-			}
-			else{
-				$this.next().text("Please Too short comment!");
-			}
-		}
-	});
-
-
 	//pure javascript with jquery
 	
 	$('.panel').fadeIn(1000);
-	$imgs = $('.people-pictures imgs');
-		$imgs = $('.people-pictures');
-		$imgs.fadeIn(2000);
-
-
 	var loginRender =  {
 		
 		desktopImg : $("#desktop_image"),//document.querySelector(),
@@ -631,36 +558,36 @@ $(document).ready(function(){
 		index      : 0,
 		
 
-		start : () => {
+		start : function(){
 			var $this  = loginRender;
 			$this.initialize();
 			$this.slideStart();
 
 		},
 
-		initialize : () => {
+		initialize : function(){
 			var $this = loginRender;
 			$this.time.text($this.getCurrentTime());
 		},
 
-		slideStart : () => {
+		slideStart : function() {
 			
 			var $this = loginRender;
 			$this.index = 0;
-			setInterval(() => {
+			setInterval(function(){
 				
-				$this.next.attr("src", $this.desktopImg.attr("src"));
-				$this.desktopImg.attr("src",$this.images[$this.index].desktop);
+				$this.desktopImg.css("background-image", "url("+$this.images[$this.index].desktop + ")");
+				// $this.desktopImg.attr("src",$this.images[$this.index].desktop);
 				
-				$this.mobileImg.attr("src",$this.images[$this.index].mobile);
-				
+				// $this.mobileImg.attr("src",$this.images[$this.index].mobile);
+				$this.mobileImg.css("background-image", "url("+$this.images[$this.index].mobile + ")");
 				$this.updateIndex();
 				$this.time.text($this.getCurrentTime());
 
 			}, 4000)
 			
 		},
-		updateIndex : () => {
+		updateIndex : function() {
 			
 			var $this = loginRender;
 			if($this.index < ($this.images.length)-1){
@@ -671,7 +598,7 @@ $(document).ready(function(){
 			}
 		},
 
-		getCurrentTime : () => {
+		getCurrentTime : function(){
 			var date = new Date();
 
 			var hours = date.getHours();
@@ -707,15 +634,9 @@ $(document).ready(function(){
 		]
 	}
 	loginRender.start();
-	//pure javascript with jquery
+	//pure END  javascript with jquery
 
-
-
-
-});
-
-//
-$('.ajaxConfirm').click(function(e){
+	$('.ajaxConfirm').click(function(e){
 		e.preventDefault();
 
 		var urlC = $(this).attr('href'), $current = $(this);
@@ -731,4 +652,150 @@ $('.ajaxConfirm').click(function(e){
 		//setInterval(function(){$('#notif-view').load(tUrl)},10000);
 		});
 
+	});
+	$invisible = true;
+	$('.t-uxs-menus').click(function(){
+		$targetMenu = $('#UxsSideMenu');
+		if($invisible){
+			$width = 250;
+			$('.t-uxs-menus').removeClass('fa-align-justify').addClass('fa-times fa-rotate-180');
+			$('.bodyOverlay').css('display', 'block');
+			$targetMenu.css('width', $width + 'px');
+			$invisible = false;
+
+		}
+		else{
+			
+			$('.t-uxs-menus').removeClass('fa-times fa-rotate-180').addClass('fa-align-justify');
+			$width = 0;
+			$('.bodyOverlay').css('display', 'none');
+			$targetMenu.css('width', $width + 'px');
+			$invisible = true;
+
+		}
+
+	});
+	
+	$('.checkbox').click(function(e){
+		$target = $(this).children('i.remember-me');
+		console.log($(this).attr('data-remember-user'));
+
+		if($(this).attr('data-remember-user') == "off"){
+			$target.removeClass('fa-toggle-off').addClass('fa-toggle-on');
+			$(this).attr('data-remember-user', 'on');
+			document.querySelector('.input-remember').setAttribute('checked', 'checked');
+
+		}
+		else{
+			
+			$target.removeClass('fa-toggle-on').addClass('fa-toggle-off');
+			$(this).attr('data-remember-user', 'off');
+			document.querySelector('.input-remember').removeAttribute('checked');
+		}
+
+	});
+
+	
+
+
+
 });
+/**************************************************************/
+		/*concerning the superheroic framework going here*/
+		  
+		var $profileApp = angular.module('Profiles', ['ngRoute']);
+
+		  $profileApp.config(function($routeProvider){
+		    $routeProvider
+		    .when('/', {
+		      templateUrl : "/profiles/home"
+		      
+		    })
+		    .when('/friends', {
+		      templateUrl : "/profiles/friends"
+		      //controller  : "ProfilesController"
+		    })
+		    .when('/edition', {
+		      templateUrl : "/users/edit"
+		      //controller  : "ProfilesController"
+		    })
+		    .when('/pictures', {
+		      templateUrl : "/profiles/pictures"
+		      //controller  : "ProfilesController"
+		    });
+
+		  });
+
+		  $profileApp.controller('ProfilesController', function($scope){
+		    $scope.scrollTo = function() {
+		      $('#scroller').click(function(){
+		        alert("clicked");
+		      })
+		    }
+		    $scope.OnInitialize = function(){
+		     $('.star-tmn').click(function(){
+		        alert("done");
+		      })
+		    }
+
+		    $scope.commentTimeline = function(e){
+		      $key = e.keyCode || e.which;
+		      if($key === 13){
+		        
+		        $comment = e.target.value;
+		        $tmln = e.target.getAttribute('data-related-tmn');
+		        $url = "/timelines/new_comment/" + $tmln;
+		        //jquery try ajax
+		        $errorMsg = e.target.nextSibling;
+		        $error = document.createElement('span');
+		        $error.style.color = "red";
+		        $checkError = false;
+		        if($comment.length > 2){
+		          $.post($url, {comment : $comment}, function(success){
+		            if(!success.error){
+		              e.target.value = "";
+		              $checkError = false;
+		              e.target.setAttribute("placeholder", "Sent");
+		            }
+		            else{
+		              $checkError = true;
+		              $error.innerHTML = "Not sent please";
+		              e.target.setAttribute("placeholder", "Not Sent");
+		            }
+		          });
+
+		        }
+		        else{
+		          e.target.setAttribute("placeholder", "Too short comment");
+		          $error.innerHTML = "Too short comment";
+		          $checkError = true;
+
+		        }
+
+		        if($checkError){
+		          e.target.parentNode.appendChild($error);
+		        }
+		        else{
+		          e.target.parentNode.lastChild.innerHTML = "";
+		        }
+
+		      }
+		     
+		   }
+		  
+		   $scope.commentBlured = function(e){
+		      e.target.setAttribute("placeholder", "comment this...");
+		   }
+		   
+		   $scope.$on("LOAD", function($scope){
+		    $scope.loading = true;
+		   });
+
+		   $scope.$on("UNLOAD", function($scope){
+		    $scope.loading = false;
+		   });
+		   
+		  });
+	/**************************************************************/
+
+
